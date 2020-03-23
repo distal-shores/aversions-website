@@ -7,12 +7,20 @@ use Illuminate\Database\Eloquent\Model;
 class Event extends Model
 {
     /**
+     * The attributes that aren't mass assignable.
+     *
+     * @var array
+     */
+    protected $guarded = [];
+
+    /**
      * The bands that belong to the event.
      */
     public function bands()
     {
         return $this->belongsToMany('App\Band');
     }
+
     /**
      * The bands that belong to the event that aren't Aversions.
      */
@@ -20,6 +28,7 @@ class Event extends Model
     {
         return $this->bands()->where('id', '!=', 1);
     }
+
     /**
      * The venue that the event belongs to.
      */

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Band;
 use Illuminate\Http\Request;
+use PragmaRX\Countries\Package\Countries;
 
 class BandsController extends Controller
 {
@@ -14,7 +15,9 @@ class BandsController extends Controller
      */
     public function index()
     {
-        //
+        $bands = Band::orderBy('name')->get();
+
+        return view('bands.index', compact("bands"));
     }
 
     /**
@@ -24,7 +27,10 @@ class BandsController extends Controller
      */
     public function create()
     {
-        return view('bands.create');
+        $countriesCollection = new Countries();
+        $countries = $countriesCollection->sortBy('name.common')->all();
+
+        return view('bands.create', compact("countries"));
     }
 
     /**
@@ -35,7 +41,24 @@ class BandsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $requestParams = array(
+            'name' => $request->band_name,
+            'email' => $request->band_email,
+            'city' => $request->band_city,
+            'country' => $request->band_country,
+            'website_url' => $request->band_url
+        );
+
+        $band = Band::firstOrCreate(
+            ['name' => $request->band_name],
+            $requestParams
+        );
+
+        if($band->wasRecentlyCreated) {
+            return redirect()->action('BandsController@index')->with(['status' => 'Band created!', 'message_type' => 'success']);
+        } else {
+            return redirect()->action('BandsController@index')->with(['status' => 'Band already exists!', 'message_type' => 'warning']);
+        }
     }
 
     /**
@@ -80,6 +103,7 @@ class BandsController extends Controller
      */
     public function destroy(Band $band)
     {
-        //
+        $band->delete();
+        return redirect()->action('BandsController@index')->with(['status' => 'Band removed!', 'message_type' => 'warning']);
     }
 }

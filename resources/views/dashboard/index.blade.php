@@ -9,6 +9,9 @@
 			@include('dashboard.left_nav')
 		</div>
 		<div class="col-md-10">
+			<div class="row">
+				@include('dashboard.partials.notifications')
+			</div>
 			@yield('right_pane')
 		</div>
 	</div>

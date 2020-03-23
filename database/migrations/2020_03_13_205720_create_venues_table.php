@@ -18,9 +18,10 @@ class CreateVenuesTable extends Migration
             $table->timestamps();
             $table->string('name');
             $table->string('email');
+            $table->string('main_contact')->nullable();
             $table->string('city');
             $table->string('country');
-            $table->string('website_url');
+            $table->string('website_url')->nullable();
         });
     }
 

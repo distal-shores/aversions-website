@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Venue;
 use Illuminate\Http\Request;
+use PragmaRX\Countries\Package\Countries;
 
 class VenuesController extends Controller
 {
@@ -14,7 +15,9 @@ class VenuesController extends Controller
      */
     public function index()
     {
-        //
+        $venues = Venue::orderBy('name')->get();
+
+        return view('venues.index', compact("venues"));
     }
 
     /**
@@ -24,7 +27,10 @@ class VenuesController extends Controller
      */
     public function create()
     {
-        return view('venues.create');
+        $countriesCollection = new Countries();
+        $countries = $countriesCollection->sortBy('name.common')->all();
+
+        return view('venues.create', compact("countries"));
     }
 
     /**
@@ -80,6 +86,7 @@ class VenuesController extends Controller
      */
     public function destroy(Venue $venue)
     {
-        //
+        $venue->delete();
+        return redirect()->action('VenuesController@index')->with(['status' => 'Venue removed!', 'message_type' => 'warning']);
     }
 }

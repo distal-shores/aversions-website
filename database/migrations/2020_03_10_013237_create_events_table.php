@@ -18,11 +18,11 @@ class CreateEventsTable extends Migration
             $table->timestamps();
             $table->string('name');
             $table->integer('venue_id');
-            $table->string('event_url');
-            $table->string('ticket_url');
+            $table->string('event_url')->nullable();
+            $table->string('ticket_url')->nullable();
             $table->date('date');
-            $table->time('start_time');
-            $table->time('end_time');
+            $table->time('start_time')->nullable();
+            $table->time('end_time')->nullable();
             $table->float('ticket_price');
         });
     }
