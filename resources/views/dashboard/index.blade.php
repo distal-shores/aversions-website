@@ -2,7 +2,7 @@
 
 @section('content')
 	@include('dashboard.partials.dashboard-header')
-	<div class="row">
+	<div class="row no-right-margin">
 		<div class="col-md-2 dashboard-nav">
 			@include('dashboard.left_nav')
 		</div>

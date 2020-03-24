@@ -40,10 +40,12 @@
 				<div class="col">
 					<label for="ticket_url">Ticket URL</label>
 					<input type="text" class="form-control" value="{{ isset($event->ticket_url) ? $event->ticket_url : ''  }}" id="ticket_url" name="ticket_url">
+					<div class="form-instruction" for="ticket_url"><em>Valid URL including http:// or https://</em></div>
 				</div> {{-- /col --}}
 				<div class="col">
 					<label for="event_url">Event URL</label>
 					<input type="text" class="form-control" value="{{ isset($event->event_url) ? $event->event_url : ''  }}" id="event_url" name="event_url">
+					<div class="form-instruction" for="ticket_url"><em>Valid URL including http:// or https://</em></div>
 				</div> {{-- /col --}}
 			</div>	{{-- /row --}}
 		</div> {{-- /form-group --}}
