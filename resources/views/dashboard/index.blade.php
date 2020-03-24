@@ -1,14 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+	@include('dashboard.partials.dashboard-header')
 	<div class="row">
-		<h1>Aversions Dashboard</h1>
-	</div>
-	<div class="row">
-		<div class="col-md-2">
+		<div class="col-md-2 dashboard-nav">
 			@include('dashboard.left_nav')
 		</div>
-		<div class="col-md-10">
+		<div class="col-md-10 dashboard-content">
 			@include('dashboard.partials.notifications')
 			@yield('right_pane')
 		</div>

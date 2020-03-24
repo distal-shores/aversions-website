@@ -10,3 +10,22 @@
 
 // Datepicker
 @import '~js-datepicker/src/datepicker';
+
+.container-fluid {
+	overflow: hidden;
+	padding: 0;
+}
+
+#dashboard-header {
+	background-color: black;
+	padding: 5px calc(15px + 0.5rem);
+	h1 {
+		color: white;
+		font-size: 1em;
+		margin: 0;
+	}
+}
+
+.dashboard-content {
+	padding: 15px 0 0;
+}
