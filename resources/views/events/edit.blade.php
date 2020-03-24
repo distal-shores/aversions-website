@@ -1,8 +1,17 @@
-@extends('dashboard.index')
+@extends('dashboard.index-forms')
+
+@section('form-image')
+	@if($event->event_poster)
+		<h3>Current poster</h3>
+		<img class="img-fluid" src="{{ asset('posters/'.$event->event_poster) }}">
+	@endif
+@endsection
 
 @section('right_pane')
-	<h1>Edit event {{ $event->name }}</h1>
-	<form class="w-50" action="{{ route('events.update', $event->id) }}" method="POST" enctype="multipart/form-data">
+	<h1>Edit event</h1>
+	<h3>{{ $event->name }}</h3>
+	
+	<form class="w-100" action="{{ route('events.update', $event->id) }}" method="POST" enctype="multipart/form-data">
 		@csrf
 		@method('PUT')
 		<div class="form-group">
@@ -58,7 +67,13 @@
 			<label for="ticket_price">Ticket Price</label>
 			<input type="number" class="form-control" id="ticket_price" min="0.50" step="0.50" max="2500" name="ticket_price" value="{{ $event->ticket_price }}" required>
 		</div> {{-- /form-group --}}
+		<div class="form-group">
+			<label for="event_poster">Change Poster</label>
+			<input type="file" class="form-control" id="event_poster"  name="event_poster">
+			@if(isset($event->event_poster))
+				<div class="form-instruction"><em>Currently set poster is named {{ $event->event_poster }}</em></div>
+			@endif
+		</div> {{-- /form-group --}}
 		<button type="submit" class="btn btn-primary">Submit</button>
 	</form>
-
 @endsection

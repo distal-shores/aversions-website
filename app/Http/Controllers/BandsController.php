@@ -8,6 +8,16 @@ use PragmaRX\Countries\Package\Countries;
 
 class BandsController extends Controller
 {
+
+    private $countriesCollection;
+    private $countries;
+
+    public function __construct()
+    {
+        $this->countriesCollection = new Countries();
+        $this->countries = $this->countriesCollection->sortBy('name.common')->all();
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -27,10 +37,7 @@ class BandsController extends Controller
      */
     public function create()
     {
-        $countriesCollection = new Countries();
-        $countries = $countriesCollection->sortBy('name.common')->all();
-
-        return view('bands.create', compact("countries"));
+        return view('bands.create')->with('countries', $this->countries);
     }
 
     /**
@@ -80,7 +87,8 @@ class BandsController extends Controller
      */
     public function edit(Band $band)
     {
-        //
+        $countries = $this->countries;
+        return view('bands.edit', compact(["band", "countries"]));
     }
 
     /**
@@ -92,7 +100,16 @@ class BandsController extends Controller
      */
     public function update(Request $request, Band $band)
     {
-        //
+
+        $band->name = $request->band_name;
+        $band->email = $request->band_email;
+        $band->city = $request->band_city;
+        $band->country = $request->band_country;
+        $band->website_url = $request->band_url;
+
+        $band->save();
+
+        return redirect()->action('BandsController@index')->with(['status' => 'Band "' . $band->name . '" updated!', 'message_type' => 'success']);
     }
 
     /**

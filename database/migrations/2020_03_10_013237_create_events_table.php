@@ -24,6 +24,7 @@ class CreateEventsTable extends Migration
             $table->time('start_time')->nullable();
             $table->time('end_time')->nullable();
             $table->float('ticket_price');
+            $table->string('event_poster')->nullable();
         });
     }
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Storage;
 use App\Band;
 use App\Event;
 use App\Venue;
@@ -43,8 +44,24 @@ class EventsController extends Controller
      */
     public function store(Request $request)
     {
-        if($request->event_bands != null) {
-            $bands = $request->event_bands;
+        $rules = array(
+            'name' => 'required',
+            'event_venue' => 'required|integer',
+            'ticket_url' => 'nullable|url',
+            'event_url' => 'nullable|url',
+            'event_date' => 'required|date',
+            'start_time' => 'required|date_format:H:i',
+            'end_time' => 'required|date_format:H:i',
+            'ticket_price' => 'required|numeric',
+            'event_poster' => 'nullable|mimes:jpeg,png,bmp,tiff|max:4096',
+        );
+
+        $this->validate($request, $rules);
+        
+        if($request->file('event_poster') != null) {
+            $file = $request->file('event_poster');
+            $originalFileName = $file->getClientOriginalName();
+            $file->storeAs('public/posters', $originalFileName);
         }
 
         $requestParams = array(
@@ -56,17 +73,22 @@ class EventsController extends Controller
             'start_time' => $request->start_time,
             'end_time' => $request->end_time,
             'ticket_price' => $request->ticket_price,
+            'event_poster' => isset($originaFileName) ? $originaFileName : null
         );
+
+        if (isset($originalFileName)) {
+            $requestParams['event_poster'] = $originalFileName;
+        }
 
         $event = Event::firstOrCreate(
             [ 'name' => $request->name, 'date' => Carbon::createFromDate($request->event_date)],
             $requestParams
         );
 
-        if($bands) {
-            foreach($bands as $band) {
-                $event->bands()->save(Band::find($band));  
-            }
+        if($request->file('event_poster') != null) {
+            $file = $request->file('event_poster');
+            $originalname = $file->getClientOriginalName();
+            $path = $file->storeAs('posters', $originalname);
         }
 
         if($event->wasRecentlyCreated) {
@@ -74,6 +96,7 @@ class EventsController extends Controller
         } else {
             return redirect()->action('EventsController@index')->with(['status' => 'Event already exists!', 'message_type' => 'warning']);
         }
+
     }
 
     /**
@@ -97,10 +120,9 @@ class EventsController extends Controller
     {
         $venues = Venue::all();
         $eventVenue = $event->venue()->first();
-        $bands = Band::all();
-        $eventBands = $event->bands()->get();
+        $bands = $this->getAllNonAversionsBands();
 
-        return view('events.edit', compact(["event", "venues", "eventVenue", "bands", "eventBands"]));
+        return view('events.edit', compact(["event", "venues", "eventVenue", "bands"]));
     }
 
     /**
@@ -127,9 +149,18 @@ class EventsController extends Controller
         $event->end_time = $request->end_time;
         $event->ticket_price = $request->ticket_price;
 
+        if($request->file('event_poster') != null) {
+            $file = $request->file('event_poster');
+            $originalFileName = $file->getClientOriginalName();
+            if(!Storage::exists('public/posters/'.$originalFileName)) {
+                $file->storeAs('public/posters', $originalFileName);
+                $event->event_poster = $originalFileName;
+            }
+        }
+
         $event->save();
 
-        return redirect()->action('EventsController@index')->with(['status' => 'Event updated!', 'message_type' => 'success']);
+        return redirect()->action('EventsController@index')->with(['status' => 'Event ' . $event->name . ' updated!', 'message_type' => 'success']);
     }
 
     /**

@@ -20,7 +20,7 @@
   				<th scope="row">{{ $event->date }}</th>
   				<td>{{ $event->name }}</td>
   				<td>{{ $event->venue->name }}</td>
-  				<td>{{ $event->start_time }}</td>
+  				<td>{{ date("g:i A", strtotime($event->start_time)) }}</td>
   				<td>
   					@foreach ($event->otherBands as $band)
               @if($band->website_url != (null || ''))

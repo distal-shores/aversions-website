@@ -8,9 +8,12 @@
 		<div class="col-md-2">
 			@include('dashboard.left_nav')
 		</div>
-		<div class="col-md-10">
-			@include('dashboard.partials.notifications')
+		<div class="col-md-6">
 			@yield('right_pane')
+		</div>
+		<div class="col-md-4">
+			@include('dashboard.partials.notifications')
+			@yield('form-image')
 		</div>
 	</div>
 @endsection

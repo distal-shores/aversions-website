@@ -1,8 +1,8 @@
-@extends('dashboard.index')
+@extends('dashboard.index-forms')
 
 @section('right_pane')
 	<h1>Add an event</h1>
-	<form class="w-50" action="{{ action('EventsController@store') }}" method="post" enctype="multipart/form-data">
+	<form class="w-100" action="{{ action('EventsController@store') }}" method="post" enctype="multipart/form-data">
 		@csrf
 		<div class="form-group">
 			<label for="event_name">Event Name</label>
@@ -30,10 +30,12 @@
 				<div class="col">
 					<label for="ticket_url">Ticket URL</label>
 					<input type="text" class="form-control" id="ticket_url" name="ticket_url">
+					<div class="form-instruction" for="ticket_url"><em>Valid URL including http:// or https://</em></div>
 				</div> {{-- /col --}}
 				<div class="col">
 					<label for="event_url">Event URL</label>
 					<input type="text" class="form-control" id="event_url" name="event_url">
+					<div class="form-instruction" for="ticket_url"><em>Valid URL including http:// or https://</em></div>
 				</div> {{-- /col --}}
 			</div>	{{-- /row --}}
 		</div> {{-- /form-group --}}
@@ -56,6 +58,10 @@
 		<div class="form-group">
 			<label for="ticket_price">Ticket Price</label>
 			<input type="number" class="form-control" id="ticket_price" min="0.50" step="0.50" max="2500" value="0.00" name="ticket_price" required>
+		</div> {{-- /form-group --}}
+		<div class="form-group">
+			<label for="event_poster">Poster</label>
+			<input type="file" class="form-control" id="event_poster"  name="event_poster">
 		</div> {{-- /form-group --}}
 		<button type="submit" class="btn btn-primary">Submit</button>
 	</form>

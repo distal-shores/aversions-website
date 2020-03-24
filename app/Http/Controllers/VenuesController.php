@@ -8,6 +8,15 @@ use PragmaRX\Countries\Package\Countries;
 
 class VenuesController extends Controller
 {
+    private $countriesCollection;
+    private $countries;
+
+    public function __construct()
+    {
+        $this->countriesCollection = new Countries();
+        $this->countries = $this->countriesCollection->sortBy('name.common')->all();
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -27,10 +36,7 @@ class VenuesController extends Controller
      */
     public function create()
     {
-        $countriesCollection = new Countries();
-        $countries = $countriesCollection->sortBy('name.common')->all();
-
-        return view('venues.create', compact("countries"));
+        return view('venues.create')->with('countries', $this->countries);
     }
 
     /**
@@ -63,7 +69,8 @@ class VenuesController extends Controller
      */
     public function edit(Venue $venue)
     {
-        //
+        $countries = $this->countries;
+        return view('venues.edit', compact(["venue", "countries"]));
     }
 
     /**
@@ -75,7 +82,16 @@ class VenuesController extends Controller
      */
     public function update(Request $request, Venue $venue)
     {
-        //
+        $venue->name = $request->venue_name;
+        $venue->main_contact = $request->venue_contact;
+        $venue->email = $request->venue_email;
+        $venue->city = $request->venue_city;
+        $venue->country = $request->venue_country;
+        $venue->website_url = $request->venue_url;
+
+        $venue->save();
+
+        return redirect()->action('VenuesController@index')->with(['status' => 'Venue "' . $venue->name . '" updated!', 'message_type' => 'success']);
     }
 
     /**
