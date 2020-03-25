@@ -1,3 +1,27 @@
+
+#dashboard-header {
+	background-color: black;
+	color: white;
+	display: flex;
+	align-items: center;
+	padding: 5px calc(15px + 0.5rem);
+	h1 {
+		font-size: 1em;
+		margin: 0;
+	}
+	.user-ui {
+		margin-left: auto;
+		ul {
+			list-style-type: none;
+			margin: 0;
+			li {
+				color: white;
+				display: inline-block;
+			}
+		}
+	}
+}
+
 #dashboard-nav {
 	background-color: white;
 	height: 100vh;

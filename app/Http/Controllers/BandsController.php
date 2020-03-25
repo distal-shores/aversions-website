@@ -14,6 +14,7 @@ class BandsController extends Controller
 
     public function __construct()
     {
+        $this->middleware('auth');
         $this->countriesCollection = new Countries();
         $this->countries = $this->countriesCollection->sortBy('name.common')->all();
     }

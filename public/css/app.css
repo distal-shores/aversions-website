@@ -8,6 +8,33 @@
   font-size: 0.8em;
 }
 
+#dashboard-header {
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 5px calc(15px + 0.5rem);
+}
+
+#dashboard-header h1 {
+  font-size: 1em;
+  margin: 0;
+}
+
+#dashboard-header .user-ui {
+  margin-left: auto;
+}
+
+#dashboard-header .user-ui ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+#dashboard-header .user-ui ul li {
+  color: white;
+  display: inline-block;
+}
+
 #dashboard-nav {
   background-color: white;
   height: 100vh;

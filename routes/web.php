@@ -19,3 +19,7 @@ Route::resource('bands', 'BandsController');
 Route::resource('venues', 'VenuesController');
 Route::resource('publications', 'PublicationsController');
 Route::resource('clippings', 'ClippingsController');
+
+Auth::routes(['register' => false]);
+
+Route::get('/home', 'HomeController@index')->name('home');
