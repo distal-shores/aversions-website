@@ -11,11 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/admin', 'DashboardController@index')->name('dashboard.index');
 
 // resource routes
 Route::resource('events', 'EventsController');
 Route::resource('bands', 'BandsController');
 Route::resource('venues', 'VenuesController');
+Route::resource('publications', 'PublicationsController');
+Route::resource('clippings', 'ClippingsController');

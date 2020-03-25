@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Venue extends Model
+class Publication extends Model
 {
     /**
      * The attributes that aren't mass assignable.
@@ -14,10 +14,10 @@ class Venue extends Model
     protected $guarded = [];
     
     /**
-     * The events that belong to the venue.
+     * The press clippings that belong to the publication.
      */
-    public function events()
+    public function clippings()
     {
-        return $this->hasMany('App\Event');
-    }
+        return $this->hasMany('App\Clipping');
+    } 
 }

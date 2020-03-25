@@ -27,7 +27,7 @@ class BandsController extends Controller
     {
         $bands = Band::orderBy('name')->get();
 
-        return view('bands.index', compact("bands"));
+        return view('dashboard.modules.bands.index', compact("bands"));
     }
 
     /**
@@ -37,7 +37,7 @@ class BandsController extends Controller
      */
     public function create()
     {
-        return view('bands.create')->with('countries', $this->countries);
+        return view('dashboard.modules.bands.create')->with('countries', $this->countries);
     }
 
     /**
@@ -88,7 +88,7 @@ class BandsController extends Controller
     public function edit(Band $band)
     {
         $countries = $this->countries;
-        return view('bands.edit', compact(["band", "countries"]));
+        return view('dashboard.modules.bands.edit', compact(["band", "countries"]));
     }
 
     /**

@@ -19,5 +19,12 @@ class Band extends Model
     public function events()
     {
         return $this->belongsToMany('App\Event');
-    }    
+    }
+    /**
+     * The press clippings that belong to the band.
+     */
+    public function clippings()
+    {
+        return $this->hasMany('App\Clipping');
+    }   
 }

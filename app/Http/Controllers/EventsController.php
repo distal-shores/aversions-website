@@ -20,7 +20,7 @@ class EventsController extends Controller
     {
         $events = Event::orderBy('date')->get();
 
-        return view('events.index', compact("events"));
+        return view('dashboard.modules.events.index', compact("events"));
     }
 
     /**
@@ -33,7 +33,7 @@ class EventsController extends Controller
         $venues = Venue::orderBy('name')->get();
         $bands = $this->getAllNonAversionsBands();
 
-        return view('events.create', compact(["venues","bands"]));
+        return view('dashboard.modules.events.create', compact(["venues","bands"]));
     }
 
     /**
@@ -122,7 +122,7 @@ class EventsController extends Controller
         $eventVenue = $event->venue()->first();
         $bands = $this->getAllNonAversionsBands();
 
-        return view('events.edit', compact(["event", "venues", "eventVenue", "bands"]));
+        return view('dashboard.modules.events.edit', compact(["event", "venues", "eventVenue", "bands"]));
     }
 
     /**

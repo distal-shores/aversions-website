@@ -8,6 +8,20 @@
   font-size: 0.8em;
 }
 
+#dashboard-nav {
+  background-color: white;
+  height: 100vh;
+}
+
+#dashboard-nav .list-group .list-group-item {
+  display: flex;
+  align-items: center;
+}
+
+#dashboard-nav .list-group .list-group-item .btn {
+  margin-left: auto;
+}
+
 /*!
  * Bootstrap v4.4.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors

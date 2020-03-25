@@ -1,0 +1,13 @@
+#dashboard-nav {
+	background-color: white;
+	height: 100vh;
+	.list-group {
+		.list-group-item {
+			display: flex;
+			align-items: center;
+			.btn {
+				margin-left: auto;
+			}
+		}
+	}
+}

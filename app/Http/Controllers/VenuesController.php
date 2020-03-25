@@ -26,7 +26,7 @@ class VenuesController extends Controller
     {
         $venues = Venue::orderBy('name')->get();
 
-        return view('venues.index', compact("venues"));
+        return view('dashboard.modules.venues.index', compact("venues"));
     }
 
     /**
@@ -36,7 +36,7 @@ class VenuesController extends Controller
      */
     public function create()
     {
-        return view('venues.create')->with('countries', $this->countries);
+        return view('dashboard.modules.venues.create')->with('countries', $this->countries);
     }
 
     /**
@@ -70,7 +70,7 @@ class VenuesController extends Controller
     public function edit(Venue $venue)
     {
         $countries = $this->countries;
-        return view('venues.edit', compact(["venue", "countries"]));
+        return view('dashboard.modules.venues.edit', compact(["venue", "countries"]));
     }
 
     /**

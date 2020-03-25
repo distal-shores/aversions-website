@@ -8,7 +8,11 @@
 		</div>
 		<div class="col-md-10 dashboard-content">
 			@include('dashboard.partials.notifications')
-			@yield('right_pane')
+    		@if(View::hasSection('right_pane'))
+        		@yield('right_pane')
+    		@else
+        		Welcome to the Aversions dashboard
+    		@endif
 		</div>
 	</div>
 @endsection
