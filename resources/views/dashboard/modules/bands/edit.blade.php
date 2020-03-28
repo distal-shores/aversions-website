@@ -6,7 +6,7 @@
 
 	<form action="{{ route('bands.update', $band->id) }}" class="w-100" enctype="multipart/form-data" method="POST">
 		@csrf
-		@method('PUT')
+		@method('PATCH')
 		<div class="form-group">
 			<label for="band_name">Band Name</label>
 			<input type="text" class="form-control" id="band_name" name="band_name" value="{{ $band->name }}" required>

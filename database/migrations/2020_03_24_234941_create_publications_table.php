@@ -17,10 +17,12 @@ class CreatePublicationsTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->string('name');
+            $table->string('email');
             $table->string('url');
+            $table->string('city')->nullable();
+            $table->string('country')->nullable();
             $table->string('contact_name')->nullable();
-            $table->string('contact_email')->nullable();
-            $table->boolean('print_only?')->default(false);
+            $table->boolean('print_only')->default(false);
         });
     }
 

@@ -21,5 +21,6 @@ Route::resource('publications', 'PublicationsController');
 Route::resource('clippings', 'ClippingsController');
 
 Auth::routes(['register' => false]);
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -5,3 +5,18 @@
 .form-instruction {
 	font-size: 0.8em;
 }
+
+label {
+	&[for="print_only"] {
+		width: 100%;
+		text-align: right;
+	}	
+}
+
+.form-control.pull-left {
+	width: auto;
+	&#print_only {
+		margin-left: auto;
+		width: 37px;
+	}
+}

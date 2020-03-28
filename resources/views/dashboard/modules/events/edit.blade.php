@@ -13,7 +13,7 @@
 	
 	<form class="w-100" action="{{ route('events.update', $event->id) }}" method="POST" enctype="multipart/form-data">
 		@csrf
-		@method('PUT')
+		@method('PATCH')
 		<div class="form-group">
 			<label for="event_name">Event Name</label>
 			<input type="text" class="form-control" id="event_name" name="name" value="{{ $event->name }}" required>

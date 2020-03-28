@@ -6,7 +6,7 @@
 		<ul>
 			<li>{{ Auth::user()->name }}</li>
 			<span>|</span>
-			<li><a href="{{ route('logout') }}">logout</a></li>
+			<li><a href="{{ url('/logout') }}">logout</a></li>
 		</ul>
 	</div>
 </div>

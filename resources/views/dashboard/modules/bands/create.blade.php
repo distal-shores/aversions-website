@@ -33,7 +33,7 @@
 				</div> {{-- /col --}}
 				<div class="col">
 					<label for="band_email">Email</label>
-					<input id="band_email" class="form-control" name="band_email">
+					<input type="email" id="band_email" class="form-control" name="band_email">
 				</div> {{-- /col --}}
 			</div>	{{-- /row --}}
 		</div> {{-- /form-group --}}

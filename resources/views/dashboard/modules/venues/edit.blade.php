@@ -5,7 +5,8 @@
 	<h3>{{ $venue->name }}</h3>
 	<form action="{{ route('venues.update', $venue->id) }}" class="w-100" enctype="multipart/form-data" method="POST">
 		@csrf
-		@method('PUT')
+		@method('PATCH')
+		
 		<div class="form-group">
 			<label for="venue_name">Venue Name</label>
 			<input type="text" class="form-control" id="venue_name" name="venue_name" value="{{ $venue->name }}" required>

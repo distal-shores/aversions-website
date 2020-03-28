@@ -48,7 +48,36 @@ class VenuesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $rules = array(
+            'name' => 'required',
+            'email' => 'required|email',
+            'city' => 'required',
+            'country' => 'required',
+            'website_url' => 'nullable|url',
+        );
+
+        $this->validate($request, $rules);
+
+        $requestParams = array(
+            'name' => $request->name,
+            'main_contact' => $request->main_contact,
+            'city' => $request->city,
+            'country' => $request->country,
+            'phone_number' => $request->phone_number,
+            'email' => $request->email,
+            'website_url' => $request->website_url,
+        );
+
+        $venue = Event::firstOrCreate(
+            [ 'name' => $request->name, 'city' => $request->city],
+            $requestParams
+        );
+
+        if($venue->wasRecentlyCreated) {
+            return redirect()->action('VenuesController@index')->with(['status' => 'Venue created!', 'message_type' => 'success']);
+        } else {
+            return redirect()->action('VenuesController@index')->with(['status' => 'Venue already exists!', 'message_type' => 'warning']);
+        }
     }
 
     /**

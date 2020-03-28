@@ -1,0 +1,41 @@
+<?php
+
+use Illuminate\Database\Seeder;
+use Carbon\Carbon;
+
+class PublicationsTableSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $pubs = array(
+            [
+                'name' => 'IDIOTEQ',
+                'email' => 'www.idioteq.com@gmail.com',
+                'contact_name' => 'Karol Kaminski',
+                'url' => 'https://idioteq.com',
+                'print_only' => 0,
+                'city' => null,
+                'country' => null,
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            ],
+            [
+                'name' => 'Rekt Chords Magazine',
+                'email' => 'info@rektchords.com',
+                'contact_name' => 'Slone Fox',
+                'url' => 'https://www.rektchords.com/',
+                'print_only' => 0,
+                'city' => 'Vancouver',
+                'country' => 'Canada',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            ],
+        );
+        DB::table('publications')->insert($pubs);
+    }
+}

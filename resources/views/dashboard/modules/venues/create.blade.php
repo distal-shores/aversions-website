@@ -5,22 +5,22 @@
 	<form class="w-100" action="{{ action('VenuesController@store') }}" method="post" enctype="multipart/form-data">
 		@csrf
 		<div class="form-group">
-			<label for="venue_name">Venue Name</label>
-			<input type="text" class="form-control" id="venue_name" name="venue_name" required>
+			<label for="name">Venue Name</label>
+			<input type="text" class="form-control" id="name" name="name" required>
 		</div> {{-- /form-group --}}
 		<div class="form-group">
-			<label for="venue_contact">Main Contact Name</label>
-			<input type="text" class="form-control" id="venue_contact" name="venue_contact" required>
+			<label for="main_contact">Main Contact Name</label>
+			<input type="text" class="form-control" id="main_contact" name="main_contact" required>
 		</div> {{-- /form-group --}}
 		<div class="form-group">
 			<div class="form-row">
 				<div class="col">
-					<label for="venue_city">City</label>
-					<input type="text" class="form-control" id="venue_city" name="venue_city" required>
+					<label for="city">City</label>
+					<input type="text" class="form-control" id="city" name="city" required>
 				</div> {{-- /col --}}
 				<div class="col">
-					<label for="venue_country">Country</label>
-					<select name="venue_country" id="venue_country" class="form-control" required>
+					<label for="country">Country</label>
+					<select name="country" id="country" class="form-control" required>
 						<option value="">--- Select Country ---</option>
 						@foreach($countries as $country)
 							<option value="{{ $country->name->common }}">{{ $country->name->common }}</option>
@@ -32,14 +32,19 @@
 		<div class="form-group">
 			<div class="form-row">
 				<div class="col">
-					<label for="venue_url">Website URL</label>
-					<input id="venue_url" class="form-control" name="venue_url">
+					<label for="phone_number">Phone Number</label>
+					<input type="tel" id="phone_number" class="form-control" name="phone_number">
 				</div> {{-- /col --}}
 				<div class="col">
-					<label for="venue_email">Email</label>
-					<input id="venue_email" class="form-control" name="venue_email">
+					<label for="email">Email</label>
+					<input id="email" class="form-control" name="email" type="email">
 				</div> {{-- /col --}}
 			</div>	{{-- /row --}}
+		</div> {{-- /form-group --}}
+		<div class="form-group">		
+			<label for="website_url">Website URL</label>
+			<input id="website_url" class="form-control" name="website_url">
+			<div class="form-instruction" for="ticket_url"><em>Valid URL including http:// or https://</em></div>
 		</div> {{-- /form-group --}}
 		<button type="submit" class="btn btn-primary">Submit</button>
 	</form>
