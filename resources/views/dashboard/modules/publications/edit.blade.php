@@ -49,7 +49,7 @@
 					<div class="form-instruction" for="url"><em>Valid URL including http:// or https://</em></div>
 				</div> {{-- /col --}}
 				<div class="col-md-2">
-					<label for="print_only">Print Primary?</label>
+					<label for="print_only">Print Only?</label>
 					<input type="checkbox" id="print_only" class="form-control pull-left" name="print_only" {{ $publication->print_only == 1 ? 'checked' : ''}}>
 				</div> {{-- /col --}}
 			</div>	{{-- /row --}}

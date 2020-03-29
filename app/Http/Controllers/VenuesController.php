@@ -16,6 +16,13 @@ class VenuesController extends Controller
         $this->middleware('auth');
         $this->countriesCollection = new Countries();
         $this->countries = $this->countriesCollection->sortBy('name.common')->all();
+        $this->rules = array(
+            'name' => 'required',
+            'email' => 'required|email',
+            'city' => 'required',
+            'country' => 'required',
+            'website_url' => 'nullable|url',
+        );
     }
 
     /**
@@ -48,14 +55,6 @@ class VenuesController extends Controller
      */
     public function store(Request $request)
     {
-        $rules = array(
-            'name' => 'required',
-            'email' => 'required|email',
-            'city' => 'required',
-            'country' => 'required',
-            'website_url' => 'nullable|url',
-        );
-
         $this->validate($request, $rules);
 
         $requestParams = array(
@@ -112,6 +111,8 @@ class VenuesController extends Controller
      */
     public function update(Request $request, Venue $venue)
     {
+        $this->validate($request, $this->rules);
+        
         $venue->name = $request->venue_name;
         $venue->main_contact = $request->venue_contact;
         $venue->email = $request->venue_email;

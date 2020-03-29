@@ -14,6 +14,17 @@ class EventsController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->rules = array(
+            'name' => 'required',
+            'event_venue' => 'required|integer',
+            'ticket_url' => 'nullable|url',
+            'event_url' => 'nullable|url',
+            'date' => 'required|date',
+            'start_time' => 'required|date_format:H:i',
+            'end_time' => 'required|date_format:H:i',
+            'ticket_price' => 'required|numeric',
+            'event_poster' => 'nullable|mimes:jpeg,png,bmp,tiff|max:4096',
+        );
     }
     
     /**
@@ -49,19 +60,7 @@ class EventsController extends Controller
      */
     public function store(Request $request)
     {
-        $rules = array(
-            'name' => 'required',
-            'event_venue' => 'required|integer',
-            'ticket_url' => 'nullable|url',
-            'event_url' => 'nullable|url',
-            'event_date' => 'required|date',
-            'start_time' => 'required|date_format:H:i',
-            'end_time' => 'required|date_format:H:i',
-            'ticket_price' => 'required|numeric',
-            'event_poster' => 'nullable|mimes:jpeg,png,bmp,tiff|max:4096',
-        );
-
-        $this->validate($request, $rules);
+        $this->validate($request, $this->rules);
         
         if($request->file('event_poster') != null) {
             $file = $request->file('event_poster');
@@ -74,7 +73,7 @@ class EventsController extends Controller
             'venue_id' => $request->event_venue,
             'ticket_url' => $request->ticket_url,
             'event_url' => $request->event_url,
-            'date' => Carbon::createFromDate($request->event_date),
+            'event_date' => Carbon::createFromDate($request->date),
             'start_time' => $request->start_time,
             'end_time' => $request->end_time,
             'ticket_price' => $request->ticket_price,
@@ -86,7 +85,7 @@ class EventsController extends Controller
         }
 
         $event = Event::firstOrCreate(
-            [ 'name' => $request->name, 'date' => Carbon::createFromDate($request->event_date)],
+            [ 'name' => $request->name, 'date' => Carbon::createFromDate($request->date)],
             $requestParams
         );
 
@@ -139,6 +138,8 @@ class EventsController extends Controller
      */
     public function update(Request $request, Event $event)
     {
+        $this->validate($request, $this->rules);
+        
         if($request->event_bands != null) {
             $bands = $request->event_bands;
             $event->bands()->detach();
@@ -149,7 +150,7 @@ class EventsController extends Controller
         $event->venue_id = $request->event_venue;
         $event->ticket_url = $request->ticket_url;
         $event->event_url = $request->event_url;
-        $event->date = Carbon::createFromDate($request->event_date);
+        $event->date = Carbon::createFromDate($request->date);
         $event->start_time = $request->start_time;
         $event->end_time = $request->end_time;
         $event->ticket_price = $request->ticket_price;

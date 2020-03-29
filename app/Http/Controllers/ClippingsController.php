@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Clipping;
+use App\Publication;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class ClippingsController extends Controller
@@ -10,6 +12,12 @@ class ClippingsController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->rules = array(
+            'title' => 'required',
+            'publication_id' => 'required',
+            'url' => 'required|url',
+            'date' => 'required|date'
+        );
     }
 
     /**
@@ -19,7 +27,8 @@ class ClippingsController extends Controller
      */
     public function index()
     {
-        //
+        $clippings = Clipping::orderBy('publish_date')->get();
+        return view('dashboard.modules.clippings.index', compact('clippings'));
     }
 
     /**
@@ -29,7 +38,9 @@ class ClippingsController extends Controller
      */
     public function create()
     {
-        //
+        $publications = Publication::orderBy('name')->get();
+
+        return view('dashboard.modules.clippings.create', compact('publications'));
     }
 
     /**
@@ -40,7 +51,25 @@ class ClippingsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, $this->rules);
+
+        $requestParams = array(
+            'title' => $request->title,
+            'publication_id' => $request->publication_id,
+            'url' => $request->url,
+            'publish_date' => Carbon::createFromDate($request->date)
+        );
+
+        $clipping = Clipping::firstOrCreate(
+            ['title' => $request->title],
+            $requestParams
+        );
+
+        if($clipping->wasRecentlyCreated) {
+            return redirect()->action('ClippingsController@index')->with(['status' => 'Clipping created!', 'message_type' => 'success']);
+        } else {
+            return redirect()->action('ClippingsController@index')->with(['status' => 'Clipping already exists!', 'message_type' => 'warning']);
+        }
     }
 
     /**
@@ -62,7 +91,9 @@ class ClippingsController extends Controller
      */
     public function edit(Clipping $clipping)
     {
-        //
+        $publications = Publication::all();
+
+        return view('dashboard.modules.clippings.edit', compact(["publications", "clipping"]));
     }
 
     /**
@@ -74,7 +105,16 @@ class ClippingsController extends Controller
      */
     public function update(Request $request, Clipping $clipping)
     {
-        //
+        $this->validate($request, $this->rules);
+
+        $clipping->title = $request->title;
+        $clipping->publication_id = $request->publication_id;
+        $clipping->url = $request->url;
+        $clipping->publish_Date = Carbon::createFromDate($request->date);
+
+        $clipping->save();
+
+        return redirect()->action('ClippingsController@index')->with(['status' => 'Clipping ' . $clipping->title . ' updated!', 'message_type' => 'success']);
     }
 
     /**
@@ -85,6 +125,7 @@ class ClippingsController extends Controller
      */
     public function destroy(Clipping $clipping)
     {
-        //
+        $clipping->delete();
+        return redirect()->action('ClippingsController@index')->with(['status' => 'Clipping removed!', 'message_type' => 'warning']);
     }
 }

@@ -42,8 +42,8 @@
 		<div class="form-group">
 			<div class="form-row">
 				<div class="col">
-					<label for="event_date">Event Date</label>
-					<input id="event_date" class="form-control" name="event_date" required>
+					<label for="date">Event Date</label>
+					<input id="date" class="form-control" name="date" required>
 				</div> {{-- /col --}}
 				<div class="col">
 					<label for="start_time">Start Time</label>

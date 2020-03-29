@@ -17,6 +17,13 @@ class BandsController extends Controller
         $this->middleware('auth');
         $this->countriesCollection = new Countries();
         $this->countries = $this->countriesCollection->sortBy('name.common')->all();
+        $this->rules = array(
+            'name' => 'required',
+            'email' => 'email|nullable',
+            'city' => 'required',
+            'country' => 'required',
+            'website_url' => 'url|nullable'
+        )
     }
 
     /**
@@ -49,6 +56,8 @@ class BandsController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, $this->rules);
+
         $requestParams = array(
             'name' => $request->band_name,
             'email' => $request->band_email,
@@ -101,7 +110,8 @@ class BandsController extends Controller
      */
     public function update(Request $request, Band $band)
     {
-
+        $this->validate($request, $this->rules);
+        
         $band->name = $request->band_name;
         $band->email = $request->band_email;
         $band->city = $request->band_city;

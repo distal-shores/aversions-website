@@ -11,7 +11,7 @@
   			<th scope="col">City</th>
         <th scope="col">Country</th>
   			<th scope="col">URL</th>
-        <th scope="col">Press Only?</th>
+        <th scope="col">Print Only?</th>
         <th scope="col">Edit/Delete</th>
     	</tr>
   	</thead>

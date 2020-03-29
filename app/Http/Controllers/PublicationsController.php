@@ -14,6 +14,11 @@ class PublicationsController extends Controller
         $this->middleware('auth');
         $this->countriesCollection = new Countries();
         $this->countries = $this->countriesCollection->sortBy('name.common')->all();
+        $this->rules = array(
+            'name' => 'required',
+            'email' => 'requied|email',
+            'url' => 'required|url',
+        );
     }
     
     /**
@@ -45,13 +50,7 @@ class PublicationsController extends Controller
      */
     public function store(Request $request)
     {
-        $rules = array(
-            'name' => 'required',
-            'email' => 'requied|email',
-            'url' => 'required|url',
-        );
-
-        $this->validate($request, $rules);
+        $this->validate($request, $this->rules);
 
         if($request->print_only === null) {
             $request->print_only = 0;
@@ -111,17 +110,7 @@ class PublicationsController extends Controller
      */
     public function update(Request $request, Publication $publication)
     {
-        $rules = array(
-            'name' => 'required',
-            'email' => 'required|email',
-            'url' => 'required|url',
-        );
-
-        $this->validate($request, $rules);
-
-        // if($request->print_only === null) {
-        //     $request->boolean('print_only') = false;
-        // }
+        $this->validate($request, $this->rules);
 
         $publication->name = $request->name;
         $publication->email = $request->email;
