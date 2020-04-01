@@ -19,6 +19,9 @@ class CreateVenuesTable extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('main_contact')->nullable();
+            $table->string('address');
+            $table->string('state');
+            $table->string('postal_code');
             $table->string('city');
             $table->string('country');
             $table->string('phone_number')->nullable();

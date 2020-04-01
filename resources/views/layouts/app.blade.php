@@ -3,6 +3,7 @@
 <head>
     <script src="{{ mix('js/app.js') }}"></script>
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    @stack('scripts')
 </head>
 <body>
 	<div class="container-fluid">

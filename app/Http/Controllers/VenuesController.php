@@ -19,6 +19,9 @@ class VenuesController extends Controller
         $this->rules = array(
             'name' => 'required',
             'email' => 'required|email',
+            'address' => 'required',
+            'state' => 'required',
+            'postal_code' => 'required',
             'city' => 'required',
             'country' => 'required',
             'website_url' => 'nullable|url',
@@ -55,19 +58,23 @@ class VenuesController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, $rules);
+        $this->validate($request, $this->rules);
 
         $requestParams = array(
             'name' => $request->name,
             'main_contact' => $request->main_contact,
+            'address' => $request->address,
+            'postal_code' => $request->postal_code,
             'city' => $request->city,
             'country' => $request->country,
+            'state' => $request->state,
+            'postal_code' => $request->postal_code,
             'phone_number' => $request->phone_number,
             'email' => $request->email,
             'website_url' => $request->website_url,
         );
 
-        $venue = Event::firstOrCreate(
+        $venue = Venue::firstOrCreate(
             [ 'name' => $request->name, 'city' => $request->city],
             $requestParams
         );
@@ -112,10 +119,13 @@ class VenuesController extends Controller
     public function update(Request $request, Venue $venue)
     {
         $this->validate($request, $this->rules);
-        
+
         $venue->name = $request->venue_name;
         $venue->main_contact = $request->venue_contact;
         $venue->email = $request->venue_email;
+        $venue->address = $request->address;
+        $venue->state = $request->state;
+        $venue->postal_code = $request->postal_code;
         $venue->city = $request->venue_city;
         $venue->country = $request->venue_country;
         $venue->website_url = $request->venue_url;

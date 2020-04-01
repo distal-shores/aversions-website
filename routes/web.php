@@ -12,6 +12,7 @@
 */
 
 Route::get('/admin', 'DashboardController@index')->name('dashboard.index');
+Route::get('/states', 'GetStatesController');
 
 // resource routes
 Route::resource('events', 'EventsController');
