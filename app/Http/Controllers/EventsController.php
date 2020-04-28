@@ -62,6 +62,7 @@ class EventsController extends Controller
     {
         $this->validate($request, $this->rules);
         
+        // Save the event poster in public storage
         if($request->file('event_poster') != null) {
             $file = $request->file('event_poster');
             $originalFileName = $file->getClientOriginalName();
@@ -77,16 +78,8 @@ class EventsController extends Controller
             'start_time' => $request->start_time,
             'end_time' => $request->end_time,
             'ticket_price' => $request->ticket_price,
-            'event_poster' => isset($originaFileName) ? $originaFileName : null
+            'event_poster' => isset($originalFileName) ? $originalFileName : null
         );
-
-        if($request->event_bands != null) {
-            $bands = $request->event_bands;
-        }
-
-        if (isset($originalFileName)) {
-            $requestParams['event_poster'] = $originalFileName;
-        }
 
 
         $event = Event::firstOrCreate(
@@ -94,9 +87,10 @@ class EventsController extends Controller
             $requestParams
         );
 
-        if($bands) {
+        if($request->event_bands != null) {
+            $bands = $request->event_bands;
             foreach($bands as $band) {
-                $event->bands()->attach(Band::find($band));  
+                $event->bands()->attach(Band::find($band));
             }
         }
 
