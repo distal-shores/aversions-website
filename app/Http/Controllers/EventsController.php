@@ -73,7 +73,7 @@ class EventsController extends Controller
             'venue_id' => $request->event_venue,
             'ticket_url' => $request->ticket_url,
             'event_url' => $request->event_url,
-            'event_date' => Carbon::createFromDate($request->date),
+            'date' => Carbon::createFromDate($request->date),
             'start_time' => $request->start_time,
             'end_time' => $request->end_time,
             'ticket_price' => $request->ticket_price,

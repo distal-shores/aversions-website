@@ -19,6 +19,7 @@ class GetStatesController extends Controller
         $countries = new Countries();
         $country = $countries->where('name.common', $request->input('country'))->first();
         $states = $country->hydrateStates()->states->sortBy('name')->pluck('name');
+        Log::info(print_r($states, true));
         return response()->json([
             'states' => $states,
         ]);

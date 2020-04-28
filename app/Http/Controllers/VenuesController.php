@@ -120,15 +120,15 @@ class VenuesController extends Controller
     {
         $this->validate($request, $this->rules);
 
-        $venue->name = $request->venue_name;
-        $venue->main_contact = $request->venue_contact;
-        $venue->email = $request->venue_email;
+        $venue->name = $request->name;
+        $venue->main_contact = $request->main_contact;
+        $venue->email = $request->email;
         $venue->address = $request->address;
         $venue->state = $request->state;
         $venue->postal_code = $request->postal_code;
-        $venue->city = $request->venue_city;
-        $venue->country = $request->venue_country;
-        $venue->website_url = $request->venue_url;
+        $venue->city = $request->city;
+        $venue->country = $request->country;
+        $venue->website_url = $request->website_url;
 
         $venue->save();
 

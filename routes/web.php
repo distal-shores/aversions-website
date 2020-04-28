@@ -24,4 +24,6 @@ Route::resource('clippings', 'ClippingsController');
 Auth::routes(['register' => false]);
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/shows', 'HomeController@shows')->name('live');
+Route::get('/show/{id}', 'HomeController@showShows')->name('live');
