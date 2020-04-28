@@ -80,20 +80,32 @@ class EventsController extends Controller
             'event_poster' => isset($originaFileName) ? $originaFileName : null
         );
 
+        if($request->event_bands != null) {
+            $bands = $request->event_bands;
+        }
+
         if (isset($originalFileName)) {
             $requestParams['event_poster'] = $originalFileName;
         }
+
 
         $event = Event::firstOrCreate(
             [ 'name' => $request->name, 'date' => Carbon::createFromDate($request->date)],
             $requestParams
         );
 
+        if($bands) {
+            foreach($bands as $band) {
+                $event->bands()->attach(Band::find($band));  
+            }
+        }
+        
         if($request->file('event_poster') != null) {
             $file = $request->file('event_poster');
-            $originalname = $file->getClientOriginalName();
-            $path = $file->storeAs('posters', $originalname);
+            $originalName = $file->getClientOriginalName();
+            $path = $file->storeAs('posters', $originalName);
         }
+
 
         if($event->wasRecentlyCreated) {
             return redirect()->action('EventsController@index')->with(['status' => 'Event created!', 'message_type' => 'success']);
