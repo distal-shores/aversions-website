@@ -99,13 +99,6 @@ class EventsController extends Controller
                 $event->bands()->attach(Band::find($band));  
             }
         }
-        
-        if($request->file('event_poster') != null) {
-            $file = $request->file('event_poster');
-            $originalName = $file->getClientOriginalName();
-            $path = $file->storeAs('posters', $originalName);
-        }
-
 
         if($event->wasRecentlyCreated) {
             return redirect()->action('EventsController@index')->with(['status' => 'Event created!', 'message_type' => 'success']);
