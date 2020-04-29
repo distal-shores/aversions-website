@@ -45,9 +45,24 @@
 	span {
 		border-radius: 5px;
 		padding: 0.4rem;
+		&.past {
+			background-position: right bottom;
+			&.selected {
+				background: linear-gradient(to left, black 50%, $off-white 50%);
+			    background-size: 200% 100%;
+	    		background-position: left bottom;
+			}
+		}
+		&.upcoming {
+			&.selected {
+				background: linear-gradient(to right, black 50%, $off-white 50%);
+			    background-size: 200% 100%;
+	    		background-position: right bottom;
+			}
+		}
 		&.selected {
 			color: black;
-			background-color: $off-white;
+			transition: color 0s ease-in-out 0.2s, background 0.2s ease-in-out;
 		}
 		&:hover {
 			cursor: pointer;

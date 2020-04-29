@@ -136,9 +136,25 @@ label[for=print_only] {
   padding: 0.4rem;
 }
 
+#show-list_selector span.past {
+  background-position: right bottom;
+}
+
+#show-list_selector span.past.selected {
+  background: linear-gradient(to left, black 50%, #ffffe9 50%);
+  background-size: 200% 100%;
+  background-position: left bottom;
+}
+
+#show-list_selector span.upcoming.selected {
+  background: linear-gradient(to right, black 50%, #ffffe9 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+}
+
 #show-list_selector span.selected {
   color: black;
-  background-color: #ffffe9;
+  transition: color 0s ease-in-out 0.2s, background 0.2s ease-in-out;
 }
 
 #show-list_selector span:hover {
