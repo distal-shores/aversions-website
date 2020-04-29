@@ -29,3 +29,7 @@
 		<button type="submit" class="btn btn-primary">Submit</button>
 	</form>
 @endsection
+
+@push('scripts')
+    <script src="/js/datepicker.js"></script>
+@endpush

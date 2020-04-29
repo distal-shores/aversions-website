@@ -1,16 +1,12 @@
 <nav class="navbar">
 	<a class="navbar-brand" href="#">
-		<picture>
+		<picture class="navbar-brand-logo_default">
   			<source media="(min-width: 1200px)" srcset="{{ asset('img/home_logo.png') }}">
-  			<img src="{{ asset('img/home_logo-300.png') }}" alt="Aversions masthead logo">
+  			<img id="logo-default" src="{{ asset('img/home_logo-300.png') }}" alt="Aversions masthead logo">
+		</picture>
+		<picture class="navbar-brand-logo_sticky hidden">
+  			<source media="(min-width: 1200px)" srcset="{{ asset('img/home_logo-alternate.png') }}">
+  			<img id="logo-sticky" src="{{ asset('img/home_logo-alternate.png') }}" alt="Aversions masthead logo">
 		</picture>
 	</a>
-{{-- 	<ul>
-		<li>
-			<a href="/live">Live</a>
-		</li>
-		<li>
-			<a href="">About</a>
-		</li>
-	</ul> --}}
 </nav>

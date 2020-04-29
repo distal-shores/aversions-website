@@ -2,10 +2,13 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
 // Variables
+@import 'layout';
 @import 'variables';
 @import 'forms';
 @import 'nav';
 @import 'home';
+@import 'partials/partials.scss';
+@import 'type';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
@@ -34,4 +37,8 @@
 
 .no-right-margin {
 	margin-right: 0;
+}
+
+.hidden {
+	display: none;
 }

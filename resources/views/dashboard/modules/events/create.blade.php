@@ -67,3 +67,7 @@
 	</form>
 
 @endsection
+
+@push('scripts')
+    <script src="/js/datepicker.js"></script>
+@endpush

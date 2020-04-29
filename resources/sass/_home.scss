@@ -6,5 +6,18 @@
 }
 
 .top-nav {
+	background-color: $off-white;
 	border-bottom: 1px solid $aversions-pink;
+	position: sticky;
+	top: 0;
+}
+
+#logo {
+	height: auto;
+}
+
+.navbar-brand-logo_sticky {
+	#logo-sticky {
+		width: 100px;
+	}
 }

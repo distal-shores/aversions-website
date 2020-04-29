@@ -1,0 +1,57 @@
+.show-list {
+	position: relative;
+	width: 100%;
+	&_container {
+		text-align: right;
+	}
+}
+
+#show-list_past,
+#show-list_upcoming {
+	table {
+		width: 100%;
+	}
+	thead {
+		tr {
+			background-color: black;
+			th {
+				color: $off-white;
+				font-family: 'Black Ops One', cursive;
+				text-transform: uppercase;
+			}
+		}
+	}
+	tbody {
+		tr {
+			td {
+				font-family: 'Special Elite', cursive;
+				padding: 5px;
+			}
+		}
+	}
+}
+
+#show-list_selector {
+	background-color: black;
+	border-radius: 5px;
+	color: $off-white;
+	display: inline-block;
+	font-family: 'Black Ops One', cursive;
+	margin: 0 0 $margin-bottom;
+	padding: 0.4rem;
+	position: absolute;
+	right: 0;
+	top: 0;
+	span {
+		border-radius: 5px;
+		padding: 0.4rem;
+		&.selected {
+			color: black;
+			background-color: $off-white;
+		}
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+}

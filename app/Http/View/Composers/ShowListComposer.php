@@ -4,6 +4,7 @@ namespace App\Http\View\Composers;
 
 use App\Event;
 use Illuminate\View\View;
+use Carbon\Carbon;
 
 class ShowListComposer
 {
@@ -13,6 +14,8 @@ class ShowListComposer
      * @var Event
      */
     protected $events;
+    protected $pastEvents;
+    protected $futureEvents;
 
     /**
      * Create a new profile composer.
@@ -24,6 +27,8 @@ class ShowListComposer
     {
         // Dependencies automatically resolved by service container...
         $this->events = Event::all();
+        $this->pastEvents = $this->events->where('date', '<', Carbon::today());
+        $this->futureEvents = $this->events->where('date', '>=', Carbon::today());
     }
 
     /**
@@ -34,6 +39,6 @@ class ShowListComposer
      */
     public function compose(View $view)
     {
-        $view->with('events', $this->events);
+        $view->with('pastEvents', $this->pastEvents)->with('futureEvents', $this->futureEvents);
     }
 }

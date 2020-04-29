@@ -13,4 +13,7 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
 .js('resources/js/getStates.js', 'public/js/')
+.js('resources/js/header.js', 'public/js/')
+.js('resources/js/datepicker.js', 'public/js/')
+.js('resources/js/showList.js', 'public/js/')
 .sourceMaps().sass('resources/sass/app.scss', 'public/css');
