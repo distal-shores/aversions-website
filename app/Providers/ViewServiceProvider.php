@@ -27,5 +27,8 @@ class ViewServiceProvider extends ServiceProvider
         View::composer(
             'home.partials.show_list', 'App\Http\View\Composers\ShowListComposer'
         );
+        View::composer(
+            'home.partials.quote_carousel', 'App\Http\View\Composers\QuoteCarouselComposer'
+        );
     }
 }

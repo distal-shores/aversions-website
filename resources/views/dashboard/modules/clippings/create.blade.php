@@ -18,6 +18,10 @@
 			</select>
 		</div> {{-- /form-group --}}
 		<div class="form-group">
+			<label for="pullquote">Pullquote</label>
+			<input type="text" class="form-control" id="pullquote" name="pullquote" required>
+		</div> {{-- /form-group --}}
+		<div class="form-group">
 			<label for="url">URL</label>
 			<input type="text" class="form-control" id="url" name="url">
 			<div class="form-instruction" for="ticket_url"><em>Valid URL including http:// or https://</em></div>

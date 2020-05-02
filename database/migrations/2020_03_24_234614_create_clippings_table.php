@@ -17,6 +17,7 @@ class CreateClippingsTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->string('title');
+            $table->string('pullquote');
             $table->integer('publication_id');
             $table->integer('band_id')->default(1);
             $table->string('url')->nullable();

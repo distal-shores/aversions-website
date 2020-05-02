@@ -16,6 +16,7 @@ class ClippingsController extends Controller
             'title' => 'required',
             'publication_id' => 'required',
             'url' => 'required|url',
+            'pullquote' => 'required',
             'date' => 'required|date'
         );
     }
@@ -57,6 +58,7 @@ class ClippingsController extends Controller
             'title' => $request->title,
             'publication_id' => $request->publication_id,
             'url' => $request->url,
+            'pullquote' => $request->pullquote,
             'publish_date' => Carbon::createFromDate($request->date)
         );
 
@@ -110,6 +112,7 @@ class ClippingsController extends Controller
         $clipping->title = $request->title;
         $clipping->publication_id = $request->publication_id;
         $clipping->url = $request->url;
+        $clipping->pullquote = $request->pullquote;
         $clipping->publish_Date = Carbon::createFromDate($request->date);
 
         $clipping->save();

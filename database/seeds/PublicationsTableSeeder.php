@@ -35,6 +35,28 @@ class PublicationsTableSeeder extends Seeder
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
             ],
+            [
+                'name' => 'Citrus Magazine',
+                'email' => 'citrusmagazineeverybody@gmail.com',
+                'contact_name' => 'Johnny Kosmos',
+                'url' => 'https://www.citrusmagazine.org/',
+                'print_only' => 0,
+                'city' => null,
+                'country' => null,
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            ],
+            [
+                'name' => 'Bucketlist Music Reviews',
+                'email' => 'citrusmagazineeverybody@gmail.com',
+                'contact_name' => 'Johnny Kosmos',
+                'url' => 'https://www.citrusmagazine.org/',
+                'print_only' => 0,
+                'city' => null,
+                'country' => null,
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            ],
         );
         DB::table('publications')->insert($pubs);
     }

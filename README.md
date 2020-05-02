@@ -1,78 +1,51 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+# Aversions Website
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+### Project Info
 
-## About Laravel
+- Project Laravel version is 6.17.0
+- Make sure when you're reading Laravel docs that you set the version to 6.x in the upper right corner of the screen
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Setup
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- Download and setup [Laravel Valet](https://laravel.com/docs/6.x/valet)
+- Grab an .env file from Sam
+- Run `composer install` to install all composer dependencies
+- Run `npm install` to install all Javascript dependencies (you'll need to have Node installed globally)
+- As long as Valet is running and you've probably `park`ed your application dir, you should be able to navigate to `aversions-website.localhost` (where 'aversions-website' is the name of your app dir) in your browser and see some output. You might get Laravel errors or otherwise if you haven't installed your database yet (see below).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Database setup
 
-## Learning Laravel
+- Download MySQL for Mac. Just use the [DMG installer](https://dev.mysql.com/doc/mysql-osx-excerpt/5.7/en/osx-installation.html)
+- Follow the info in the .env file to setup a database locally. The host will be 127.0.0.1 or localhost. Your username/password will be dependent on what you setup when you installed MySQL in the previous step. I named my database 'aversions' but you can name it whatever you want.
+- Run the various `php artisan migrate` commands to instantiate the database
+⋅⋅* `php artisan migrate --seed` on first installation
+..* `php artisan migrate:refresh --seed` if you make new migration and want a fresh copy of the DB. You will lose any test data you've created, but it will re-seed with dummy data from the seed files.
+..* `php artisan list migrate` will give you a list of all available migration commands
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Versioning
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- Work on new features in a branch off master (`git checkout master && git checkout -b 'new_feature_name'`)
+- When your work is ready to go, submit a [pull request](https://yangsu.github.io/pull-request-tutorial/) and I'll merge into master if it looks good
+- Commit new code in small chunks when it's working properly. Try and keep commits atomic i.e. related to one change at a time (I haven't been great about this myself so far but will be better now that someone else is working on the project)
 
-## Laravel Sponsors
+### Where the important bits are
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+- Your `app` folder contains all of your application logic.
+..* Controllers: `app/Http/Controllers`
+..* Models: are in the base `app` folder i.e. `Band.php`
+- Your `resources` folder contains all your front-end presentation code. Views, scripts, and styles.
+..* `resources/views` contains all your view files. These are roughly organized by `views/dashboard/` which contains all the admin dashboard view files, and `views/home` which contains all the public-facing view files.
+- The `database` directory contains all your database stuff. You'll probably just interact with `/migrations` and `/seeds`
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
+### Compiling assets
 
-## Contributing
+- Run `npm run watch` from the root directory to compile all SCSS and Javascript files. It'll auto-update on file change, so you can leave a terminal window with this command running if you're working on front-end stuff.
+- The `webpack.mix.js` file in your root directory can be used to easily chain new JS files onto compilation, if you're adding a new custom script or installing a third party dependency. You can ask me about how to do this as it can be kind of finicky. See more [here](https://laravel.com/docs/6.x/mix)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Front end stuff
 
-## Code of Conduct
+- Laravel uses the Blade templating engine. It's similar to Liquid and other html extension engines. See [here](https://laravel.com/docs/6.x/blade)
+- [Bootstrap](https://getbootstrap.com/) is installed so feel free to make use of its helper classes in template building. I'll probably replace this convention at some point as I find it kind of annoying but it's useful enough for now so we don't have to write a bunch of CSS.
+- If you're working on admin dashboard stuff, don't worry about mobile styling for now -- the code so far is only supposed to be presentable for desktop views.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Happy coding! 
