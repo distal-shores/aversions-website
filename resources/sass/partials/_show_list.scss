@@ -25,7 +25,27 @@
 		tr {
 			td {
 				font-family: 'Special Elite', cursive;
-				padding: 5px;
+				padding: 5px 0;
+				&.no-upcoming-shows {
+					font-size: 1.2rem;
+					text-align: center;
+					padding: 25px;
+					position: relative;
+					&:after {
+						content: '';
+						display: inline-block;
+						background-image: url(/storage/img/show-list_tombstone.svg);
+						background-size: contain;
+						background-repeat: no-repeat;
+						background-position: center;
+						width: 50px;
+						height: 80px;
+						position: absolute;
+						top: 50%;
+						transform: translateY(-50%);
+						left: calc(50% + 100px);
+					}
+				}
 			}
 		}
 	}

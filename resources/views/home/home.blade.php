@@ -9,7 +9,8 @@
             <div class="col px-2 py-2 home-content">
                 @section('bottom-content')
                 	@include('home.partials.show_list')
-                    @include('home.partials.quote_carousel')
+                    {{-- @include('home.partials.quote_carousel') --}}
+                    @include('home.partials.latest_release')
                 @show
             </div>
         </div>

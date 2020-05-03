@@ -1,4 +1,4 @@
-<div class="show-list">
+<section class="show-list">
 	<h2>Live</h2>
 	<div id="show-list_selector">
 		<span class="upcoming selected">Upcoming</span>
@@ -15,14 +15,18 @@
 				</tr>
 			</thead>
 			<tbody>
-				@foreach($futureEvents as $event)
+				@forelse($futureEvents as $event)
 					<tr>
 						<td>{{ $event->date }}</td>
 						<td>{{ $event->venue->name }}</td>
 						<td>{{ $event->venue->city }}</td>
 						<td>{{ $event->venue->country }}</td>
 					</tr>
-				@endforeach
+				@empty
+					<tr>
+						<td colspan="4" class="no-upcoming-shows">No upcoming shows!</td>
+					</tr>
+				@endforelse
 			</tbody>
 		</table>
 	</div>
@@ -48,7 +52,8 @@
 			</tbody>
 		</table>
 	</div>
-</div>
+</section>
+@include('home.partials.divider')
 
 <script src="/js/showList.js"></script>
 

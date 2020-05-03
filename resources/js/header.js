@@ -1,14 +1,12 @@
 $(document).ready(function() {
-    $(window).scroll(function () {
-    	setTimeout(function(){ 
-	        if ($(this).scrollTop() > 130) { 
-				$('.navbar-brand-logo_sticky').removeClass('hidden');
-				$('.navbar-brand-logo_default').addClass('hidden');
-	        }
-	        if ($(this).scrollTop() <= 130) { 
-				$('.navbar-brand-logo_sticky').addClass('hidden');
-				$('.navbar-brand-logo_default').removeClass('hidden');
-	        }
-    	}, 100);
+	var $logo = $('#logo-default');
+
+	$('.container-fluid').scroll(function () {
+		var value = $(this).scrollTop();
+		if (value > 100 && value <= 200) {
+			$logo.css('opacity', ((200 - value) * 0.01));
+		} else if (value <= 100) {
+			$logo.css('opacity', 1);
+      	}
 	});
 }); 

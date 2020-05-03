@@ -48,9 +48,9 @@ class PublicationsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Bucketlist Music Reviews',
-                'email' => 'citrusmagazineeverybody@gmail.com',
-                'contact_name' => 'Johnny Kosmos',
-                'url' => 'https://www.citrusmagazine.org/',
+                'email' => 'info@bucketlistmusicreviews.com',
+                'contact_name' => 'Shawn Thicke',
+                'url' => 'https://www.bucketlistmusicreviews.com/',
                 'print_only' => 0,
                 'city' => null,
                 'country' => null,
@@ -61,3 +61,4 @@ class PublicationsTableSeeder extends Seeder
         DB::table('publications')->insert($pubs);
     }
 }
+

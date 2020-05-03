@@ -6,18 +6,41 @@
 }
 
 .top-nav {
-	background-color: $off-white;
-	border-bottom: 1px solid $aversions-pink;
+	background-color: black;
+	border-bottom: 3px solid $aversions-pink;
 	position: sticky;
+	height: 101px;
 	top: 0;
+	z-index: 10;
 }
 
-#logo {
-	height: auto;
+#logo-default {
+	height: 72px;
+	opacity: 100;
 }
 
-.navbar-brand-logo_sticky {
-	#logo-sticky {
-		width: 100px;
+#logo-alternate {
+	height: 72px;
+	position: absolute;
+	left: 1rem;
+}
+
+.navbar {
+	margin: 0;
+	height: 100%;
+}
+
+.navbar-brand {
+	margin: 0;
+	height: 100%;
+	#logo-default {
+		height: 100%;
 	}
+}
+
+.retractable {
+	position: absolute;
+	width: 100%;
+	height: 100px;
+	background-color: $off-white;
 }
