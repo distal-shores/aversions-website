@@ -1,7 +1,8 @@
 $(document).ready(function() {
 	var $logo = $('#logo-default');
 
-	$('.container-fluid').scroll(function () {
+	$(window).scroll(function () {
+		console.log('hi');
 		var value = $(this).scrollTop();
 		if (value > 100 && value <= 200) {
 			$logo.css('opacity', ((200 - value) * 0.01));

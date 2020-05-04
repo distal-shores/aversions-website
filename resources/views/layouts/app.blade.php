@@ -7,8 +7,8 @@
     @stack('scripts')
 </head>
 <body>
-	<div class="container-fluid overflow-auto">
+	<main class="container-fluid">
     	@yield('content')
-    </div>
+    </main>
 </body>
 </html>

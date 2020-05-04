@@ -14,6 +14,9 @@
                 @show
             </div>
         </div>
+        <div class="row no-gutters">
+            @include('home.partials.footer')
+        </div>
     </div>
 @endsection
 
