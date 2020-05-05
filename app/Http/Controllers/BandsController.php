@@ -23,7 +23,7 @@ class BandsController extends Controller
             'city' => 'required',
             'country' => 'required',
             'website_url' => 'url|nullable'
-        )
+        );
     }
 
     /**

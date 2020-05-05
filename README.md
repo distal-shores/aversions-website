@@ -11,7 +11,8 @@
 - Grab an .env file from Sam
 - Run `composer install` to install all composer dependencies
 - Run `npm install` to install all Javascript dependencies (you'll need to have Node installed globally)
-- As long as Valet is running and you've probably `park`ed your application dir, you should be able to navigate to `aversions-website.localhost` (where 'aversions-website' is the name of your app dir) in your browser and see some output. You might get Laravel errors or otherwise if you haven't installed your database yet (see below).
+- Run `npm run dev` to compile your SCSS and JS assets to serve locally
+- As long as Valet is running and you've probably `park`ed your application dir, you should be able to navigate to `aversions-website.test` (where 'aversions-website' is the name of your app dir) in your browser and see some output. You might get Laravel errors or otherwise if you haven't installed your database yet (see below).
 
 ### Database setup
 
