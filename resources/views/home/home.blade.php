@@ -11,6 +11,7 @@
                 	@include('home.partials.show_list')
                     @include('home.partials.quote_carousel')
                     @include('home.partials.latest_release')
+                    @include('home.partials.newsletter_signup')
                 @show
             </div>
         </div>

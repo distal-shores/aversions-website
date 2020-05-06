@@ -17,4 +17,5 @@ mix.js('resources/js/app.js', 'public/js')
 .js('resources/js/datepicker.js', 'public/js/')
 .js('resources/js/showList.js', 'public/js/')
 .js('resources/js/quoteCarousel.js', 'public/js/')
+.js('resources/js/newsletter.js', 'public/js/')
 .sourceMaps().sass('resources/sass/app.scss', 'public/css');
