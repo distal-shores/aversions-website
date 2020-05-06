@@ -3,17 +3,21 @@ footer {
 	padding: 10px;
 	.social-media {
 		display: flex;
-		flex-wrap: wrap;
+		justify-content: space-around;
+		width: 100%;
 		.social-icon {
-			display: inline-flex;
 			align-items: center;
+			display: inline-flex;
 			justify-content: center;
 			margin-top: 0;
-			flex: 0 0 33%;
 			img {
-				height: 50px;
 				object-fit: contain;
 				width: 50px;
+			}
+			&.circle {
+				img {
+					width: 38px;
+				}
 			}
 		}
 	}

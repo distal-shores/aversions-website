@@ -1,6 +1,8 @@
 .home-container {
-	* + * {
-		margin-top: 1.5em;
+	row {
+		> * + * {
+			margin-top: 1.5em;
+		}
 	}
 	background-color: $off-white;
 	max-width: none;
@@ -19,10 +21,10 @@
 		background-size: contain;
 		width: 100%;
 		height: 50px;
+		margin-bottom: 1.5em;
 	}
 	@import 'type';
 	@import 'footer';
-	@import 'slick';
 	@import 'partials/partials.scss';
 }
 
