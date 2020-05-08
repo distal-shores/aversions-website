@@ -1,10 +1,10 @@
 {
     "/js/app.js": "/js/app.js",
+    "/css/app.css": "/css/app.css",
     "/js/datepicker.js": "/js/datepicker.js",
     "/js/getStates.js": "/js/getStates.js",
     "/js/header.js": "/js/header.js",
     "/js/newsletter.js": "/js/newsletter.js",
     "/js/quoteCarousel.js": "/js/quoteCarousel.js",
-    "/js/showList.js": "/js/showList.js",
-    "/css/app.css": "/css/app.css"
+    "/js/showList.js": "/js/showList.js"
 }

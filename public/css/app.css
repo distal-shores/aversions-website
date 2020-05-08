@@ -10184,6 +10184,9 @@ h3 {
   font-family: "Istok Web", sans-serif;
   margin-top: 1rem;
 }
+.home-container .newsletter-signup svg {
+  position: absolute;
+}
 
 .top-nav {
   background-color: black;
