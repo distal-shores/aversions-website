@@ -10,6 +10,5 @@
 	</div>
 	<div class="quote-carousel_arrows no-top-margin"></div>
 </section>
-@include('home.partials.divider')
 
 <script src="/js/quoteCarousel.js"></script>

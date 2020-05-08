@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=Special+Elite&display=swap);@import url(https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Special+Elite&display=swap);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=Special+Elite&display=swap);@import url(https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Special+Elite&display=swap);@import url(https://fonts.googleapis.com/css2?family=Istok+Web:wght@400;700&display=swap);@charset "UTF-8";
 /*!
  * Bootstrap v4.4.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -10051,6 +10051,14 @@ h3 {
   transform: translateY(-50%);
   left: calc(50% + 100px);
 }
+@media screen and (max-width: 499px) {
+  .home-container #show-list_past .th-country,
+.home-container #show-list_past .td-country,
+.home-container #show-list_upcoming .th-country,
+.home-container #show-list_upcoming .td-country {
+    display: none;
+  }
+}
 .home-container #show-list_selector {
   background-color: black;
   border-radius: 5px;
@@ -10139,14 +10147,14 @@ h3 {
 }
 .home-container #mailchimp_subscribe form-group {
   display: inline-block;
+  flex: 1 0 auto;
   position: relative;
-  width: 50%;
 }
 .home-container #mailchimp_subscribe .hand_drawn {
   --underline-color: black;
   background: linear-gradient(to top, var(--underline-color), var(--underline-color)) repeat-x left 1.13em/100% 4px;
   background-position: top;
-  bottom: -12px;
+  bottom: -17px;
   left: 0;
   -webkit-filter: url("#handdrawn");
           filter: url("#handdrawn");
@@ -10171,6 +10179,10 @@ h3 {
   background-color: #ffffe9;
   border: 1px solid black;
   color: black;
+}
+.home-container #newsletter-signup_message .newsletter-signup_message_message {
+  font-family: "Istok Web", sans-serif;
+  margin-top: 1rem;
 }
 
 .top-nav {

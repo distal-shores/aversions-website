@@ -49,6 +49,13 @@
 			}
 		}
 	}
+	.th-country,
+	.td-country {
+		@media screen and (max-width: 499px) {
+			display: none;
+		}
+	}
+
 }
 
 #show-list_selector {

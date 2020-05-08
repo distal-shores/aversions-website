@@ -8,15 +8,19 @@ $(document).ready(function() {
             dataType: 'jsonp',
             contentType: "application/json; charset=utf-8",
             error: function(err) { 
-                console.log(err); 
             },
             success: function(data) {
-                console.log('success');
-                console.log(data);
+                showMessage(data);
             }
         });
     }
-
+    function showMessage(data) {
+        let string = data.msg;
+        $('#newsletter-signup_message').removeClass();
+        $('#newsletter-signup_message').addClass(data.result);
+        $('.newsletter-signup_message_message').empty();
+        $('.newsletter-signup_message_message').html(string);
+    }
     $(document).on('submit', '#mailchimp_subscribe', function(event) {
         try {
             const $form = jQuery(this);
@@ -24,6 +28,7 @@ $(document).ready(function() {
             register($form);
         } catch(error){}
     });
+
 
 });
 

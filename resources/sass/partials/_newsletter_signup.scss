@@ -10,14 +10,14 @@
 	}
 	form-group {
 		display: inline-block;
+		flex: 1 0 auto;
 		position: relative;
-		width: 50%;
 	}
 	.hand_drawn {
 		--underline-color: black;
 		background: linear-gradient(to top, var(--underline-color), var(--underline-color)) repeat-x left 1.13em / 100% 4px;
 		background-position: top;
-		bottom: -12px;
+		bottom: -17px;
 		left: 0;
 		filter: url('#handdrawn');
 		display: inline-block;
@@ -41,5 +41,11 @@
 			border: 1px solid black;
 			color: black;
 		}
+	}
+}
+#newsletter-signup_message {
+	.newsletter-signup_message_message {
+		font-family: 'Istok Web', sans-serif;
+		margin-top: 1rem;
 	}
 }

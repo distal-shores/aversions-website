@@ -11,7 +11,7 @@
 					<th scope="col">Date</th>
 					<th scope="col">Venue</th>
 					<th scope="col">City</th>
-					<th scope="col">Country</th>
+					<th scope="col" class="th-country">Country</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -20,7 +20,7 @@
 						<td>{{ $event->date }}</td>
 						<td>{{ $event->venue->name }}</td>
 						<td>{{ $event->venue->city }}</td>
-						<td>{{ $event->venue->country }}</td>
+						<td class="td-country">{{ $event->venue->country }}</td>
 					</tr>
 				@empty
 					<tr>
@@ -37,7 +37,7 @@
 					<th scope="col">Date</th>
 					<th scope="col">Venue</th>
 					<th scope="col">City</th>
-					<th scope="col">Country</th>
+					<th scope="col" class="th-country">Country</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -46,14 +46,13 @@
 						<td>{{ $event->date }}</td>
 						<td>{{ $event->venue->name }}</td>
 						<td>{{ $event->venue->city }}</td>
-						<td>{{ $event->venue->country }}</td>
+						<td class="td-country">{{ $event->venue->country }}</td>
 					</tr>
 				@endforeach
 			</tbody>
 		</table>
 	</div>
 </section>
-@include('home.partials.divider')
 
 <script src="/js/showList.js"></script>
 
