@@ -1,5 +1,5 @@
 <footer class="col-12">
-	<div class="row no-gutters">
+	<div class="row no-gutters footer-content">
 		<div class="col social-media">
 			<a class="social-icon circle spotify" href="https://open.spotify.com/artist/65fB37pXWPMPJrNg1ZJOpR" alt="Listen to Aversions on Spotify"><img src="{{ asset('img/footer_social_spotify.png') }}"/></a>
 			<a class="social-icon bandcamp" href="https://aversionsband.bandcamp.com" alt="Listen to or buy merch from Aversions on Bandcamp"><img src="{{ asset('img/footer_social_bandcamp.png') }}"/></a>

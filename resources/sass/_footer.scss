@@ -4,6 +4,12 @@ footer {
 	position: fixed;
 	bottom: 0;
 	width: 100%;
+	.footer-content {
+		@include breakpoint(desktop) {
+			margin: 0 auto;
+			max-width: $breakpoint-desktop;
+		}
+	}
 	.social-media {
 		display: flex;
 		justify-content: space-around;
@@ -22,6 +28,9 @@ footer {
 					width: 38px;
 				}
 			}
+		}
+		@include breakpoint(desktop) {
+			justify-content: space-between;
 		}
 	}
 }

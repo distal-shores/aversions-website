@@ -4,6 +4,10 @@
 		> * + * {
 			margin-top: 1.5em;
 		}
+		@include breakpoint(desktop) {
+			margin: 0 auto;
+			max-width: $breakpoint-desktop;
+		}
 	}
 	background-color: $off-white;
 	max-width: none;
@@ -40,6 +44,7 @@
 #logo-default {
 	height: 72px;
 	opacity: 100;
+	transition: opacity 0.3s linear;
 }
 
 #logo-alternate {
@@ -51,6 +56,9 @@
 .navbar {
 	margin: 0;
 	height: 100%;
+	@include breakpoint(desktop) {
+		margin: 0 auto;
+	}
 }
 
 .navbar-brand {
