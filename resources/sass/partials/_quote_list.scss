@@ -16,7 +16,7 @@
 .carousel-button {
 	width: 60px;
 	height: 40px;
-	background-image: url(/storage/img/quote-carousel_pointing-hand.svg);
+	background-image: url(/images/quote-carousel_pointing-hand.svg);
 	border: none;
 	background-color: transparent;
 	background-repeat: no-repeat;
@@ -24,7 +24,7 @@
 	background-size: contain;
 	position: absolute;
 	&:hover {
-		background-image: url(/storage/img/quote-carousel_pointing-hand_pink.svg);
+		background-image: url(/images/quote-carousel_pointing-hand_pink.svg);
 		transform: rotate(-5deg);
 	}
 	&.slick-prev {

@@ -9963,7 +9963,7 @@ h3 {
   margin-bottom: 0;
 }
 .home-container .divider {
-  background-image: url("/storage/img/site_hr_flowers.svg");
+  background-image: url("/images/site_hr_flowers.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -10057,7 +10057,7 @@ h3 {
 .home-container #show-list_upcoming tbody tr td.no-upcoming-shows:after {
   content: "";
   display: inline-block;
-  background-image: url(/storage/img/show-list_tombstone.svg);
+  background-image: url(/images/show-list_tombstone.svg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -10126,7 +10126,7 @@ h3 {
 .home-container .carousel-button {
   width: 60px;
   height: 40px;
-  background-image: url(/storage/img/quote-carousel_pointing-hand.svg);
+  background-image: url(/images/quote-carousel_pointing-hand.svg);
   border: none;
   background-color: transparent;
   background-repeat: no-repeat;
@@ -10135,7 +10135,7 @@ h3 {
   position: absolute;
 }
 .home-container .carousel-button:hover {
-  background-image: url(/storage/img/quote-carousel_pointing-hand_pink.svg);
+  background-image: url(/images/quote-carousel_pointing-hand_pink.svg);
   transform: rotate(-5deg);
 }
 .home-container .carousel-button.slick-prev {
