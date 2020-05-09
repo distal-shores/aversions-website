@@ -59,15 +59,15 @@ class BandsController extends Controller
         $this->validate($request, $this->rules);
 
         $requestParams = array(
-            'name' => $request->band_name,
-            'email' => $request->band_email,
-            'city' => $request->band_city,
-            'country' => $request->band_country,
-            'website_url' => $request->band_url
+            'name' => $request->name,
+            'email' => $request->email,
+            'city' => $request->city,
+            'country' => $request->country,
+            'website_url' => $request->url
         );
 
         $band = Band::firstOrCreate(
-            ['name' => $request->band_name],
+            ['name' => $request->name],
             $requestParams
         );
 
@@ -112,11 +112,11 @@ class BandsController extends Controller
     {
         $this->validate($request, $this->rules);
         
-        $band->name = $request->band_name;
-        $band->email = $request->band_email;
-        $band->city = $request->band_city;
-        $band->country = $request->band_country;
-        $band->website_url = $request->band_url;
+        $band->name = $request->name;
+        $band->email = $request->email;
+        $band->city = $request->city;
+        $band->country = $request->country;
+        $band->website_url = $request->url;
 
         $band->save();
 
