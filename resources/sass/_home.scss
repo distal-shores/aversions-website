@@ -1,24 +1,42 @@
 .home-container {
-	padding-bottom: calc(70px + 1.5em);
-	.home-content {
-		> * + * {
-			margin-top: 1.5em;
-		}
-		@include breakpoint(desktop) {
-			margin: 0 auto;
-			max-width: $breakpoint-desktop;
-		}
-	}
 	background-color: $off-white;
 	max-width: none;
+	padding-bottom: calc(70px + 1.5em);
 	width: 100vw;
-
-	.latest-release {
-		h2 {
-			margin-bottom: 0;
-		}
+	section > h2 {
+	    border-bottom: 2px dashed black;
+	    margin-bottom: 1rem;
+	    padding-bottom: 0.5rem;
+	    position: relative;
+	    &:after {
+	        background-image: url('/images/site_hr_flowers-pink.svg');
+	        background-position: center;
+	        background-repeat: no-repeat;
+	        background-size: contain;
+	        bottom: -20px;
+	        content: '';
+	        display: inline-block;
+	        height: 75px;
+	        position: absolute;
+	        right: 0;
+	        width: 75px;
+	    }
+	    &.no-flowers {
+	        &:after {
+	            display: none;
+	        }
+	    }
 	}
-
+	#logo-alternate {
+		height: 72px;
+		position: absolute;
+		left: 1rem;
+	}
+	#logo-default {
+		height: 72px;
+		opacity: 100;
+		transition: opacity 0.3s linear;
+	}
 	.divider {
 		background-image: url('/images/site_hr_flowers.svg');
 		background-repeat: no-repeat;
@@ -27,51 +45,44 @@
 		width: 100%;
 		height: 50px;
 	}
+	.home-content {
+		> * + * {
+			margin-top: 5em;
+		}
+		@include breakpoint(desktop) {
+			margin: 0 auto;
+			max-width: $breakpoint-desktop;
+		}
+	}
+	.navbar {
+		margin: 0;
+		height: 100%;
+		@include breakpoint(desktop) {
+			margin: 0 auto;
+		}
+	}
+	.navbar-brand {
+		margin: 0;
+		height: 100%;
+		#logo-default {
+			height: 100%;
+		}
+	}
+	.retractable {
+		position: absolute;
+		width: 100%;
+		height: 100px;
+		background-color: $off-white;
+	}
+	.top-nav {
+		background-color: black;
+		border-bottom: 3px solid $aversions-pink;
+		position: sticky;
+		height: 101px;
+		top: 0;
+		z-index: 10;
+	}
 	@import 'type';
 	@import 'footer';
 	@import 'partials/partials.scss';
-}
-
-.top-nav {
-	background-color: black;
-	border-bottom: 3px solid $aversions-pink;
-	position: sticky;
-	height: 101px;
-	top: 0;
-	z-index: 10;
-}
-
-#logo-default {
-	height: 72px;
-	opacity: 100;
-	transition: opacity 0.3s linear;
-}
-
-#logo-alternate {
-	height: 72px;
-	position: absolute;
-	left: 1rem;
-}
-
-.navbar {
-	margin: 0;
-	height: 100%;
-	@include breakpoint(desktop) {
-		margin: 0 auto;
-	}
-}
-
-.navbar-brand {
-	margin: 0;
-	height: 100%;
-	#logo-default {
-		height: 100%;
-	}
-}
-
-.retractable {
-	position: absolute;
-	width: 100%;
-	height: 100px;
-	background-color: $off-white;
 }

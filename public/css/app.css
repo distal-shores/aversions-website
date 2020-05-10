@@ -9945,22 +9945,42 @@ h3 {
   }
 }
 .home-container {
-  padding-bottom: calc(70px + 1.5em);
   background-color: #ffffe9;
   max-width: none;
+  padding-bottom: calc(70px + 1.5em);
   width: 100vw;
 }
-.home-container .home-content > * + * {
-  margin-top: 1.5em;
+.home-container section > h2 {
+  border-bottom: 2px dashed black;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  position: relative;
 }
-@media (min-width: 715px) {
-  .home-container .home-content {
-    margin: 0 auto;
-    max-width: 715px;
-  }
+.home-container section > h2:after {
+  background-image: url("/images/site_hr_flowers-pink.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  bottom: -20px;
+  content: "";
+  display: inline-block;
+  height: 75px;
+  position: absolute;
+  right: 0;
+  width: 75px;
 }
-.home-container .latest-release h2 {
-  margin-bottom: 0;
+.home-container section > h2.no-flowers:after {
+  display: none;
+}
+.home-container #logo-alternate {
+  height: 72px;
+  position: absolute;
+  left: 1rem;
+}
+.home-container #logo-default {
+  height: 72px;
+  opacity: 100;
+  transition: opacity 0.3s linear;
 }
 .home-container .divider {
   background-image: url("/images/site_hr_flowers.svg");
@@ -9969,6 +9989,46 @@ h3 {
   background-size: contain;
   width: 100%;
   height: 50px;
+}
+.home-container .home-content > * + * {
+  margin-top: 5em;
+}
+@media (min-width: 715px) {
+  .home-container .home-content {
+    margin: 0 auto;
+    max-width: 715px;
+  }
+}
+.home-container .navbar {
+  margin: 0;
+  height: 100%;
+}
+@media (min-width: 715px) {
+  .home-container .navbar {
+    margin: 0 auto;
+  }
+}
+.home-container .navbar-brand {
+  margin: 0;
+  height: 100%;
+}
+.home-container .navbar-brand #logo-default {
+  height: 100%;
+}
+.home-container .retractable {
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  background-color: #ffffe9;
+}
+.home-container .top-nav {
+  background-color: black;
+  border-bottom: 3px solid #ea9ee1;
+  position: -webkit-sticky;
+  position: sticky;
+  height: 101px;
+  top: 0;
+  z-index: 10;
 }
 .home-container h1, .home-container h2, .home-container h3 {
   font-family: "Black Ops One", cursive;
@@ -10203,53 +10263,6 @@ h3 {
 }
 .home-container .newsletter-signup svg {
   position: absolute;
-}
-
-.top-nav {
-  background-color: black;
-  border-bottom: 3px solid #ea9ee1;
-  position: -webkit-sticky;
-  position: sticky;
-  height: 101px;
-  top: 0;
-  z-index: 10;
-}
-
-#logo-default {
-  height: 72px;
-  opacity: 100;
-  transition: opacity 0.3s linear;
-}
-
-#logo-alternate {
-  height: 72px;
-  position: absolute;
-  left: 1rem;
-}
-
-.navbar {
-  margin: 0;
-  height: 100%;
-}
-@media (min-width: 715px) {
-  .navbar {
-    margin: 0 auto;
-  }
-}
-
-.navbar-brand {
-  margin: 0;
-  height: 100%;
-}
-.navbar-brand #logo-default {
-  height: 100%;
-}
-
-.retractable {
-  position: absolute;
-  width: 100%;
-  height: 100px;
-  background-color: #ffffe9;
 }
 
 .inline-form {

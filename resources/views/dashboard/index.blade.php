@@ -16,3 +16,7 @@
 		</div>
 	</div>
 @endsection
+
+@push('robots')
+    <meta name="robots" content="nofollow"/>
+@endpush

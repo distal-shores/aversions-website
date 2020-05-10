@@ -1,5 +1,5 @@
 <section class="show-list">
-	<h2>Live</h2>
+	<h2 class="no-flowers">Live</h2>
 	<div id="show-list_selector">
 		<span class="upcoming selected">Upcoming</span>
 		<span class="past">Past</span>
