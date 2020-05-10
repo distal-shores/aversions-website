@@ -1,4 +1,3 @@
-<span class="retractable"></span>
 <nav class="navbar">
 	<a class="navbar-brand" href="#">
   		<img id="logo-default" class="no-top-margin" src="{{ asset('images/home_logo-300-black.png') }}" alt="Aversions masthead logo">

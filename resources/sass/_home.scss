@@ -13,13 +13,19 @@
 	        background-position: center;
 	        background-repeat: no-repeat;
 	        background-size: contain;
-	        bottom: -20px;
 	        content: '';
 	        display: inline-block;
-	        height: 75px;
 	        position: absolute;
-	        right: 0;
-	        width: 75px;
+        	bottom: -14px;
+        	right: -5px;
+        	height: 50px;
+        	width: 50px;
+	        @include breakpoint(desktop) {
+	        	bottom: -20px;
+	        	right: 0;
+	        	height: 75px;
+	        	width: 75px;
+	        }
 	    }
 	    &.no-flowers {
 	        &:after {
@@ -28,26 +34,21 @@
 	    }
 	}
 	#logo-alternate {
-		height: 72px;
+		height: 42px;
 		position: absolute;
 		left: 1rem;
+		@include breakpoint(desktop) {
+			height: 72px;
+		}
 	}
 	#logo-default {
-		height: 72px;
+		height: 100%;
 		opacity: 100;
 		transition: opacity 0.3s linear;
 	}
-	.divider {
-		background-image: url('/images/site_hr_flowers.svg');
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: contain;
-		width: 100%;
-		height: 50px;
-	}
 	.home-content {
 		> * + * {
-			margin-top: 5em;
+			margin-top: 3em;
 		}
 		@include breakpoint(desktop) {
 			margin: 0 auto;
@@ -75,12 +76,15 @@
 		background-color: $off-white;
 	}
 	.top-nav {
-		background-color: black;
-		border-bottom: 3px solid $aversions-pink;
+		background-color: $off-white;
+		border-bottom: 2px solid $aversions-pink;
 		position: sticky;
-		height: 101px;
+		height: 70px;
 		top: 0;
 		z-index: 10;
+		@include breakpoint(desktop) {
+			height: 100px;
+		}
 	}
 	@import 'type';
 	@import 'footer';

@@ -9,7 +9,6 @@
     <meta name="keywords" content="post-punk, post-hardcore, band, Vancouver, independent music, live band, punk, British Columbia, Canada, post punk, post hardcore, grunge, alternative rock, alt-rock, art rock"/>
     <meta name="author" content="Sam Coll" />
 	<meta name="copyright" content="Copyright Aversions" />
-	<meta name="robots" content="follow"/>
 	@stack('robots')
     @stack('scripts')
 </head>

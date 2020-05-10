@@ -5,7 +5,7 @@
         <div class="row top-nav no-gutters">
             @include('home.partials.top-nav')
         </div>
-        <div class="row no-gutters" style="padding:1.5rem 0;">
+        <div class="row no-gutters" style="padding-top:1rem;">
             <div class="col px-2 py-2 home-content">
                 @section('bottom-content')
                     @include('home.partials.latest_release')
