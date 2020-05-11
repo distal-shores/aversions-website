@@ -27,3 +27,5 @@ Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/shows', 'HomeController@shows')->name('live');
 Route::get('/show/{id}', 'HomeController@showShows')->name('live');
+
+Route::post('/in-carousel', 'ClippingsController@inCarousel');

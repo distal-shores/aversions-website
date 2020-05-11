@@ -33,7 +33,6 @@ $(document).ready(function() {
 			},
 			dataType: "json",
 			success: function(result) {
-				console.log('success');
 				$state.find('*').not('.default').remove();
 				result.states.forEach(function(item) {
 					$state.append('<option value="' + item + '">' + item + '</option>');
@@ -41,7 +40,6 @@ $(document).ready(function() {
 			},
 			error: function(data) {
 				var errors = data.responseJSON;
-                console.log(errors);
 			},
 			complete: function() {
 				if(pageLoad === true) {

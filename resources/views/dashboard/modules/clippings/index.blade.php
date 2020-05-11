@@ -1,6 +1,7 @@
 @extends('dashboard.index')
 
 @section('right_pane')
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 	<h1>Clippings</h1>
 	<table class="table">
 		<thead>
@@ -9,11 +10,13 @@
   			<th scope="col">Publication</th>
   			<th scope="col">URL</th>
   			<th scope="col">Publish Date</th>
+        <th scope="col">In Carousel?</th>
     	</tr>
   	</thead>
   	<tbody>
 		  @foreach ($clippings as $clipping)
         <tr>
+          <input class="clipping-id" type="hidden" data-clipid="{{$clipping->id}}">
   				<td>{{ $clipping->title }}</td>
   				<td>{{ $clipping->publication->name }}</td>
           <td>
@@ -23,6 +26,9 @@
           </td>
           <td>
             {{ $clipping->publish_date }}
+          </td>
+          <td>
+            <input class="in_carousel" type="checkbox" name="in_carousel" {{ $clipping->in_carousel ? 'checked' : '' }}>
           </td>
           <td>
             <a href="{{ route('clippings.edit', ['clipping' => $clipping->id]) }}" class="btn btn-sm btn-secondary">Edit</a>
@@ -37,3 +43,7 @@
     </tbody>
   </table>
 @endsection
+
+@push('scripts')
+  <script src="{{ mix('js/inCarousel.js') }}"></script>
+@endpush

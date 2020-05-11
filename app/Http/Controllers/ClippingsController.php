@@ -6,6 +6,7 @@ use App\Clipping;
 use App\Publication;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class ClippingsController extends Controller
 {
@@ -113,7 +114,7 @@ class ClippingsController extends Controller
         $clipping->publication_id = $request->publication_id;
         $clipping->url = $request->url;
         $clipping->pullquote = $request->pullquote;
-        $clipping->publish_Date = Carbon::createFromDate($request->date);
+        $clipping->publish_date = Carbon::createFromDate($request->date);
 
         $clipping->save();
 
@@ -130,5 +131,23 @@ class ClippingsController extends Controller
     {
         $clipping->delete();
         return redirect()->action('ClippingsController@index')->with(['status' => 'Clipping removed!', 'message_type' => 'warning']);
+    }
+
+    /**
+     * Adds or removes the Clipping from the homepage quote carousel
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return JSON
+     */
+    public function inCarousel(Request $request) {
+        $clipping = Clipping::find($request->id);
+        if($request->in_carousel == 'true') {
+            $clipping->in_carousel = 1;
+        } else {
+            $clipping->in_carousel = 0;
+        }
+        $clipping->save();
+
+        return response()->json();
     }
 }

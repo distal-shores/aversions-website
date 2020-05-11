@@ -26,7 +26,7 @@
 			<input type="text" class="form-control" id="url" name="url">
 			<div class="form-instruction" for="ticket_url"><em>Valid URL including http:// or https://</em></div>
 		</div> {{-- /form-group --}}
-		<div class="form-group w-25">
+		<div class="form-group w-50">
 			<label for="date">Publication Date</label>
 			<input id="date" class="form-control" name="date" required>
 		</div> {{-- /form-group --}}

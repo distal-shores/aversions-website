@@ -23,7 +23,7 @@ class QuoteCarouselComposer
     public function __construct()
     {
         // Dependencies automatically resolved by service container...
-        $this->quotes = Clipping::orderBy('id', 'asc')->take(3)->get();
+        $this->quotes = Clipping::where('in_carousel', 1)->get();
     }
 
     /**
