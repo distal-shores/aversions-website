@@ -11,6 +11,7 @@
   			<th scope="col">URL</th>
   			<th scope="col">Publish Date</th>
         <th scope="col">In Carousel?</th>
+        <th scope="col">Edit/Delete</th>
     	</tr>
   	</thead>
   	<tbody>
