@@ -3,7 +3,7 @@
 @section('form-image')
 	@if($event->event_poster)
 		<h3>Current poster</h3>
-		<img class="img-fluid" src="{{ asset('posters/'.$event->event_poster) }}">
+		<img class="img-fluid" src="{{ asset('storage/posters/'.$event->event_poster) }}">
 	@endif
 @endsection
 
