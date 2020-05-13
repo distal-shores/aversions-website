@@ -53,15 +53,15 @@
 			<div class="form-row">
 				<div class="col">
 					<label for="event_date">Event Date</label>
-					<input id="event_date" class="form-control" value="{{ $event->date }}" name="event_date" required>
+					<input id="event_date" class="form-control" value="{{ $event->date }}" name="date" required>
 				</div> {{-- /col --}}
 				<div class="col">
 					<label for="start_time">Start Time</label>
-					<input type="time" class="form-control" value="{{ $event->start_time }}" id="start_time" name="start_time" required>
+					<input type="time" class="form-control" value="{{ date('H:i', strtotime($event->start_time)) }}" step="60" id="start_time" name="start_time" required>
 				</div> {{-- /col --}}
 				<div class="col">
 					<label for="end_time">End Time</label>
-					<input type="time" class="form-control" value="{{ $event->end_time }}" id="end_time" name="end_time" required>
+					<input type="time" class="form-control" value="{{ date('H:i', strtotime($event->end_time)) }}" step="60" id="end_time" name="end_time" required>
 				</div> {{-- /col --}}
 			</div>	{{-- /row --}}
 		</div> {{-- /form-group --}}

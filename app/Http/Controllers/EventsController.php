@@ -159,8 +159,8 @@ class EventsController extends Controller
             $originalFileName = $file->getClientOriginalName();
             if(!Storage::exists('public/posters/'.$originalFileName)) {
                 $file->storeAs('public/posters', $originalFileName);
-                $event->event_poster = $originalFileName;
             }
+            $event->event_poster = $originalFileName;
         }
 
         $event->save();
