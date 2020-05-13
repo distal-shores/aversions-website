@@ -12,7 +12,7 @@
 				</div> {{-- /col --}}
 				<div class="col-md-4">
 					<label for="main_contact">Main Contact Name</label>
-					<input type="text" class="form-control" id="main_contact" name="main_contact" required>
+					<input type="text" class="form-control" id="main_contact" name="main_contact">
 				</div> {{-- /col --}}
 			</div> {{-- /row --}}
 		</div> {{-- /form-group --}}
