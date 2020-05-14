@@ -8,12 +8,10 @@
         <div class="row no-gutters" style="padding-top:1rem;">
             <div class="col px-2 py-2 home-content">
                 @section('bottom-content')
-                    @include('home.partials.latest_release')
-                    {{-- @include('home.partials.divider') --}}
+                    @include('home.partials.contact')
                     @include('home.partials.quote_carousel')
-                    {{-- @include('home.partials.divider') --}}
+                    @include('home.partials.latest_release')
                 	@include('home.partials.show_list')
-                    {{-- @include('home.partials.divider') --}}
                     @include('home.partials.newsletter_signup')
                 @show
             </div>

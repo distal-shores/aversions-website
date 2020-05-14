@@ -104,7 +104,7 @@ eval("$(document).ready(function () {\n  $('.quote-carousel').slick({\n    adapt
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/samcoll/Sites/aversions-website/resources/js/quoteCarousel.js */"./resources/js/quoteCarousel.js");
+module.exports = __webpack_require__(/*! /Users/josephross/Sites/aversions-website/resources/js/quoteCarousel.js */"./resources/js/quoteCarousel.js");
 
 
 /***/ })
