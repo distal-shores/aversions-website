@@ -1,6 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
+    "/js/contactForm.js": "/js/contactForm.js",
     "/js/datepicker.js": "/js/datepicker.js",
     "/js/getStates.js": "/js/getStates.js",
     "/js/header.js": "/js/header.js",
