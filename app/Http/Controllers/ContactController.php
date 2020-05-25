@@ -13,8 +13,8 @@ class ContactController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return JSON
      */
-    public function handleForm(Request $request)
+    public function __invoke(Request $request)
     {
-        Log::info($request); 
+
     }
 }

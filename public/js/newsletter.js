@@ -104,7 +104,7 @@ eval("$(document).ready(function () {\n  function register($form) {\n    $.ajax(
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/josephross/Sites/aversions-website/resources/js/newsletter.js */"./resources/js/newsletter.js");
+module.exports = __webpack_require__(/*! /Users/samcoll/Sites/aversions-website/resources/js/newsletter.js */"./resources/js/newsletter.js");
 
 
 /***/ })

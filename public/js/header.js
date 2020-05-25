@@ -104,7 +104,7 @@ eval("$(document).ready(function () {\n  var $logo = $('#logo-default');\n  $(wi
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/josephross/Sites/aversions-website/resources/js/header.js */"./resources/js/header.js");
+module.exports = __webpack_require__(/*! /Users/samcoll/Sites/aversions-website/resources/js/header.js */"./resources/js/header.js");
 
 
 /***/ })
