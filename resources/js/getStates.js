@@ -2,7 +2,6 @@ $(document).ready(function() {
 
 	const $state = $('#state');
 	const hiddenState = $('#hiddenState').val();
-	console.log(hiddenState);
 	var observer = new MutationObserver(function(mutations) {
 	  mutations.forEach(function(mutation) {
 		if($('#state').find('*').not('.default').length > 0) {
