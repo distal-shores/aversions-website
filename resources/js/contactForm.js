@@ -13,7 +13,7 @@ $(document).ready(function(){
 			data: formData,
 			dataType: "json",
 			success: function(result) {
-				console.log('success ' + result);
+				console.log('success ' + result.message);
 			},
 			error: function(xhr, status, error) {
 				console.log(xhr.responseText);

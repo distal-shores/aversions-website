@@ -29,4 +29,4 @@ Route::get('/shows', 'HomeController@shows')->name('live');
 Route::get('/show/{id}', 'HomeController@showShows')->name('live');
 
 Route::post('/in-carousel', 'ClippingsController@inCarousel');
-Route::post('/contact', 'ContactController');
+Route::post('/contact', 'ContactController@receiveEntry');

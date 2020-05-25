@@ -20,7 +20,7 @@
 		</div> {{-- /form-group --}}
 		<div class="form-group">
 			<label for="message">Message</label>
-			<textarea id="message" class="form-control" rows="4" cols="50"> Message</textarea>
+			<textarea name="message" id="message" class="form-control" rows="4" cols="50"> Message</textarea>
 		</div> {{-- /form-group --}}
 		<input type="submit" class="btn btn-primary" value="Submit">
 	</form>	

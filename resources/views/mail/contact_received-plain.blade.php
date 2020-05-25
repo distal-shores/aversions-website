@@ -1,0 +1,1 @@
+plain text test from {{ $entry->name }}
