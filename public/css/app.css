@@ -9957,7 +9957,6 @@ h3 {
   position: relative;
 }
 .home-container section > h2:after {
-  background-image: url("/images/site_hr_flowers-pink.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -9977,7 +9976,34 @@ h3 {
     width: 75px;
   }
 }
-.home-container section > h2.no-flowers:after {
+.home-container section.collapsible > h2:hover {
+  cursor: pointer;
+}
+.home-container section.collapsible > h2:hover:after {
+  background-image: url("/images/site_hr_pinocchio-pink.svg");
+  transform: scaleX(-1) rotate(80deg);
+}
+.home-container section.collapsible > h2:after {
+  -webkit-transform: scaleX(-1);
+  background-image: url("/images/site_hr_pinocchio.svg");
+  bottom: 5px;
+  height: 50px;
+  width: 50px;
+  transform: scaleX(-1) rotate(90deg);
+}
+.home-container section.collapsible.collapsed > h2:after {
+  transform: scaleX(-1) rotate(0deg);
+}
+.home-container section.collapsible.collapsed > h2:hover:after {
+  transform: scaleX(-1) rotate(10deg);
+}
+.home-container section.collapsed .collapsible-content {
+  display: none;
+}
+.home-container section:not(.collapsible) > h2:after {
+  background-image: url("/images/site_hr_flowers-pink.svg");
+}
+.home-container section:not(.collapsible) > h2.no-flowers:after {
   display: none;
 }
 .home-container #logo-alternate {

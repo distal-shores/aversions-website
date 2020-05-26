@@ -3,35 +3,80 @@
 	max-width: none;
 	padding-bottom: calc(70px + 1.5em);
 	width: 100vw;
-	section > h2 {
-	    border-bottom: 2px dashed black;
-	    margin-bottom: 1rem;
-	    padding-bottom: 0.5rem;
-	    position: relative;
-	    &:after {
-	        background-image: url('/images/site_hr_flowers-pink.svg');
-	        background-position: center;
-	        background-repeat: no-repeat;
-	        background-size: contain;
-	        content: '';
-	        display: inline-block;
-	        position: absolute;
-        	bottom: -14px;
-        	right: -5px;
-        	height: 50px;
-        	width: 50px;
-	        @include breakpoint(desktop) {
-	        	bottom: -20px;
-	        	right: 0;
-	        	height: 75px;
-	        	width: 75px;
-	        }
-	    }
-	    &.no-flowers {
-	        &:after {
-	            display: none;
-	        }
-	    }
+	section {
+		> h2 {
+		    border-bottom: 2px dashed black;
+		    margin-bottom: 1rem;
+		    padding-bottom: 0.5rem;
+		    position: relative;
+		    &:after {
+		        background-position: center;
+		        background-repeat: no-repeat;
+		        background-size: contain;
+		        content: '';
+		        display: inline-block;
+		        position: absolute;
+	        	bottom: -14px;
+	        	right: -5px;
+	        	height: 50px;
+	        	width: 50px;
+		        @include breakpoint(desktop) {
+		        	bottom: -20px;
+		        	right: 0;
+		        	height: 75px;
+		        	width: 75px;
+		        }
+		    }
+		}
+		&.collapsible {
+			> h2 {
+				&:hover {
+					cursor: pointer;
+					&:after {
+						background-image: url('/images/site_hr_pinocchio-pink.svg');
+						transform: scaleX(-1) rotate(80deg);
+					}
+				}
+				&:after {
+					-webkit-transform: scaleX(-1);
+					background-image: url('/images/site_hr_pinocchio.svg');
+					bottom: 5px;
+					height: 50px;
+					width: 50px;
+  					transform: scaleX(-1) rotate(90deg);
+				}
+			}
+			&.collapsed {
+				> h2 {
+					&:after {
+						transform: scaleX(-1) rotate(0deg);
+					}				
+					&:hover {
+						&:after {
+							transform: scaleX(-1) rotate(10deg);
+						}
+					}
+				}
+
+			}
+		}
+		&.collapsed {
+			.collapsible-content {
+				display: none;
+			}
+		}
+		&:not(.collapsible) {
+			> h2 {
+			    &:after {
+			        background-image: url('/images/site_hr_flowers-pink.svg');
+			    }
+			    &.no-flowers {
+			        &:after {
+			            display: none;
+			        }
+			    }
+			}
+		}
 	}
 	#logo-alternate {
 		height: 42px;
