@@ -9980,22 +9980,23 @@ h3 {
   cursor: pointer;
 }
 .home-container section.collapsible > h2:hover:after {
-  background-image: url("/images/site_hr_pinocchio-pink.svg");
-  transform: scaleX(-1) rotate(80deg);
+  background-image: url("/images/site_hr_pistol-pink.svg");
+  transform: rotate(-35deg);
 }
 .home-container section.collapsible > h2:after {
   -webkit-transform: scaleX(-1);
-  background-image: url("/images/site_hr_pinocchio.svg");
+  background-image: url("/images/site_hr_pistol.svg");
   bottom: 5px;
   height: 50px;
-  width: 50px;
-  transform: scaleX(-1) rotate(90deg);
+  width: 90px;
+  transform: rotate(-40deg);
+  transition: transform 0.1s ease-out;
 }
 .home-container section.collapsible.collapsed > h2:after {
-  transform: scaleX(-1) rotate(0deg);
+  transform: rotate(0deg);
 }
 .home-container section.collapsible.collapsed > h2:hover:after {
-  transform: scaleX(-1) rotate(10deg);
+  transform: rotate(-5deg);
 }
 .home-container section.collapsed .collapsible-content {
   display: none;
