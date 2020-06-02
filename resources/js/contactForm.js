@@ -6,7 +6,6 @@ $(document).ready(function(){
 		ajaxSubmitContactForm(formData);
 	});
 	function ajaxSubmitContactForm(formData) {
-
 		$.ajax({
 			type: 'POST',
 			url: '/contact',

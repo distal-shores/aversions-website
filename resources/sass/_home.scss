@@ -79,6 +79,63 @@
 			}
 		}
 	}
+	form {
+		// display: flex;
+		// align-items: flex-start;
+		input, textarea {
+			background-color: transparent;
+			border: none;
+			font-family: 'Special Elite', cursive;
+			font-size: 1.2rem;
+			width: 100%;
+		}
+		form-group {
+			display: inline-block;
+			flex: 1 0 auto;
+			margin-bottom: 2rem;
+			position: relative;
+		}
+		svg {
+			position: absolute;
+		}
+		textarea {
+			border: 1px dashed black;
+			border-radius: 4px;
+			margin-top: 10px;
+			padding: 5px 10px;
+		}
+		.mr-20 {
+			margin-right: 20px;
+		}
+		.submit {
+			border: none;
+			background-color: black;
+			border: 1px solid transparent;	
+			font-family: 'Black Ops One', cursive;
+			font-size: 1.2rem;
+			color: $off-white;
+			border-radius: 10px;
+			padding: 5px 14px;
+			transition: background-color 0.2s linear, color 0.2s linear;
+			&:hover {
+				background-color: $off-white;
+				border: 1px solid black;
+				color: black;
+			}
+		}
+	}
+	.hand_drawn {
+		--underline-color: black;
+		background: linear-gradient(to top, var(--underline-color), var(--underline-color)) repeat-x left 1.13em / 100% 4px;
+		background-position: top;
+		bottom: -17px;
+		left: 0;
+		filter: url('#handdrawn');
+		display: inline-block;
+		height: 15px;
+		position: absolute;
+		width: 100%;		
+	}
 	#logo-alternate {
 		height: 42px;
 		position: absolute;

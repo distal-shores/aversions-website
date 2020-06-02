@@ -10007,6 +10007,60 @@ h3 {
 .home-container section:not(.collapsible) > h2.no-flowers:after {
   display: none;
 }
+.home-container form input, .home-container form textarea {
+  background-color: transparent;
+  border: none;
+  font-family: "Special Elite", cursive;
+  font-size: 1.2rem;
+  width: 100%;
+}
+.home-container form form-group {
+  display: inline-block;
+  flex: 1 0 auto;
+  margin-bottom: 2rem;
+  position: relative;
+}
+.home-container form svg {
+  position: absolute;
+}
+.home-container form textarea {
+  border: 1px dashed black;
+  border-radius: 4px;
+  margin-top: 10px;
+  padding: 5px 10px;
+}
+.home-container form .mr-20 {
+  margin-right: 20px;
+}
+.home-container form .submit {
+  border: none;
+  background-color: black;
+  border: 1px solid transparent;
+  font-family: "Black Ops One", cursive;
+  font-size: 1.2rem;
+  color: #ffffe9;
+  border-radius: 10px;
+  padding: 5px 14px;
+  transition: background-color 0.2s linear, color 0.2s linear;
+}
+.home-container form .submit:hover {
+  background-color: #ffffe9;
+  border: 1px solid black;
+  color: black;
+}
+.home-container .hand_drawn {
+  --underline-color: black;
+  background: linear-gradient(to top, var(--underline-color), var(--underline-color)) repeat-x left 1.13em/100% 4px;
+  background-position: top;
+  bottom: -17px;
+  left: 0;
+  -webkit-filter: url("#handdrawn");
+          filter: url("#handdrawn");
+  display: inline-block;
+  height: 15px;
+  position: absolute;
+  width: 100%;
+}
 .home-container #logo-alternate {
   height: 42px;
   position: absolute;
@@ -10256,58 +10310,9 @@ h3 {
 .home-container .quote-carousel .slick-slide {
   margin-top: 0;
 }
-.home-container #mailchimp_subscribe {
-  display: flex;
-  align-items: flex-start;
-}
-.home-container #mailchimp_subscribe input {
-  background-color: transparent;
-  border: none;
-  font-family: "Special Elite", cursive;
-  font-size: 1.2rem;
-  width: 100%;
-}
-.home-container #mailchimp_subscribe form-group {
-  display: inline-block;
-  flex: 1 0 auto;
-  position: relative;
-}
-.home-container #mailchimp_subscribe .hand_drawn {
-  --underline-color: black;
-  background: linear-gradient(to top, var(--underline-color), var(--underline-color)) repeat-x left 1.13em/100% 4px;
-  background-position: top;
-  bottom: -17px;
-  left: 0;
-  -webkit-filter: url("#handdrawn");
-          filter: url("#handdrawn");
-  display: inline-block;
-  height: 15px;
-  position: absolute;
-  width: 100%;
-}
-.home-container #mailchimp_subscribe .mailchimp_submit {
-  border: none;
-  background-color: black;
-  border: 1px solid transparent;
-  font-family: "Black Ops One", cursive;
-  font-size: 1.2rem;
-  color: #ffffe9;
-  border-radius: 10px;
-  margin-left: 10px;
-  padding: 5px 14px;
-  transition: background-color 0.2s linear, color 0.2s linear;
-}
-.home-container #mailchimp_subscribe .mailchimp_submit:hover {
-  background-color: #ffffe9;
-  border: 1px solid black;
-  color: black;
-}
 .home-container #newsletter-signup_message .newsletter-signup_message_message {
   font-family: "Istok Web", sans-serif;
   margin-top: 1rem;
-}
-.home-container .newsletter-signup svg {
-  position: absolute;
 }
 
 .inline-form {

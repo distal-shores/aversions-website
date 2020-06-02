@@ -6,7 +6,7 @@
     		<input type="text" name="MERGE0" placeholder="Enter email here" />
     		<span class="hand_drawn"></span>
     	</form-group>
-    	<button class="mailchimp_submit" type="submit">Submit</button>
+    	<button class="submit" type="submit">Submit</button>
     </form>
     <div id="newsletter-signup_message">
     	<div class="newsletter-signup_message_message"></div>

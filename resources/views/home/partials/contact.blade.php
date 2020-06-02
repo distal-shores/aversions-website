@@ -2,28 +2,32 @@
 	<h2>Contact Us</h2>
 	<div class="collapsible-content">
 		<form id="contact">
+			@include('home.partials.hand_drawn')
 			@csrf
 			<div class="form-group">
 				<div class="form-row">
+					<div class="col mr-20">
+						<input type="text" id="name" name="name" placeholder="Name">
+						<span class="hand_drawn"></span>
+					</div>
 					<div class="col">
-						<label for="name">Name</label>
-						<input type="text" class="form-control" id="name" name="name" placeholder="Name">
-					</div> {{-- /col --}}
+						<input type="email" id="email" name="email" placeholder="Email">
+						<span class="hand_drawn"></span>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="form-row">
 					<div class="col">
-						<label for="Email">Email</label>
-						<input type="email" class="form-control" id="email" name="email" placeholder="Email">
-					</div> {{-- /col --}}
-				</div>	{{-- /row --}}	
-			</div> {{-- /form-group --}}
+						<input type="text" id="subject" name="subject" placeholder="Subject">
+						<span class="hand_drawn"></span>
+					</div>
+				</div>
+			</div>
 			<div class="form-group">
-				<label for="subject">Subject</label>
-				<input type="text" class="form-control" id="subject" name="subject" placeholder="Subject">
-			</div> {{-- /form-group --}}
-			<div class="form-group">
-				<label for="message">Message</label>
-				<textarea name="message" id="message" class="form-control" rows="4" cols="50"> Message</textarea>
-			</div> {{-- /form-group --}}
-			<input type="submit" class="btn btn-primary" value="Submit">
+				<textarea name="message" id="message" rows="4" cols="50" placeholder="Message"></textarea>
+			</div>
+			<input type="submit" class="submit" value="Submit">
 		</form>
 	</div>
 </section>

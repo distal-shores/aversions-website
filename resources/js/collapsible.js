@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$('.collapsible').click(function() {
-		$(this).toggleClass('collapsed');
+	$('.collapsible h2').click(function() {
+		$(this).parent().toggleClass('collapsed');
 	});
 });
