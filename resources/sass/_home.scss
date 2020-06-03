@@ -3,35 +3,148 @@
 	max-width: none;
 	padding-bottom: calc(70px + 1.5em);
 	width: 100vw;
-	section > h2 {
-	    border-bottom: 2px dashed black;
-	    margin-bottom: 1rem;
-	    padding-bottom: 0.5rem;
-	    position: relative;
-	    &:after {
-	        background-image: url('/images/site_hr_flowers-pink.svg');
-	        background-position: center;
-	        background-repeat: no-repeat;
-	        background-size: contain;
-	        content: '';
-	        display: inline-block;
-	        position: absolute;
-        	bottom: -14px;
-        	right: -5px;
-        	height: 50px;
-        	width: 50px;
-	        @include breakpoint(desktop) {
-	        	bottom: -20px;
-	        	right: 0;
-	        	height: 75px;
-	        	width: 75px;
-	        }
-	    }
-	    &.no-flowers {
-	        &:after {
-	            display: none;
-	        }
-	    }
+	*::selection {
+		// background-color: $aversions-pink;
+	}
+	section {
+		> h2 {
+		    border-bottom: 2px dashed black;
+		    margin-bottom: 1rem;
+		    padding-bottom: 0.5rem;
+		    position: relative;
+		    &:after {
+		        background-position: center;
+		        background-repeat: no-repeat;
+		        background-size: contain;
+		        content: '';
+		        display: inline-block;
+		        position: absolute;
+	        	bottom: -14px;
+	        	height: 50px;
+	        	right: -5px;
+	        	width: 50px;
+		        @include breakpoint(desktop) {
+		        	bottom: -20px;
+		        	right: 0;
+		        	height: 75px;
+		        	width: 75px;
+		        }
+		    }
+		}
+		&.collapsible {
+			> h2 {
+				&:hover {
+					cursor: pointer;
+					&:after {
+						background-image: url('/images/site_hr_pistol-pink.svg');
+						transform: rotate(-35deg);
+					}
+				}
+				&:after {
+					-webkit-transform: scaleX(-1);
+					background-image: url('/images/site_hr_pistol.svg');
+					bottom: 5px;
+					height: 50px;
+					right: 0;
+					width: 90px;
+  					transform: rotate(-40deg);
+  					transition: transform 0.1s ease-out;
+				}
+			}
+			&.collapsed {
+				> h2 {
+					&:after {
+						transform: rotate(0deg);
+					}				
+					&:hover {
+						&:after {
+							transform: rotate(-5deg);
+						}
+					}
+				}
+
+			}
+		}
+		&.collapsed {
+			.collapsible-content {
+				display: none;
+			}
+		}
+		&:not(.collapsible) {
+			> h2 {
+			    &:after {
+			        background-image: url('/images/site_hr_flowers-pink.svg');
+			    }
+			    &.no-flowers {
+			        &:after {
+			            display: none;
+			        }
+			    }
+			}
+		}
+	}
+	form {
+		overflow: hidden;
+		input, textarea {
+			background-color: transparent;
+			border: none;
+			font-family: 'Special Elite', cursive;
+			font-size: 1.2rem;
+			min-height: 50px;
+			width: 100%;
+			&:focus {
+				outline: none;
+			}
+		}
+		form-group {
+			display: inline-block;
+			flex: 1 0 auto;
+			margin-bottom: 2rem;
+			position: relative;
+		}
+		svg {
+			position: absolute;
+		}
+		textarea {
+			border: 1px dashed black;
+			border-radius: 4px;
+			margin-top: 10px;
+			padding: 5px 10px;
+		}
+		.mr-20 {
+			margin-right: 20px;
+		}
+		.submit {
+			border: none;
+			background-color: black;
+			border: 1px solid transparent;	
+			font-family: 'Black Ops One', cursive;
+			font-size: 1.2rem;
+			color: $off-white;
+			border-radius: 10px;
+			padding: 5px 14px;
+			transition: background-color 0.2s linear, color 0.2s linear;
+			&.mt-10 {
+				margin-top: 10px;
+			}
+			&:hover {
+				background-color: $off-white;
+				border: 1px solid black;
+				color: black;
+			}
+		}
+	}
+	.hand_drawn {
+		--underline-color: black;
+		background: linear-gradient(to top, var(--underline-color), var(--underline-color)) repeat-x left 1.13em / 100% 4px;
+		background-position: top;
+		bottom: 0;
+		left: 0;
+		filter: url('#handdrawn');
+		display: inline-block;
+		height: 15px;
+		position: absolute;
+		width: calc(100% - 10px);
 	}
 	#logo-alternate {
 		height: 42px;

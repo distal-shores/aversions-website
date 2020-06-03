@@ -4,11 +4,13 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 // Variables
+@import 'helpers';
 @import 'variables';
 @import 'layout';
 @import 'home';
 @import 'dashboard';
 @import 'slick';
+
 
 main {
 	&.container-fluid {

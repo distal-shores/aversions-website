@@ -9,7 +9,6 @@ $(document).ready(function() {
 				data: { in_carousel: in_carousel, id: clip_id },
 				url: '/in-carousel',
 		        success: function (response) {
-		            console.log(response);
 		        },
 		        error: function (jqXHR, textStatus, errorThrown) {
 		        	console.log(JSON.stringify(jqXHR));
