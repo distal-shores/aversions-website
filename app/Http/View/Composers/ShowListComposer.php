@@ -26,7 +26,7 @@ class ShowListComposer
     public function __construct()
     {
         // Dependencies automatically resolved by service container...
-        $this->events = Event::all();
+        $this->events = Event::orderBy('date', 'DESC')->get();
         $this->pastEvents = $this->events->where('date', '<', Carbon::today());
         $this->futureEvents = $this->events->where('date', '>=', Carbon::today());
     }

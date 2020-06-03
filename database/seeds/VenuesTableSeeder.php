@@ -49,6 +49,18 @@ class VenuesTableSeeder extends Seeder
 	            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
     			'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
 	        ],
+	        [
+	            'name' => 'Sewing Machine Factory',
+	            'email' => 'thesewingmachinefactory@gmail.com',
+	            'city' => 'Edmonton',
+	            'country' => 'Canada',
+	            'address' => '9562 82 Ave NW',
+	            'state' => 'Alberta',
+	            'postal_code' => 'T6C 0Z8',
+	            'website_url' => 'https://www.facebook.com/TheSewingMachineFactory/',
+	            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+    			'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+	        ],
     	);
         DB::table('venues')->insert($venues);
     }
