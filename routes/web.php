@@ -20,6 +20,7 @@ Route::resource('bands', 'BandsController');
 Route::resource('venues', 'VenuesController');
 Route::resource('publications', 'PublicationsController');
 Route::resource('clippings', 'ClippingsController');
+Route::resource('posts', 'PostsController');
 
 Auth::routes(['register' => false]);
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
