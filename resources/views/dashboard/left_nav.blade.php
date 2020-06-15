@@ -1,6 +1,10 @@
 <nav id="dashboard-nav">
 	<ul class="list-group list-group-flush">
 		<li class="list-group-item">
+			<a href="{{ route('posts.index') }}">Posts</a>
+			<a class="btn btn-small btn-success" href="{{ route('posts.create') }}">Add New</a>
+		</li>
+		<li class="list-group-item">
 			<a href="{{ route('events.index') }}">Events</a>
 			<a class="btn btn-small btn-success" href="{{ route('events.create') }}">Add New</a>
 		</li>

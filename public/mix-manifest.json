@@ -9,5 +9,9 @@
     "/js/inCarousel.js": "/js/inCarousel.js",
     "/js/newsletter.js": "/js/newsletter.js",
     "/js/quoteCarousel.js": "/js/quoteCarousel.js",
-    "/js/showList.js": "/js/showList.js"
+    "/js/showList.js": "/js/showList.js",
+    "/node_modules/tinymce/jquery.tinymce.js": "/node_modules/tinymce/jquery.tinymce.js",
+    "/node_modules/tinymce/jquery.tinymce.min.js": "/node_modules/tinymce/jquery.tinymce.min.js",
+    "/node_modules/tinymce/tinymce.js": "/node_modules/tinymce/tinymce.js",
+    "/node_modules/tinymce/tinymce.min.js": "/node_modules/tinymce/tinymce.min.js"
 }

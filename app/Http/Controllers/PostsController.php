@@ -13,7 +13,6 @@ class PostsController extends Controller
         $this->rules = array(
             'title' => 'required|unique:posts,title',
             'content' => 'required',
-            'slug' => 'required|unique:posts,slug',
             'category' => 'nullable'
         );
     }
@@ -46,7 +45,23 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, $this->rules);
+        $slug = str_slug($request->title, '-');
+        $requestParams = array(
+            'title' => $request->title,
+            'content' => $request->content,
+            'slug' => $slug,
+            'published' => $request->published,
+        );
+        $post = Post::firstOrCreate(
+            ['title' => $request->title],
+            $requestParams
+        );
+        if($post->wasRecentlyCreated) {
+            return redirect()->action('PostsController@index')->with(['status' => 'Post created!', 'message_type' => 'success']);
+        } else {
+            return redirect()->action('PostsController@index')->with(['status' => 'Post already exists!', 'message_type' => 'warning']);
+        }
     }
 
     /**
@@ -55,9 +70,10 @@ class PostsController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+    public function show($param)
     {
-        //
+        $post = Post::where('slug', $param)->firstOrFail();
+        dd($post);
     }
 
     /**

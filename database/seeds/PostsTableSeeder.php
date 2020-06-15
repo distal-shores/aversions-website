@@ -19,7 +19,8 @@ class PostsTableSeeder extends Seeder
 	            'category' => null,
 	            'slug' => 'aversions-first-post',
 	            'published' => true,
-                'user_id' => 1
+                'user_id' => 1,
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
 	        ],
         );
         DB::table('posts')->insert($posts);
