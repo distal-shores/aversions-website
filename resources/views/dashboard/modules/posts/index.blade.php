@@ -16,7 +16,7 @@
   	<tbody>
 		  @foreach ($posts as $post)
         <tr>
-          {{-- <input class="clipping-id" type="hidden" data-clipid="{{$post->id}}"> --}}
+          <input class="post-id" type="hidden" data-postid="{{$post->id}}">
   				<td>{{ date('d M Y', $post->created_at->timestamp) }}</td>
   				<td>{{ $post->title }}</td>
           <td>
@@ -32,7 +32,7 @@
             <form method="POST" action="{{ route('posts.destroy', $post->id) }}" class="inline-form" enctype="multipart/form-data">
               @csrf
               @method('DELETE')
-              <button type="submit" onclick="confirm('Are you sure you want to delete the clipping {{ $post->title }}?')" class="btn btn-sm btn-danger">Delete</button>
+              <button type="submit" onclick="confirm('Are you sure you want to delete the post {{ $post->title }}?')" class="btn btn-sm btn-danger">Delete</button>
             </form>
           </td>
     		</tr>
@@ -42,5 +42,5 @@
 @endsection
 
 @push('scripts')
-  {{-- <script src="{{ mix('js/inCarousel.js') }}"></script> --}}
+  <script src="{{ mix('js/published.js') }}"></script>
 @endpush

@@ -19,6 +19,7 @@ mix.js('resources/js/app.js', 'public/js')
 .js('resources/js/quoteCarousel.js', 'public/js/')
 .js('resources/js/newsletter.js', 'public/js/')
 .js('resources/js/inCarousel.js', 'public/js/')
+.js('resources/js/published.js', 'public/js/')
 .js('resources/js/contactForm.js', 'public/js/')
 .js('resources/js/collapsible.js', 'public/js/')
 .sourceMaps().sass('resources/sass/app.scss', 'public/css');

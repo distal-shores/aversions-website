@@ -8,6 +8,7 @@
     "/js/header.js": "/js/header.js",
     "/js/inCarousel.js": "/js/inCarousel.js",
     "/js/newsletter.js": "/js/newsletter.js",
+    "/js/published.js": "/js/published.js",
     "/js/quoteCarousel.js": "/js/quoteCarousel.js",
     "/js/showList.js": "/js/showList.js",
     "/node_modules/tinymce/jquery.tinymce.js": "/node_modules/tinymce/jquery.tinymce.js",

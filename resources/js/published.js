@@ -1,13 +1,13 @@
 $(document).ready(function() {
-	let $in_carousel = $('.in_carousel');
-	$in_carousel.each(function(index) {
+	let $published = $('.published');
+	$published.each(function(index) {
 		$(this).change(function() {
-			let in_carousel = $(this).prop('checked');
-			let clip_id = $(this).closest('td').siblings('.clipping-id').data('clipid');
+			let published = $(this).prop('checked');
+			let post_id = $(this).closest('td').siblings('.post-id').data('postid');
 			$.ajax({
 				method: 'POST',
-				data: { in_carousel: in_carousel, id: clip_id },
-				url: '/in-carousel',
+				data: { published: published, id: post_id },
+				url: '/published',
 				headers: {
         			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     			},

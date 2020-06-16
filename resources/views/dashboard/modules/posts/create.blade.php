@@ -10,7 +10,7 @@
 		</div> {{-- /form-group --}}
 		<div class="form-group">
 			<label for="pullquote">Content</label>
-			<textarea class="form-control" id="content" name="content" required></textarea>
+			<textarea class="form-control" id="content" name="content"></textarea>
 		</div> {{-- /form-group --}}
 		<div class="form-group">
 			<label for="published">Published</label>
@@ -25,8 +25,14 @@
 	<script>
 	    tinymce.init({
 	        selector:'textarea#content',
-	        width: 900,
-	        height: 300
+	        plugins: "link image",
+	        toolbar: "undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+	        image_title: true,
+	        automatic_uploads: true,
+	        images_upload_url: '/upload',
+	        images_upload_base_path: 'https://aversions-website.localhost/',
+	        file_picker_types: 'image',
+	        height: 600
 	    });
 	</script>
 @endpush

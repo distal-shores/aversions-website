@@ -31,4 +31,7 @@ Route::get('/show/{id}', 'HomeController@showShows')->name('live');
 Route::get('/post/{slug}', 'PostsController@show');
 
 Route::post('/in-carousel', 'ClippingsController@inCarousel');
+Route::post('/published', 'PostsController@published');
 Route::post('/contact', 'ContactController@receiveEntry');
+Route::post('/upload', 'UploadController');
+

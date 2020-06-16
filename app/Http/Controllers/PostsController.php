@@ -51,7 +51,7 @@ class PostsController extends Controller
             'title' => $request->title,
             'content' => $request->content,
             'slug' => $slug,
-            'published' => $request->published,
+            'published' => $request->published === null ? false : $request->published,
         );
         $post = Post::firstOrCreate(
             ['title' => $request->title],
@@ -84,7 +84,7 @@ class PostsController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        return view('dashboard.modules.posts.edit', compact('post'));
     }
 
     /**
@@ -96,7 +96,22 @@ class PostsController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        // dd($request);
+        $this->validate($request, array(
+            'title' => 'required|unique:posts,title,'.$post->id,
+            'content' => 'required',
+            'category' => 'nullable'
+        ));
+        $slug = str_slug($request->title, '-');
+        
+        $post->title = $request->title;
+        $post->content = $request->content;
+        $post->published = $request->published == null ? false : $request->published;
+        $post->slug = $slug;
+
+        $post->save();
+
+        return redirect()->action('PostsController@index')->with(['status' => 'Post #' . $post->id . ' "' . $post->title . '" updated!', 'message_type' => 'success']);
     }
 
     /**
@@ -108,5 +123,23 @@ class PostsController extends Controller
     public function destroy(Post $post)
     {
         //
+    }
+
+    /**
+     * Publishes or unpublishes a post
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return JSON
+     */
+    public function published(Request $request) {
+        $post = Post::find($request->id);
+        if($request->published == 'true') {
+            $post->published = 1;
+        } else {
+            $post->published = 0;
+        }
+        $post->save();
+
+        return response()->json();
     }
 }
