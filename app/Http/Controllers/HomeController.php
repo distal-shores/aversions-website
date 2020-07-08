@@ -16,14 +16,14 @@ class HomeController extends Controller
         return view('home.home');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function shows()
-    {
-        return view('home.shows');
-    }
+    // *
+    //  * Show the application dashboard.
+    //  *
+    //  * @return \Illuminate\Contracts\Support\Renderable
+     
+    // public function shows()
+    // {
+    //     return view('home.shows');
+    // }
 
 }

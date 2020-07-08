@@ -12,4 +12,12 @@ class Post extends Model
      * @var array
      */
     protected $guarded = [];
+
+     /**
+     * The post's author
+     */
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }

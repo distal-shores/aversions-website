@@ -9,7 +9,7 @@ class PostsController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->except(['blogIndex']);
         $this->rules = array(
             'title' => 'required|unique:posts,title',
             'content' => 'required',
@@ -26,7 +26,16 @@ class PostsController extends Controller
         $posts = Post::orderBy('created_at', 'DESC')->get();
         return view('dashboard.modules.posts.index', compact('posts'));
     }
-
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function blogIndex()
+    {
+        $posts = Post::orderBy('created_at', 'DESC')->get();
+        return view('home.blog.index', compact('posts'));
+    }
     /**
      * Show the form for creating a new resource.
      *

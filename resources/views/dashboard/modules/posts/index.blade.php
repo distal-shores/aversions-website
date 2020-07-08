@@ -8,6 +8,7 @@
     	<tr>
   			<th scope="col">Date</th>
   			<th scope="col">Title</th>
+        <th scope="col">Author</th>
   			<th scope="col">Slug</th>
         <th scope="col">Published?</th>
         <th scope="col">Edit/Delete</th>
@@ -19,6 +20,7 @@
           <input class="post-id" type="hidden" data-postid="{{$post->id}}">
   				<td>{{ date('d M Y', $post->created_at->timestamp) }}</td>
   				<td>{{ $post->title }}</td>
+          <td>{{ $post->user->name }}</td>
           <td>
             @isset($post->slug)
               <a href="/post/{{ $post->slug }}">/{{ $post->slug }}</a>
