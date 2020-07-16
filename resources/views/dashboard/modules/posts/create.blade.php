@@ -34,7 +34,7 @@
 	        image_title: true,
 	        automatic_uploads: true,
 	        images_upload_url: '/upload',
-	        images_upload_base_path: 'https://aversions-website.localhost/',
+	        images_upload_base_path: '{{ url('/') }}',
 	        file_picker_types: 'image',
 	        height: 600
 	    });
