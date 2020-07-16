@@ -15,9 +15,10 @@ class UploadController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $imgpath = $request->file->store('uploads', 'public');
+        $imgpath = $request->file->store('uploads');
+        Log::info($imgpath);
         return response()->json([
-            'location' => $imgpath
+            'location' => 'storage/'.$imgpath
         ]);
     }
 }
