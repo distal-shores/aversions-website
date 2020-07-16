@@ -6,7 +6,9 @@
 		<ul>
 			<li>{{ Auth::user()->name }}</li>
 			<span>|</span>
-			<li><a href="{{ url('/logout') }}">logout</a></li>
+			<li><a href="{{ url('/admin/profile/edit') }}">settings</a></li>
+			<span>|</span>
+			<li><a href="{{ url('/admin/logout') }}">logout</a></li>
 		</ul>
 	</div>
 </div>

@@ -11,26 +11,32 @@
 |
 */
 
+Route::get('/', 'HomeController@index')->name('home');
 Route::get('/admin', 'DashboardController@index')->name('dashboard.index');
-Route::get('/states', 'GetStatesController');
 
-// resource routes
-Route::resource('events', 'EventsController');
-Route::resource('bands', 'BandsController');
-Route::resource('venues', 'VenuesController');
-Route::resource('publications', 'PublicationsController');
-Route::resource('clippings', 'ClippingsController');
-Route::resource('posts', 'PostsController');
+// Admin routes
+Route::prefix('admin')->group(function () {
+	Route::resource('events', 'EventsController');
+	Route::resource('bands', 'BandsController');
+	Route::resource('venues', 'VenuesController');
+	Route::resource('publications', 'PublicationsController');
+	Route::resource('clippings', 'ClippingsController');
+	Route::resource('posts', 'PostsController');
+	Route::get('/profile/edit', 'UsersController@edit');
+	Route::patch('/profile/update', 'UsersController@update');
+	Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+});
 
 Auth::routes(['register' => false]);
-Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
-Route::get('/', 'HomeController@index')->name('home');
-Route::get('/post/{slug}', 'PostsController@show');
-Route::get('/blog', 'PostsController@blogIndex');
-
+// Utility routes
+Route::get('/states', 'GetStatesController');
 Route::post('/in-carousel', 'ClippingsController@inCarousel');
 Route::post('/published', 'PostsController@published');
 Route::post('/contact', 'ContactController@receiveEntry');
+
+// Blog routes
+Route::get('/post/{slug}', 'PostsController@show');
+Route::get('/blog', 'PostsController@blogIndex');
 Route::post('/upload', 'UploadController');
 

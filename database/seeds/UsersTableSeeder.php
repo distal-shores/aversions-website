@@ -13,22 +13,26 @@ class UsersTableSeeder extends Seeder
     {
     	$users = array(
 			[
-	            'name' => 'sammyc',
+	            'name' => 'samcoll',
+                'display_name' => 'Sammy C',
 	            'email' => 'samcoll@gmail.com',
 	            'password' => bcrypt('aversions2018'),
 	        ],
             [
-                'name' => 'joer',
+                'name' => 'joeross',
+                'display_name' => 'Joey Razor',
                 'email' => 'joeross@live.com',
                 'password' => bcrypt('aversions2018'),
             ],
             [
-                'name' => 'cdevlin',
+                'name' => 'chaddevlin',
+                'display_name' => 'CD',
                 'email' => 'chad.d2117@gmail.com',
                 'password' => bcrypt('aversions2018'),
             ],
             [
-                'name' => 'rmunro',
+                'name' => 'rorymunro',
+                'display_name' => 'Rory',
                 'email' => 'rory.john.munro@gmail.com',
                 'password' => bcrypt('aversions2018'),
             ],
