@@ -2,18 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use Storage;
 use App\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostsController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')->except(['blogIndex']);
+        $this->middleware('auth')->except(['blogIndex', 'show']);
         $this->rules = array(
             'title' => 'required|unique:posts,title',
             'content' => 'required',
-            'category' => 'nullable'
+            'category' => 'nullable',
+            'featured_img' => 'nullable|mimes:jpeg,png,bmp,tiff|max:4096',
         );
     }
     /**
@@ -55,12 +58,20 @@ class PostsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, $this->rules);
+        // Save the featured image in public storage
+        if($request->file('featured_img') != null) {
+            $file = $request->file('featured_img');
+            $originalFileName = $file->getClientOriginalName();
+            $file->storeAs('public/blog/featured_imgs', $originalFileName);
+        }
         $slug = str_slug($request->title, '-');
         $requestParams = array(
             'title' => $request->title,
             'content' => $request->content,
             'slug' => $slug,
-            'published' => $request->published === null ? false : $request->published,
+            'published' => $request->published === null ? false : true,
+            'featured_img' => isset($originalFileName) ? $originalFileName : null,
+            'user_id' => Auth::id(),
         );
         $post = Post::firstOrCreate(
             ['title' => $request->title],
@@ -112,6 +123,15 @@ class PostsController extends Controller
             'category' => 'nullable'
         ));
         $slug = str_slug($request->title, '-');
+
+        if($request->file('featured_img') != null) {
+            $file = $request->file('featured_img');
+            $originalFileName = $file->getClientOriginalName();
+            if(!Storage::exists('public/blog/featured_imgs'.$originalFileName)) {
+                $file->storeAs('public/blog/featured_imgs', $originalFileName);
+            }
+            $post->featured_img = $originalFileName;
+        }
         
         $post->title = $request->title;
         $post->content = $request->content;

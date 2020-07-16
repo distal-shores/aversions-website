@@ -4,6 +4,7 @@ footer {
 	position: fixed;
 	bottom: 0;
 	width: 100%;
+	z-index: 10;
 	.footer-content {
 		@include breakpoint(desktop) {
 			margin: 0 auto;
@@ -22,10 +23,16 @@ footer {
 			img {
 				object-fit: contain;
 				width: 50px;
+				@include breakpoint(mobile-only) {
+					width: 40px;
+				}
 			}
 			&.circle {
 				img {
 					width: 38px;
+					@include breakpoint(mobile-only) {
+						width: 30px;
+					}
 				}
 			}
 		}

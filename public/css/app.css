@@ -9955,6 +9955,7 @@ h3 {
 .home-container {
   background-color: #ffffe9;
   max-width: none;
+  min-height: 100vh;
   padding-bottom: calc(70px + 1.5em);
   width: 100vw;
 }
@@ -9976,7 +9977,7 @@ h3 {
   right: -5px;
   width: 50px;
 }
-@media (min-width: 715px) {
+@media (min-width: 900px) {
   .home-container section > h2:after {
     bottom: -20px;
     right: 0;
@@ -10085,7 +10086,7 @@ h3 {
   position: absolute;
   left: 1rem;
 }
-@media (min-width: 715px) {
+@media (min-width: 900px) {
   .home-container #logo-alternate {
     height: 72px;
   }
@@ -10098,17 +10099,17 @@ h3 {
 .home-container .home-content > * + * {
   margin-top: 3em;
 }
-@media (min-width: 715px) {
+@media (min-width: 900px) {
   .home-container .home-content {
     margin: 0 auto;
-    max-width: 715px;
+    max-width: 900px;
   }
 }
 .home-container .navbar {
   margin: 0;
   height: 100%;
 }
-@media (min-width: 715px) {
+@media (min-width: 900px) {
   .home-container .navbar {
     margin: 0 auto;
   }
@@ -10135,7 +10136,7 @@ h3 {
   top: 0;
   z-index: 10;
 }
-@media (min-width: 715px) {
+@media (min-width: 900px) {
   .home-container .top-nav {
     height: 100px;
   }
@@ -10146,7 +10147,7 @@ h3 {
 .home-container h2 {
   font-size: 1.7rem;
 }
-@media (min-width: 715px) {
+@media (min-width: 900px) {
   .home-container h2 {
     font-size: 2rem;
   }
@@ -10158,7 +10159,10 @@ h3 {
   color: #e589db;
   transition: color 0.2s linear;
 }
-.home-container a:hover {
+.home-container a.no-hover:hover {
+  text-decoration: none;
+}
+.home-container a:not(.no-hover):hover {
   color: #e174d4;
 }
 .home-container p {
@@ -10173,11 +10177,12 @@ h3 {
   position: fixed;
   bottom: 0;
   width: 100%;
+  z-index: 10;
 }
-@media (min-width: 715px) {
+@media (min-width: 900px) {
   .home-container footer .footer-content {
     margin: 0 auto;
-    max-width: 715px;
+    max-width: 900px;
   }
 }
 .home-container footer .social-media {
@@ -10196,10 +10201,20 @@ h3 {
      object-fit: contain;
   width: 50px;
 }
+@media screen and (min-width: 0) and (max-width: 899px) {
+  .home-container footer .social-media .social-icon img {
+    width: 40px;
+  }
+}
 .home-container footer .social-media .social-icon.circle img {
   width: 38px;
 }
-@media (min-width: 715px) {
+@media screen and (min-width: 0) and (max-width: 899px) {
+  .home-container footer .social-media .social-icon.circle img {
+    width: 30px;
+  }
+}
+@media (min-width: 900px) {
   .home-container footer .social-media {
     justify-content: space-between;
   }
@@ -10338,6 +10353,64 @@ h3 {
 .home-container #newsletter-signup_message .newsletter-signup_message_message {
   font-family: "Istok Web", sans-serif;
   margin-top: 1rem;
+}
+.home-container .blog-index_list_item {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 205px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+.home-container .blog-index_list_item_border {
+  border: 1px dashed black;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+.home-container .blog-index_list_item > a {
+  color: #ffffe9;
+  padding: 1rem;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+.home-container .blog-index_list_item > a h3 {
+  text-transform: uppercase;
+}
+.home-container .blog-index_list_item > a:hover > h3 {
+  color: #ea9ee1;
+}
+@media (min-width: 900px) {
+  .home-container .blog-index_list_item > a > * {
+    max-width: 50%;
+  }
+}
+.home-container .blog-index_list_item_overlay {
+  background-image: linear-gradient(to right, black, rgba(0, 0, 0, 0));
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+}
+@media (min-width: 900px) {
+  .home-container .blog-index_list_item_overlay {
+    -webkit-clip-path: polygon(0 0, 75% 0, 50% 100%, 0% 100%);
+            clip-path: polygon(0 0, 75% 0, 50% 100%, 0% 100%);
+  }
+}
+@media screen and (min-width: 0) and (max-width: 899px) {
+  .home-container .blog-index_list_item > * {
+    font-size: 0.9rem;
+  }
+  .home-container .blog-index_list_item > a h3 {
+    font-size: 1.2rem;
+  }
 }
 
 .inline-form {

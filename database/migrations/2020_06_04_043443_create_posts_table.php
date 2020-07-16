@@ -20,6 +20,7 @@ class CreatePostsTable extends Migration
             $table->longtext('content');
             $table->string('category')->nullable();
             $table->string('slug')->unique();
+            $table->string('featured_img')->nullable();
             $table->boolean('published')->default(false);
             $table->foreignId('user_id')->constrained();
         });

@@ -1,6 +1,7 @@
 .home-container {
 	background-color: $off-white;
 	max-width: none;
+	min-height: 100vh;
 	padding-bottom: calc(70px + 1.5em);
 	width: 100vw;
 	*::selection {
@@ -202,4 +203,5 @@
 	@import 'type';
 	@import 'footer';
 	@import 'partials/partials.scss';
+	@import 'home/blog.scss';
 }

@@ -22,8 +22,15 @@ h3 {
 a {
 	color: darken($pop-colour, 5%);
 	transition: color 0.2s linear;
-	&:hover {
-		color: darken($pop-colour, 10%);
+	&.no-hover {
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	&:not(.no-hover) {		
+		&:hover {
+			color: darken($pop-colour, 10%);
+		}
 	}
 }
 

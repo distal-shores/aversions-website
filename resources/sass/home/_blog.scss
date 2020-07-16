@@ -1,0 +1,65 @@
+.blog {
+	&-index {
+		&_list {
+			&_item {
+				background-position: center;
+				background-size: cover;
+				background-repeat: no-repeat;
+				min-height: 205px;
+				overflow: hidden;
+				position: relative;
+				z-index: 1;
+				&_border {
+					border: 1px dashed black;
+					border-radius: 5px;
+					margin-bottom: 1rem;
+					padding: 0.5rem;
+				}
+				> a {
+					color: $blog-index-list-color;
+					padding: 1rem;
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					left: 0;
+					top: 0;
+					h3 {
+						text-transform: uppercase;
+					}
+					&:hover {
+						> h3 {
+							color: $pop-colour;
+						}
+					}
+					@include breakpoint(desktop) {
+						> * {
+							max-width: 50%;
+						}
+					}
+				}
+				&_overlay {
+					background-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0));
+					position: absolute;
+					height: 100%;
+					top: 0;
+					left: 0;
+					width: 100%;
+					z-index: -1;
+					@include breakpoint(desktop) {
+						clip-path: polygon(0 0, 75% 0, 50% 100%, 0% 100%);
+					}
+				}
+				@include breakpoint(mobile-only) {
+					> * {
+						font-size: 0.9rem;
+					}
+					> a {
+						h3 {
+							font-size: 1.2rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}

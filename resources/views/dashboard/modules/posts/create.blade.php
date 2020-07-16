@@ -13,6 +13,10 @@
 			<textarea class="form-control" id="content" name="content"></textarea>
 		</div> {{-- /form-group --}}
 		<div class="form-group">
+			<label for="featured_img">Featured Image</label>
+			<input type="file" class="form-control" id="featured_img"  name="featured_img">
+		</div> {{-- /form-group --}}
+		<div class="form-group">
 			<label for="published">Published</label>
 			<input type="checkbox" class="form-control" id="published" name="published">
 		</div> {{-- /form-group --}}
