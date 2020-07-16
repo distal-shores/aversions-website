@@ -93,7 +93,8 @@ class PostsController extends Controller
     public function show($param)
     {
         $post = Post::where('slug', $param)->firstOrFail();
-        dd($post);
+
+        return view('home.blog.post', compact('post'));
     }
 
     /**
