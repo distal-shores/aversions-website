@@ -16,7 +16,7 @@ class PublicationsController extends Controller
         $this->countries = $this->countriesCollection->sortBy('name.common')->all();
         $this->rules = array(
             'name' => 'required',
-            'email' => 'requied|email',
+            'email' => 'required|email',
             'url' => 'required|url',
         );
     }
