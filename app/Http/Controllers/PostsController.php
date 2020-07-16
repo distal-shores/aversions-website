@@ -62,7 +62,7 @@ class PostsController extends Controller
         if($request->file('featured_img') != null) {
             $file = $request->file('featured_img');
             $originalFileName = $file->getClientOriginalName();
-            $file->storeAs('public/blog/featured_imgs', $originalFileName);
+            $file->storeAs('blog/featured_imgs', $originalFileName);
         }
         $slug = str_slug($request->title, '-');
         $requestParams = array(
@@ -128,8 +128,8 @@ class PostsController extends Controller
         if($request->file('featured_img') != null) {
             $file = $request->file('featured_img');
             $originalFileName = $file->getClientOriginalName();
-            if(!Storage::exists('public/blog/featured_imgs'.$originalFileName)) {
-                $file->storeAs('public/blog/featured_imgs', $originalFileName);
+            if(!Storage::exists('blog/featured_imgs'.$originalFileName)) {
+                $file->storeAs('blog/featured_imgs', $originalFileName);
             }
             $post->featured_img = $originalFileName;
         }
@@ -152,7 +152,8 @@ class PostsController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+        return redirect()->action('PostsController@index')->with(['status' => 'Post removed!', 'message_type' => 'warning']);
     }
 
     /**

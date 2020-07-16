@@ -66,7 +66,7 @@ class EventsController extends Controller
         if($request->file('event_poster') != null) {
             $file = $request->file('event_poster');
             $originalFileName = $file->getClientOriginalName();
-            $file->storeAs('public/posters', $originalFileName);
+            $file->storeAs('posters', $originalFileName);
         }
 
         $requestParams = array(
@@ -157,8 +157,8 @@ class EventsController extends Controller
         if($request->file('event_poster') != null) {
             $file = $request->file('event_poster');
             $originalFileName = $file->getClientOriginalName();
-            if(!Storage::exists('public/posters/'.$originalFileName)) {
-                $file->storeAs('public/posters', $originalFileName);
+            if(!Storage::exists('posters/'.$originalFileName)) {
+                $file->storeAs('posters', $originalFileName);
             }
             $event->event_poster = $originalFileName;
         }
