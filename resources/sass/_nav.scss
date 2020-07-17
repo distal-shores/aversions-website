@@ -24,13 +24,18 @@
 
 #dashboard-nav {
 	background-color: white;
-	height: 100vh;
 	.list-group {
 		.list-group-item {
 			display: flex;
 			align-items: center;
 			.btn {
+				color: MediumSpringGreen;
+				font-size: 1.8rem;
+				padding: 0;
 				margin-left: auto;
+				&:hover {
+					color: MediumSeaGreen;
+				}
 			}
 		}
 	}

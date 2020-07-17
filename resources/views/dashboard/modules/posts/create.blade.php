@@ -1,4 +1,4 @@
-@extends('dashboard.index-forms')
+@extends('dashboard.index')
 
 @section('right_pane')
 	<h1>Add a post</h1>
