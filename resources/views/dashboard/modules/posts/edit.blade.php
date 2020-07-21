@@ -30,12 +30,13 @@
 	<script>
 	    tinymce.init({
 	        selector:'textarea#content',
-	        plugins: "link image",
-	        toolbar: "undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+	        plugins: "pageembed link image",
+	        toolbar: "undo redo pageembed| styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+	        menubar: 'view',
 	        image_title: true,
 	        automatic_uploads: true,
 	        images_upload_url: '/upload',
-	        images_upload_base_path: 'https://aversions-website.localhost/',
+	        images_upload_base_path: '{{ url('/') }}',
 	        file_picker_types: 'image',
 	        height: 600
 	    });

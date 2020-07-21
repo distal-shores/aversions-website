@@ -16,7 +16,7 @@ blog-index
 					<a class="no-hover" href="{!! url('/post/' . $post->slug) !!}">
 						<h3>{{ $post->title }}</h3>
 						<p class="se">{{ $post->user->display_name }}</p>
-						<p class="se">{!! strip_tags(Str::limit($post->content, 130)) !!}</p>
+						<p class="se">{!! strip_tags(Str::limit($post->content, 100)) !!}</p>
 					</a>
 				</div>
 			</div>

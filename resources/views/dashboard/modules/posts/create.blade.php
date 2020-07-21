@@ -29,8 +29,8 @@
 	<script>
 	    tinymce.init({
 	        selector:'textarea#content',
-	        plugins: "link image",
-	        toolbar: "undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+	        plugins: "link image pageembed",
+	        toolbar: "undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image pageembed",
 	        image_title: true,
 	        automatic_uploads: true,
 	        images_upload_url: '/upload',
