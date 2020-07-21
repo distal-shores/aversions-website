@@ -13,7 +13,7 @@ blog-index
 			<div class="blog-index_list_item_border">
 				<div class="blog-index_list_item" style="background-image:url({{asset($backgroundImg)}});">
 					<div class="blog-index_list_item_overlay"></div>
-					<a class="no-hover" href="{!! url('/post/' . $post->slug) !!}">
+					<a class="no-hover" href="{!! url('/blog/' . $post->slug) !!}">
 						<h3>{{ $post->title }}</h3>
 						<p class="se">{{ $post->user->display_name }}</p>
 						<p class="se">{!! strip_tags(Str::limit($post->content, 100)) !!}</p>
