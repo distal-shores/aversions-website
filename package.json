@@ -25,6 +25,6 @@
     "dependencies": {
         "js-datepicker": "^5.4.0",
         "slick-carousel": "^1.8.1",
-        "tinymce": "^5.3.2"
+        "tinymce": "^5.4.0"
     }
 }
