@@ -93,8 +93,11 @@ class PostsController extends Controller
     public function show($param)
     {
         $post = Post::where('slug', $param)->firstOrFail();
-
-        return view('home.blog.post', compact('post'));
+        if($post->published || Auth::check()) {
+            return view('home.blog.post', compact('post'));
+        } else {
+            abort(404);
+        }
     }
 
     /**

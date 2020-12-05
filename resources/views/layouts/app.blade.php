@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Aversions Vancouver</title>
     <meta name="description" content="Website for Vancouver post-punk band Aversions: music, news, shows, merch and more."/>
-    <meta property="og:url" content="https://aversionsband.com" />
+    <meta property="og:url" content="{{ Request::url() }}" />
     <meta property="og:type" content="website" />
     <meta property="og:description" content="Website for Vancouver post-punk band Aversions: music, news, shows, merch and more." />
     <meta property="og:image" content="@yield('ogimg', asset('images/og_preview_band_railing.jpg'))" />

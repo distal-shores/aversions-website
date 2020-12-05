@@ -23,7 +23,7 @@
           <td>{{ $post->user->name }}</td>
           <td>
             @isset($post->slug)
-              <a href="/post/{{ $post->slug }}">/{{ $post->slug }}</a>
+              <a href="/blog/{{ $post->slug }}">/{{ $post->slug }}</a>
             @endisset
           </td>
           <td>
