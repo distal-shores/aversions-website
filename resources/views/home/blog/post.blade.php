@@ -1,5 +1,9 @@
 @extends('home.home')
 
+@section('ogimg')
+{{ asset('storage/blog/featured_imgs/' . $post->featured_img) }}
+@endsection
+
 @section('wrapper-class')
 blog-post
 @endsection

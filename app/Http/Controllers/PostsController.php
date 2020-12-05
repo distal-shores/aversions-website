@@ -36,7 +36,7 @@ class PostsController extends Controller
      */
     public function blogIndex()
     {
-        $posts = Post::orderBy('created_at', 'DESC')->get();
+        $posts = Post::orderBy('created_at', 'DESC')->where('published', 1)->get();
         return view('home.blog.index', compact('posts'));
     }
     /**

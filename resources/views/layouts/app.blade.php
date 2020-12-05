@@ -9,7 +9,7 @@
     <meta property="og:url" content="https://aversionsband.com" />
     <meta property="og:type" content="website" />
     <meta property="og:description" content="Website for Vancouver post-punk band Aversions: music, news, shows, merch and more." />
-    <meta property="og:image:secure_uri" content="{{ asset('images/og_preview_band_railing.jpg') }}" />
+    <meta property="og:image" content="@yield('ogimg', asset('images/og_preview_band_railing.jpg'))" />
     <meta property="og:title" content="Aversions Vancouver" />
     <meta name="keywords" content="post-punk, post-hardcore, band, Vancouver, independent music, live band, punk, British Columbia, Canada, post punk, post hardcore, grunge, alternative rock, alt-rock, art rock"/>
     <meta name="author" content="Sam Coll" />
