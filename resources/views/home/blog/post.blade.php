@@ -9,9 +9,16 @@ blog-post
 @endsection
 
 @section('bottom-content')
-	<h1>{{ $post->title }}</h1>
-	<div class="blog-post_byline">
-		Posted on {{ date('M j, Y', strtotime($post->created_at)) }} by {{ $post->user->display_name }}
+	@php
+		$backgroundImg = $post->featured_img == null ? 'storage/blog/featured_imgs/aversions_bground.jpg' : 'storage/blog/featured_imgs/'.$post->featured_img;
+	@endphp
+	<div class="blog-post_hero">
+		<div class="blog-post_hero_img" style="background-image:url({{asset($backgroundImg)}});"></div>
+		<div class="blog-post_hero_overlay"></div>
+		<h1>{{ $post->title }}</h1>
+		<div class="blog-post_byline">
+			Posted on {{ date('M j, Y', strtotime($post->created_at)) }} by {{ $post->user->display_name }}
+		</div>
 	</div>
 	{!! $post->content !!}
 	<div class="blog-post_return-link">

@@ -9,6 +9,9 @@
 			font-size: 2.5rem;
 		}
 	}
+	h3 {
+		margin: 1rem 0;
+	}
 	img {
 		max-width: 100%;
 		object-fit: contain;
@@ -22,11 +25,59 @@
 		}
 	}
 	&_byline {
+		color: $off-white;
 		font-family: 'Special Elite', Helvetica, sans-serif;
 		font-size: 0.8rem;
 		margin: 0 0 1rem;
+		z-index: 1;
 		@include breakpoint(desktop) {
 			font-size: 1rem;
+		}
+	}
+	&_hero {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		height: 175px;
+		margin-bottom: 2rem;
+		position: relative;
+		z-index: 1;
+		margin-top: -20px;
+		@include breakpoint(desktop) {
+			height: 250px;
+		}
+		h1 {
+			color: $off-white;
+			z-index: 1;
+			@include breakpoint(desktop) {
+				display: inline-block;
+			}
+		}
+		&_img {
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			height: 100%;
+			margin: 0 -0.5rem;
+			position: absolute;
+			top: 0;
+			width: 100vw;
+			@include breakpoint(desktop) {
+				left: calc((100vw - 100%) / 2 * -1);
+				margin: 0;
+				clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
+			}
+		}
+		&_overlay {
+			@include angled-overlay;
+			margin: 0 -0.5rem;
+			width: 100vw;
+			z-index: 1;
+			@include breakpoint(desktop) {
+				clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
+				left: calc((100vw - 100%) / 2 * -1);
+				margin: 0;
+			}
 		}
 	}
 	&_return-link {

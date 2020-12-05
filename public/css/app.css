@@ -10445,6 +10445,9 @@ h3 {
     font-size: 2.5rem;
   }
 }
+.home-container .blog-post h3 {
+  margin: 1rem 0;
+}
 .home-container .blog-post img {
   max-width: 100%;
   -o-object-fit: contain;
@@ -10461,13 +10464,83 @@ h3 {
   }
 }
 .home-container .blog-post_byline {
+  color: #ffffe9;
   font-family: "Special Elite", Helvetica, sans-serif;
   font-size: 0.8rem;
   margin: 0 0 1rem;
+  z-index: 1;
 }
 @media (min-width: 900px) {
   .home-container .blog-post_byline {
     font-size: 1rem;
+  }
+}
+.home-container .blog-post_hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 175px;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+  margin-top: -20px;
+}
+@media (min-width: 900px) {
+  .home-container .blog-post_hero {
+    height: 250px;
+  }
+}
+.home-container .blog-post_hero h1 {
+  color: #ffffe9;
+  z-index: 1;
+}
+@media (min-width: 900px) {
+  .home-container .blog-post_hero h1 {
+    display: inline-block;
+  }
+}
+.home-container .blog-post_hero_img {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  margin: 0 -0.5rem;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+}
+@media (min-width: 900px) {
+  .home-container .blog-post_hero_img {
+    left: calc((100vw - 100%) / 2 * -1);
+    margin: 0;
+    -webkit-clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
+  }
+}
+.home-container .blog-post_hero_overlay {
+  background-image: linear-gradient(to right, black, rgba(0, 0, 0, 0));
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  margin: 0 -0.5rem;
+  width: 100vw;
+  z-index: 1;
+}
+@media (min-width: 900px) {
+  .home-container .blog-post_hero_overlay {
+    -webkit-clip-path: polygon(0 0, 75% 0, 50% 100%, 0% 100%);
+            clip-path: polygon(0 0, 75% 0, 50% 100%, 0% 100%);
+  }
+}
+@media (min-width: 900px) {
+  .home-container .blog-post_hero_overlay {
+    -webkit-clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
+    left: calc((100vw - 100%) / 2 * -1);
+    margin: 0;
   }
 }
 .home-container .blog-post_return-link {

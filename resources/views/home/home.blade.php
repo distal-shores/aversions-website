@@ -6,7 +6,7 @@
             @include('home.partials.top-nav')
         </div>
         <div class="row no-gutters" style="padding-top:1rem;">
-            <div class="col px-2 py-2 home-content @yield('wrapper-class')">
+            <div class="col px-2 home-content @yield('wrapper-class')">
                 @section('bottom-content')
                     @include('home.partials.latest_release')
                     @include('home.partials.quote_carousel')
