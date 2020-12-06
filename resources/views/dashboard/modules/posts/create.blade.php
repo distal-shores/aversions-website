@@ -29,7 +29,7 @@
 	<script>
 	    tinymce.init({
 	        selector:'textarea#content',
-	        plugins: "link image pageembed",
+	        plugins: "link image pageembed lists",
 	        toolbar: "undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image pageembed",
 	        image_title: true,
 	        automatic_uploads: true,
