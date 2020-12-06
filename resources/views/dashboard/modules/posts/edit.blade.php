@@ -33,6 +33,9 @@
 	        plugins: "pageembed link image lists hr",
 	        toolbar: "undo redo pageembed| styleselect | bold italic | hr | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
 	        menubar: 'view',
+	        formats: {
+	        	italic: { inline: 'span', classes: 'italic' },
+	        },
 	        image_title: true,
 	        automatic_uploads: true,
 	        images_upload_url: '/upload',

@@ -10466,6 +10466,9 @@ h3 {
     font-size: 18px;
   }
 }
+.home-container .blog-post .italic {
+  font-style: italic;
+}
 .home-container .blog-post_byline {
   color: #ffffe9;
   font-family: "Special Elite", Helvetica, sans-serif;

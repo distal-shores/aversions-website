@@ -32,6 +32,9 @@
 	        plugins: "link image pageembed lists hr",
 	        toolbar: "undo redo | styleselect | bold italic | hr | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image pageembed",
 	        image_title: true,
+	        formats: {
+	        	italic: { inline: 'span', classes: 'italic' },
+	        },
 	        automatic_uploads: true,
 	        images_upload_url: '/upload',
 	        images_upload_base_path: '{{ url('/') }}',
