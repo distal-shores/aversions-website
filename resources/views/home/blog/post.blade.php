@@ -4,6 +4,10 @@
 {{ asset('storage/blog/featured_imgs/' . $post->featured_img) }}
 @endsection
 
+@section('ogtitle')
+{{ $post->title }}
+@endsection
+
 @section('wrapper-class')
 blog-post
 @endsection
