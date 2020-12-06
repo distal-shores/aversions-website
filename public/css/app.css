@@ -10437,6 +10437,9 @@ h3 {
   margin: 0;
   padding: 0;
 }
+.home-container .blog-post > hr {
+  margin: 2rem 0;
+}
 .home-container .blog-post h1 {
   font-size: 2rem;
 }
@@ -10549,6 +10552,7 @@ h3 {
   font-family: "Black Ops One";
   font-size: 1.25rem;
   position: relative;
+  margin-top: 1.5rem;
 }
 .home-container .blog-post_return-link:before {
   content: "";

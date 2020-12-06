@@ -3,6 +3,9 @@
 		margin: 0;
 		padding: 0;
 	}
+	> hr {
+		margin: 2rem 0;
+	}
 	h1 {
 		font-size: 2rem;
 		@include breakpoint(desktop) {
@@ -86,6 +89,7 @@
 		font-family: 'Black Ops One';
 		font-size: 1.25rem;
 		position: relative;
+		margin-top: 1.5rem;
 		&:before {
 			content: '';
 			display: inline-block;
