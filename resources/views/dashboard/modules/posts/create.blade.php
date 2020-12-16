@@ -34,6 +34,7 @@
 			image_title: true,
 			relative_urls: false,
 			convert_urls : true,
+			content_css: '/css/tinymce.css',
 			formats: {
 				italic: { inline: 'span', classes: 'italic' },
 			},
