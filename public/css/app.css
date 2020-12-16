@@ -10466,6 +10466,12 @@ h3 {
     font-size: 18px;
   }
 }
+.home-container .blog-post .album-cover {
+  height: auto;
+  width: 250px;
+  float: left;
+  margin: 0 25px 25px 0;
+}
 .home-container .blog-post .italic {
   font-style: italic;
 }
@@ -10551,6 +10557,7 @@ h3 {
 }
 .home-container .blog-post_return-link {
   align-items: center;
+  clear: both;
   display: flex;
   font-family: "Black Ops One";
   font-size: 1.25rem;
@@ -10583,6 +10590,11 @@ h3 {
   position: absolute;
   top: 0;
   left: 0;
+}
+.home-container #tinymce .album-cover {
+  float: left;
+  max-height: 250px;
+  max-width: 250px;
 }
 
 .inline-form {

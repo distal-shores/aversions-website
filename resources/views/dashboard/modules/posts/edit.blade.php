@@ -22,26 +22,34 @@
 			<input type="checkbox" class="form-control" id="published" name="published" value="1" {{ $post->published ? 'checked' : '' }}>
 		</div> {{-- /form-group --}}
 		<button type="submit" class="btn btn-primary">Submit</button>
+		Url base path is {{ url('/') }}
 	</form>
 @endsection
 
 @push('scripts')
 	<script src="{{ asset('node_modules/tinymce/tinymce.js') }}"></script>
 	<script>
-	    tinymce.init({
-	        selector:'textarea#content',
-	        plugins: "pageembed link image lists hr",
-	        toolbar: "undo redo pageembed| styleselect | bold italic | hr | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
-	        menubar: 'view',
-	        formats: {
-	        	italic: { inline: 'span', classes: 'italic' },
-	        },
-	        image_title: true,
-	        automatic_uploads: true,
-	        images_upload_url: '/upload',
-	        images_upload_base_path: '{{ url('/') }}',
-	        file_picker_types: 'image',
-	        height: 600
-	    });
+		tinymce.init({
+			selector:'textarea#content',
+			plugins: "link image lists hr",
+			toolbar: "undo redo pageembed| styleselect | bold italic | hr | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+			menubar: 'view',
+			content_css: '/css/tinymce.css',
+			relative_urls: false,
+			convert_urls : true,
+			formats: {
+				italic: { inline: 'span', classes: 'italic' },
+			},
+			image_title: true,
+			image_class_list: [
+				{title: 'None', value: ''},
+				{title: 'Album Cover', value: 'album-cover'},
+			],
+			automatic_uploads: true,
+			images_upload_url: '/upload',
+			images_upload_base_path: '{{ url('/') }}',
+			file_picker_types: 'image',
+			height: 600
+		});
 	</script>
 @endpush

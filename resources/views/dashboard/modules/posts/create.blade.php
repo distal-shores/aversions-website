@@ -27,19 +27,25 @@
 @push('scripts')
 	<script src="{{ asset('node_modules/tinymce/tinymce.js') }}"></script>
 	<script>
-	    tinymce.init({
-	        selector:'textarea#content',
-	        plugins: "link image pageembed lists hr",
-	        toolbar: "undo redo | styleselect | bold italic | hr | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image pageembed",
-	        image_title: true,
-	        formats: {
-	        	italic: { inline: 'span', classes: 'italic' },
-	        },
-	        automatic_uploads: true,
-	        images_upload_url: '/upload',
-	        images_upload_base_path: '{{ url('/') }}',
-	        file_picker_types: 'image',
-	        height: 600
-	    });
+		tinymce.init({
+			selector:'textarea#content',
+			plugins: "link image lists hr",
+			toolbar: "undo redo | styleselect | bold italic | hr | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image pageembed",
+			image_title: true,
+			relative_urls: false,
+			convert_urls : true,
+			formats: {
+				italic: { inline: 'span', classes: 'italic' },
+			},
+			automatic_uploads: true,
+			image_class_list: [
+				{title: 'None', value: ''},
+				{title: 'Album Cover', value: 'album-cover'},
+			],
+			images_upload_url: '/upload',
+			images_upload_base_path: '{{ url('/') }}',
+			file_picker_types: 'image',
+			height: 600
+		});
 	</script>
 @endpush

@@ -27,6 +27,12 @@
 			font-size: 18px;
 		}
 	}
+	.album-cover {
+		height: auto;
+		width: 250px;
+		float: left;
+		margin: 0 25px 25px 0;
+	}
 	.italic {
 		font-style: italic;
 	}
@@ -88,6 +94,7 @@
 	}
 	&_return-link {
 		align-items: center;
+		clear: both;
 		display: flex;
 		font-family: 'Black Ops One';
 		font-size: 1.25rem;
@@ -120,5 +127,13 @@
 			top: 0;
 			left: 0;
 		}
+	}
+}
+
+#tinymce {
+	.album-cover {
+		float: left;
+		max-height: 250px;
+		max-width: 250px;
 	}
 }
