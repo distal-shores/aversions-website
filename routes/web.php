@@ -23,6 +23,8 @@ Route::prefix('admin')->group(function () {
 	Route::resource('clippings', 'ClippingsController');
 	Route::resource('posts', 'PostsController');
 	Route::get('/profile/edit', 'UsersController@edit');
+	Route::get('/splash-enable', 'SplashController@edit')->name('splash.edit');
+	Route::post('/splash-enable', 'SplashController@update')->name('splash.update');
 	Route::patch('/profile/update', 'UsersController@update');
 	Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 });

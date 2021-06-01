@@ -24,5 +24,8 @@
 			<a href="{{ route('clippings.index') }}">Clippings</a>
 			<a class="btn" href="{{ route('clippings.create') }}"><i class="fas fa-plus-square"></i></a>
 		</li>
+		<li class="list-group-item">
+			<a href="{{ route('splash.edit') }}">Splash On/Off</a>
+		</li>
 	</ul>
 </nav>
