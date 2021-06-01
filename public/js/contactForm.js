@@ -104,7 +104,7 @@ eval("$(document).ready(function () {\n  $('#contact').on(\"submit\", function (
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/samcoll/Sites/aversions-website/resources/js/contactForm.js */"./resources/js/contactForm.js");
+module.exports = __webpack_require__(/*! /Users/samcoll/Code/aversions/resources/js/contactForm.js */"./resources/js/contactForm.js");
 
 
 /***/ })

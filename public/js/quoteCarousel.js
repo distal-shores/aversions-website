@@ -104,7 +104,7 @@ eval("$(document).ready(function () {\n  $.fn.shuffle = function () {\n    var a
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/samcoll/Sites/aversions-website/resources/js/quoteCarousel.js */"./resources/js/quoteCarousel.js");
+module.exports = __webpack_require__(/*! /Users/samcoll/Code/aversions/resources/js/quoteCarousel.js */"./resources/js/quoteCarousel.js");
 
 
 /***/ })

@@ -104,7 +104,7 @@ eval("$(document).ready(function () {\n  var $in_carousel = $('.in_carousel');\n
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/samcoll/Sites/aversions-website/resources/js/inCarousel.js */"./resources/js/inCarousel.js");
+module.exports = __webpack_require__(/*! /Users/samcoll/Code/aversions/resources/js/inCarousel.js */"./resources/js/inCarousel.js");
 
 
 /***/ })

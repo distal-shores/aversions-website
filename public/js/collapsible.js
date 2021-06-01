@@ -104,7 +104,7 @@ eval("$(document).ready(function () {\n  $('.collapsible h2').click(function () 
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/samcoll/Sites/aversions-website/resources/js/collapsible.js */"./resources/js/collapsible.js");
+module.exports = __webpack_require__(/*! /Users/samcoll/Code/aversions/resources/js/collapsible.js */"./resources/js/collapsible.js");
 
 
 /***/ })
