@@ -25,7 +25,11 @@
 			<a class="btn" href="{{ route('clippings.create') }}"><i class="fas fa-plus-square"></i></a>
 		</li>
 		<li class="list-group-item">
-			<a href="{{ route('splash.edit') }}">Splash On/Off</a>
+			<a href="{{ route('songs.index') }}">Songs</a>
+			<a class="btn" href="{{ route('songs.create') }}"><i class="fas fa-plus-square"></i></a>
+		</li>
+		<li class="list-group-item">
+			<a href="{{ route('settings.edit') }}">Global Settings</a>
 		</li>
 	</ul>
 </nav>

@@ -7,7 +7,7 @@
 			<div class="col-sm-4 col-md-3 col-lg-2 dashboard-nav">
 				@include('dashboard.left_nav')
 			</div>
-			<div class="col-sm-4 col-md-5 col-lg-8 dashboard-content">
+			<div class="col-sm-4 col-md-5 col-lg-6 dashboard-content">
 				@yield('right_pane')
 			</div>
 			<div class="col-sm-4 dashboard-content">

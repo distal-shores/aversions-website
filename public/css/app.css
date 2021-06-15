@@ -10120,54 +10120,6 @@ h3 {
 .home-container .se {
   font-family: "Special Elite", cursive;
 }
-.home-container footer {
-  background-color: black;
-  padding: 10px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  z-index: 10;
-}
-@media (min-width: 900px) {
-  .home-container footer .footer-content {
-    margin: 0 auto;
-    max-width: 900px;
-  }
-}
-.home-container footer .social-media {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-}
-.home-container footer .social-media .social-icon {
-  align-items: center;
-  display: inline-flex;
-  justify-content: center;
-  margin-top: 0;
-}
-.home-container footer .social-media .social-icon img {
-  -o-object-fit: contain;
-     object-fit: contain;
-  width: 50px;
-}
-@media screen and (min-width: 0) and (max-width: 899px) {
-  .home-container footer .social-media .social-icon img {
-    width: 40px;
-  }
-}
-.home-container footer .social-media .social-icon.circle img {
-  width: 38px;
-}
-@media screen and (min-width: 0) and (max-width: 899px) {
-  .home-container footer .social-media .social-icon.circle img {
-    width: 30px;
-  }
-}
-@media (min-width: 900px) {
-  .home-container footer .social-media {
-    justify-content: space-between;
-  }
-}
 .home-container .show-list {
   position: relative;
   width: 100%;
@@ -10595,6 +10547,117 @@ h3 {
   float: left;
   max-height: 250px;
   max-width: 250px;
+}
+
+footer {
+  background-color: black;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+}
+@media (min-width: 900px) {
+  footer .footer-content {
+    margin: 0 auto;
+    max-width: 900px;
+  }
+}
+footer .social-media {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+footer .social-media .social-icon {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  margin-top: 0;
+}
+footer .social-media .social-icon img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 50px;
+}
+@media screen and (min-width: 0) and (max-width: 899px) {
+  footer .social-media .social-icon img {
+    width: 40px;
+  }
+}
+footer .social-media .social-icon.circle img {
+  width: 38px;
+}
+@media screen and (min-width: 0) and (max-width: 899px) {
+  footer .social-media .social-icon.circle img {
+    width: 30px;
+  }
+}
+@media (min-width: 900px) {
+  footer .social-media {
+    justify-content: space-between;
+  }
+}
+
+@font-face {
+  font-family: "Varta";
+  src: url("/fonts/Varta-Light.ttf") format("truetype");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Varta";
+  src: url("/fonts/Varta-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Varta";
+  src: url("/fonts/Varta-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Varta";
+  src: url("/fonts/Varta-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+}
+.epk-container * {
+  font-family: "Varta", sans-serif;
+}
+.epk-container .epk-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: calc(100vh - 70px);
+}
+.epk-container .epk-content,
+.epk-container .epk-header {
+  padding: 1rem;
+}
+.epk-container .epk-content .row {
+  margin: 0 0 1rem 0;
+}
+.epk-container .epk-content .left-content h3 {
+  font-family: "Varta", sans-serif;
+  font-weight: 700;
+}
+.epk-container .epk-content .left-content .song-copy p {
+  font-size: 18px;
+}
+.epk-container .epk-content .right-content > img {
+  width: 100%;
+}
+.epk-container .epk-header {
+  height: 120px;
+}
+.epk-container .epk-header img {
+  height: 100%;
+}
+.epk-container .song-name h1 {
+  font-family: "Varta", sans-serif;
+  font-weight: 700;
+  margin-bottom: 0;
+  line-height: 1;
+}
+.epk-container .song-name span {
+  display: block;
+  text-indent: 2px;
 }
 
 .inline-form {

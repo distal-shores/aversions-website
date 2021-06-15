@@ -22,9 +22,10 @@ Route::prefix('admin')->group(function () {
 	Route::resource('publications', 'PublicationsController');
 	Route::resource('clippings', 'ClippingsController');
 	Route::resource('posts', 'PostsController');
+	Route::resource('songs', 'SongsController');
 	Route::get('/profile/edit', 'UsersController@edit');
-	Route::get('/splash-enable', 'SplashController@edit')->name('splash.edit');
-	Route::post('/splash-enable', 'SplashController@update')->name('splash.update');
+	Route::get('/site-settings', 'SettingsController@edit')->name('settings.edit');
+	Route::post('/site-settings', 'SettingsController@update')->name('settings.update');
 	Route::patch('/profile/update', 'UsersController@update');
 	Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 });
@@ -41,4 +42,7 @@ Route::post('/contact', 'ContactController@receiveEntry');
 Route::get('/blog/{slug}', 'PostsController@show');
 Route::get('/blog', 'PostsController@blogIndex');
 Route::post('/upload', 'UploadController');
+
+// EPK routes
+Route::get('/track/{slug}/epk', 'SongsController@showEPK');
 

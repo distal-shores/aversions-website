@@ -1,0 +1,77 @@
+@font-face {
+    font-family: "Varta";
+    src: url("/fonts/Varta-Light.ttf") format("truetype");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Varta";
+    src: url("/fonts/Varta-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Varta";
+    src: url("/fonts/Varta-Bold.ttf") format("truetype");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Varta";
+    src: url("/fonts/Varta-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+}
+
+.epk-container {
+    * {
+        font-family: "Varta", sans-serif;
+    }
+    .epk-wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+        min-height: calc(100vh - 70px);
+    }
+    .epk-content,
+    .epk-header {
+        padding: 1rem;
+    }
+    .epk-content {
+        .row {
+            margin: 0 0 1rem 0;
+        }
+        .left-content {
+            h3 {
+                font-family: 'Varta', sans-serif;
+                font-weight: 700;
+            }
+            .song-copy {
+                p {
+                    font-size: 18px;
+                }
+            }
+        }
+        .right-content {
+            > img {
+                width: 100%;
+            }
+        }
+    }
+    .epk-header {
+        height: 120px;
+        img {
+            height: 100%;
+        }
+    }
+    .song-name {
+        h1 {
+            font-family: 'Varta', sans-serif;
+            font-weight: 700;
+            margin-bottom: 0;
+            line-height: 1;
+        }
+        span {
+            display: block;
+            text-indent: 2px;
+        }
+    }
+}

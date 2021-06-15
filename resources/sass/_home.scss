@@ -154,8 +154,8 @@
 		}
 	}
 	@import 'type';
-	@import 'footer';
 	@import 'partials/partials.scss';
 	@import 'home/blog.scss';
 	@import 'home/blog_post.scss';
 }
+@import 'footer';
