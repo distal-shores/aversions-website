@@ -70,6 +70,7 @@ class SongsController extends Controller
             'cover_art' => isset($originalFileName) ? $originalFileName : null,
             'bandcamp_slug' => $request->bandcamp_slug,
             'soundcloud_slug' => $request->soundcloud_slug,
+            'soundcloud_param' => $request->soundcloud_param,
             'description' => $request->description,
             'is_single' => $request->is_single,
             'epk_published' => false,
@@ -138,6 +139,7 @@ class SongsController extends Controller
         $song->release_date = $request->release_date;
         $song->bandcamp_slug = $request->bandcamp_slug;
         $song->soundcloud_slug = $request->soundcloud_slug;
+        $song->soundcloud_param = $request->soundcloud_param;
         $song->description = $request->description;
         $song->is_single = $request->boolean('is_single');
         $song->epk_published = $request->boolean('epk_published');
