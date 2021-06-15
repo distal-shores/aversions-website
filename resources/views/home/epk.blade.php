@@ -43,5 +43,5 @@
 @endsection
 
 @push('robots')
-<meta name="robots" content="follow"/>
+    <meta name="robots" content="nofollow"/>
 @endpush
