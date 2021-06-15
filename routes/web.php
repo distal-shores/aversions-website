@@ -38,10 +38,10 @@ Route::post('/in-carousel', 'ClippingsController@inCarousel');
 Route::post('/published', 'PostsController@published');
 Route::post('/contact', 'ContactController@receiveEntry');
 
-// Blog routes
-Route::get('/blog/{slug}', 'PostsController@show');
-Route::get('/blog', 'PostsController@blogIndex');
-Route::post('/upload', 'UploadController');
+// // Blog routes
+// Route::get('/blog/{slug}', 'PostsController@show');
+// Route::get('/blog', 'PostsController@blogIndex');
+// Route::post('/upload', 'UploadController');
 
 // EPK routes
 Route::get('/track/{slug}/epk', 'SongsController@showEPK');
