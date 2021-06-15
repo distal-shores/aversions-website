@@ -19,7 +19,7 @@
 @endsection
 
 @push('robots')
-    <meta name="robots" content="nofollow"/>
+	<meta name="robots" content="noindex, nofollow"/>
 @endpush
 
 @push('scripts')
