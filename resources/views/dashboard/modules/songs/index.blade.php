@@ -10,6 +10,7 @@
   			<th scope="col">Album</th>
   			<th scope="col">Bandcamp Link</th>
             <th scope="col">Soundcloud Link</th>
+            <th scope="col">EPK</th>
             <th scope="col">Single?</th>
             <th scope="col">Edit/Delete</th>
     	</tr>
@@ -29,6 +30,11 @@
                     @isset($song->soundcloud_slug)
                         <a href="{{ env('SOUNDCLOUD_BASE_URL') . $song->soundcloud_slug }}">Click here</a>
                     @endisset
+                </td>
+                <td>
+                    @if($song->epk_published)
+                        <a href="/track/{{ $song->slug }}/epk">Click here</a>
+                    @endif
                 </td>
                 <td>
                     {{ $song->is_single ? 'X' : '' }}
