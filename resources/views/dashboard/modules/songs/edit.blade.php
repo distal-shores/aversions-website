@@ -32,6 +32,14 @@
 					<input type="text" class="form-control" id="bandcamp_slug" name="bandcamp_slug" value="{{ $song->bandcamp_slug }}">
 				</div> {{-- /col --}}
 				<div class="col">
+					<label for="youtube_slug">Youtube Slug</label>
+					<input type="text" class="form-control" id="youtube_slug" name="youtube_slug" value="{{ $song->youtube_slug }}">
+				</div> {{-- /col --}}
+			</div>	{{-- /row --}}
+		</div> {{-- /form-group --}}
+		<div class="form-group">
+			<div class="form-row">
+				<div class="col">
 					<label for="soundcloud_slug">Soundcloud Slug</label>
                     <input type="text" class="form-control" id="soundcloud_slug" name="soundcloud_slug" value="{{ $song->soundcloud_slug }}">
 				</div> {{-- /col --}}

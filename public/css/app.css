@@ -10629,24 +10629,41 @@ footer .social-media .social-icon.circle img {
 .epk-container .epk-header {
   padding: 1rem;
 }
-.epk-container .epk-content .row {
-  margin: 0 0 1rem 0;
-}
-.epk-container .epk-content .left-content h3 {
+.epk-container .epk-content h3 {
   font-family: "Varta", sans-serif;
   font-weight: 700;
 }
-.epk-container .epk-content .left-content .song-copy p {
+.epk-container .epk-content img {
+  width: 100%;
+}
+.epk-container .epk-content p {
   font-size: 18px;
 }
-.epk-container .epk-content .right-content > img {
-  width: 100%;
+@media screen and (min-width: 0) and (max-width: 899px) {
+  .epk-container .epk-content .band-photo {
+    max-height: 300px;
+  }
+  .epk-container .epk-content .band-photo img {
+    -o-object-position: 50% 8%;
+       object-position: 50% 8%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+.epk-container .epk-content .row {
+  margin: 0 0 1rem 0;
 }
 .epk-container .epk-header {
   height: 120px;
 }
 .epk-container .epk-header img {
   height: 100%;
+}
+@media screen and (min-width: 0) and (max-width: 899px) {
+  .epk-container .epk-header img {
+    width: 100%;
+  }
 }
 .epk-container .song-name h1 {
   font-family: "Varta", sans-serif;
@@ -10657,6 +10674,19 @@ footer .social-media .social-icon.circle img {
 .epk-container .song-name span {
   display: block;
   text-indent: 2px;
+}
+.epk-container .video {
+  height: 0;
+  padding-bottom: 56.25%;
+  padding-top: 25px;
+  position: relative;
+}
+.epk-container .video iframe {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 .inline-form {

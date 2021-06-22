@@ -69,6 +69,7 @@ class SongsController extends Controller
             'release_date' => $request->release_date,
             'cover_art' => isset($originalFileName) ? $originalFileName : null,
             'bandcamp_slug' => $request->bandcamp_slug,
+            'youtube_slug' => $request->youtube_slug,
             'soundcloud_slug' => $request->soundcloud_slug,
             'soundcloud_param' => $request->soundcloud_param,
             'description' => $request->description,
@@ -138,6 +139,7 @@ class SongsController extends Controller
         }
         $song->release_date = $request->release_date;
         $song->bandcamp_slug = $request->bandcamp_slug;
+        $song->youtube_slug = $request->youtube_slug;
         $song->soundcloud_slug = $request->soundcloud_slug;
         $song->soundcloud_param = $request->soundcloud_param;
         $song->description = $request->description;

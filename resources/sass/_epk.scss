@@ -36,30 +36,37 @@
         padding: 1rem;
     }
     .epk-content {
-        .row {
-            margin: 0 0 1rem 0;
+        h3 {
+            font-family: 'Varta', sans-serif;
+            font-weight: 700;
         }
-        .left-content {
-            h3 {
-                font-family: 'Varta', sans-serif;
-                font-weight: 700;
-            }
-            .song-copy {
-                p {
-                    font-size: 18px;
+        img {
+            width: 100%;
+        }
+        p {
+            font-size: 18px;
+        }
+        .band-photo {
+            @include breakpoint(mobile-only) {
+                max-height: 300px;
+                img {
+                    object-position: 50% 8%;
+                    height: 100%;
+                    object-fit: cover;
                 }
             }
         }
-        .right-content {
-            > img {
-                width: 100%;
-            }
+        .row {
+            margin: 0 0 1rem 0;
         }
     }
     .epk-header {
         height: 120px;
         img {
             height: 100%;
+            @include breakpoint(mobile-only) {
+                width: 100%;
+            }
         }
     }
     .song-name {
@@ -72,6 +79,19 @@
         span {
             display: block;
             text-indent: 2px;
+        }
+    }
+    .video {
+        height: 0;
+        padding-bottom: 56.25%;
+        padding-top: 25px;
+        position: relative;
+        iframe {
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
         }
     }
 }

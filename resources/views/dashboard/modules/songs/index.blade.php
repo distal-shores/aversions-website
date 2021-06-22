@@ -10,6 +10,7 @@
   			<th scope="col">Album</th>
   			<th scope="col">Bandcamp Link</th>
             <th scope="col">Soundcloud Link</th>
+            <th scope="col">Youtube Link</th>
             <th scope="col">EPK</th>
             <th scope="col">Single?</th>
             <th scope="col">Edit/Delete</th>
@@ -29,6 +30,11 @@
                 <td>
                     @isset($song->soundcloud_slug)
                         <a href="{{ env('SOUNDCLOUD_BASE_URL') . $song->soundcloud_slug }}">Click here</a>
+                    @endisset
+                </td>
+                <td>
+                    @isset($song->youtube_slug)
+                        <a href="{{ env('YOUTUBE_BASE_URL') . $song->youtube_slug }}">Click here</a>
                     @endisset
                 </td>
                 <td>
