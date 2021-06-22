@@ -32,11 +32,13 @@
                         <img src="{{ asset('storage/song_covers/' . $song->cover_art) }}">
                     </div>
                 </div>
-                <div class="row no-gutters" style="margin-bottom: 2rem;">
-                    <div class="col-sm-12 video">
-                        <iframe width="560" height="349" src="https://www.youtube.com/embed/{{ $song->youtube_slug }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                @if(isset($song->youtube_slug))
+                    <div class="row no-gutters" style="margin-bottom: 2rem;">
+                        <div class="col-sm-12 video">
+                            <iframe width="560" height="349" src="https://www.youtube.com/embed/{{ $song->youtube_slug }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
                     </div>
-                </div>
+                @endif
                 <div class="row no-gutters">
                     <div class="col-sm-12 col-md-4 mb-4 mb-md-0 left-content band-photo">
                         <img src="{{ asset('images/band_photo.jpg') }}">
