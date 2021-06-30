@@ -61,6 +61,20 @@ class SongsController extends Controller
             $file->storeAs('song_covers', $originalFileName);
         }
 
+        // Save the wav in public storage
+        if($request->file('wav') != null) {
+            $wavFile = $request->file('wav');
+            $originalWavFileName = preg_replace('/\s+/', '-', $wavFile->getClientOriginalName());
+            $wavFile->storeAs('wavs', $originalWavFileName);
+        }
+
+        // Save the wav in public storage
+        if($request->file('mp3') != null) {
+            $mp3File = $request->file('mp3');
+            $originalMp3FileName = preg_replace('/\s+/', '-', $mp3File->getClientOriginalName());
+            $mp3File->storeAs('mp3s', $originalMp3FileName);
+        }
+
         $name = $request->name;
 
         $requestParams = array(
@@ -68,6 +82,8 @@ class SongsController extends Controller
             'slug' => $this->createSlug($name),
             'release_date' => $request->release_date,
             'cover_art' => isset($originalFileName) ? $originalFileName : null,
+            'wav' => isset($originalWavFileName) ? $originalWavFileName : null,
+            'mp3' => isset($originalMp3FileName) ? $originalMp3FileName : null,
             'bandcamp_slug' => $request->bandcamp_slug,
             'youtube_slug' => $request->youtube_slug,
             'soundcloud_slug' => $request->soundcloud_slug,
@@ -129,6 +145,25 @@ class SongsController extends Controller
                 $file->storeAs('song_covers', $originalFileName);
             }
             $song->cover_art = $originalFileName;
+        }
+
+        if($request->file('wav') != null) {
+            $wavFile = $request->file('wav');
+            $originalWavFileName = preg_replace('/\s+/', '-', $wavFile->getClientOriginalName());
+            if(!Storage::exists('wavs/'.$originalWavFileName)) {
+                $wavFile->storeAs('wavs', $originalWavFileName);
+            }
+            $song->wav = $originalWavFileName;
+        }
+
+        if($request->file('mp3') != null) {
+            $mp3File = $request->file('mp3');
+            $originalMp3FileName = preg_replace('/\s+/', '-', $mp3File->getClientOriginalName());
+
+            if(!Storage::exists('mp3s/'.$originalMp3FileName)) {
+                $mp3File->storeAs('mp3s', $originalMp3FileName);
+            }
+            $song->mp3 = $originalMp3FileName;
         }
         
         if($song->name != $request->name) {

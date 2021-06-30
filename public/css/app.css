@@ -10662,6 +10662,10 @@ footer .social-media .social-icon.circle img {
 .epk-container .epk-content .row {
   margin: 0 0 1rem 0;
 }
+.epk-container .epk-content .download-button {
+  padding: 1rem;
+  background-color: #0043FF;
+}
 .epk-container .epk-header {
   height: 120px;
 }

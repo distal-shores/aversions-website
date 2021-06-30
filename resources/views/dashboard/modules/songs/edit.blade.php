@@ -49,6 +49,18 @@
 				</div> {{-- /col --}}
 			</div>	{{-- /row --}}
 		</div> {{-- /form-group --}}
+		<div class="form-group">
+			<div class="form-row">
+				<div class="col">
+					<label for="mp3">Mp3 Upload</label>
+                    <input type="file" id="mp3" name="mp3">
+				</div> {{-- /col --}}
+				<div class="col">
+					<label for="wav">WAV Upload</label>
+					<input type="file" id="wav" name="wav">
+				</div> {{-- /col --}}
+			</div>	{{-- /row --}}
+		</div> {{-- /form-group --}}
         <div class="form-group">
 			<label for="description">Description</label>
 			<textarea rows="8" class="form-control" id="description" name="description" required>{{ $song->description }}</textarea>
