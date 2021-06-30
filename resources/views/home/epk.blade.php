@@ -32,14 +32,18 @@
                         <img src="{{ asset('storage/song_covers/' . $song->cover_art) }}">
                     </div>
                 </div>
-                @if(isset($song->mp3) || isset($song->wav)) 
+                @if(isset($song->mp3) || isset($song->wav))
                     <div class="row justify-content-end" style="margin-bottom: 2rem;">
-                        <div class="col-6 col-lg-auto mp3 text-center">
-                            <a class="download-button" style="color:#{{ settings('epk_bg_colour') }};" href={{ asset('mp3s/'.$song->mp3) }} download>Download MP3</a>
-                        </div>
-                        <div class="col-6 col-lg-auto wav text-center">
-                            <a class="download-button" style="color:#{{ settings('epk_bg_colour') }};" href={{ asset('wavs/'.$song->wav) }}>Download WAV</a>
-                        </div>
+                        @if(isset($song->mp3))
+                            <div class="col-6 col-lg-auto mp3 text-center">
+                                <a class="download-button" style="color:#{{ settings('epk_bg_colour') }};" href={{ asset('/storage/mp3s/'.$song->mp3) }} download>Download MP3</a>
+                            </div>
+                        @endif
+                        @if(isset($song->wav))
+                            <div class="col-6 col-lg-auto wav text-center">
+                                <a class="download-button" style="color:#{{ settings('epk_bg_colour') }};" href={{ asset('/storage/wavs/'.$song->wav) }}>Download WAV</a>
+                            </div>
+                        @endif
                     </div>
                 @endif
                 @if(isset($song->youtube_slug))
