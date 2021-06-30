@@ -1,6 +1,6 @@
 $margin-bottom: 0.5rem;
 $mobile-maxwidth: 499px;
-$breakpoint-desktop: 900px;
+$breakpoint-desktop: 1150px;
 
 @mixin breakpoint($breakpoint) {
     @if $breakpoint == mobile-only {
