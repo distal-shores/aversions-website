@@ -11,6 +11,7 @@
     "/js/published.js": "/js/published.js",
     "/js/quoteCarousel.js": "/js/quoteCarousel.js",
     "/js/showList.js": "/js/showList.js",
+    "/js/splash.js": "/js/splash.js",
     "/node_modules/tinymce/jquery.tinymce.js": "/node_modules/tinymce/jquery.tinymce.js",
     "/node_modules/tinymce/jquery.tinymce.min.js": "/node_modules/tinymce/jquery.tinymce.min.js",
     "/node_modules/tinymce/tinymce.js": "/node_modules/tinymce/tinymce.js",

@@ -22,6 +22,7 @@ mix.js('resources/js/app.js', 'public/js')
 .js('resources/js/published.js', 'public/js/')
 .js('resources/js/contactForm.js', 'public/js/')
 .js('resources/js/collapsible.js', 'public/js/')
+.js('resources/js/splash.js', 'public/js/')
 .sourceMaps().sass('resources/sass/app.scss', 'public/css');
 
 mix.copyDirectory('node_modules/tinymce/plugins', 'public/node_modules/tinymce/plugins');

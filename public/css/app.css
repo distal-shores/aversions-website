@@ -10709,8 +10709,8 @@ footer .social-media .social-icon.circle img {
 }
 #face::before {
   background-size: calc(100vw + 20%);
-  background-repeat: no-repeat;
   background-position: center;
+  background-repeat: no-repeat;
   content: "";
   position: absolute;
   top: 0;
@@ -10718,6 +10718,12 @@ footer .social-media .social-icon.circle img {
   width: 100%;
   height: 100%;
   background-image: url("/images/face.png");
+}
+@media (max-width: 1150px) {
+  #face::before {
+    background-size: calc(100vh + 30%);
+    background-position: 50% 60%;
+  }
 }
 #face.invert::before {
   -webkit-filter: invert(100%);
@@ -10753,6 +10759,11 @@ footer .social-media .social-icon.circle img {
   text-transform: uppercase;
   font-size: 56px;
 }
+@media (max-width: 1150px) {
+  #title h1 {
+    font-size: 42px;
+  }
+}
 
 #square-grid {
   background-color: #ffe9e9;
@@ -10771,12 +10782,34 @@ footer .social-media .social-icon.circle img {
 #square-grid .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
   grid-row-gap: 10px;
   width: 50%;
+}
+@media screen and (min-width: 0) and (max-width: 499px) {
+  #square-grid .grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (min-width: 500px) {
+  #square-grid .grid {
+    width: 75%;
+  }
+}
+@media (min-width: 1150px) {
+  #square-grid .grid {
+    width: 50%;
+  }
 }
 #square-grid .grid img {
   display: none;
   width: 250px;
+}
+@media screen and (min-width: 0) and (max-width: 499px) {
+  #square-grid .grid img {
+    grid-column: 1;
+    width: 100%;
+  }
 }
 #square-grid .grid .song-title {
   grid-column: 1/span 3;
@@ -10802,6 +10835,9 @@ footer .social-media .social-icon.circle img {
   pointer-events: none;
 }
 #video video {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
 }
 
