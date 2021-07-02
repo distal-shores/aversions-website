@@ -1,13 +1,13 @@
 <div class="artwork">
     <ul class="cta-left">
         <li>
-            <a href="#">Watch the video</a>
+            <a href="https://youtu.be/T-Ue2xa2xnU">Watch the video</a>
         </li>
         <li>
-            <a href="#">Listen on Spotify</a>
+            <a href="https://open.spotify.com/track/3PeB7CQs7texiNiQ1umEKr">Listen on Spotify</a>
         </li>
         <li>
-            <a href="https://aversionsband.bandcamp.com">Buy Single</a>
+            <a href="https://aversionsband.bandcamp.com/track/famous-last-lines">Buy Single</a>
         </li>
     </ul>
     <ul class="cta-right">
