@@ -25,6 +25,8 @@ mix.js('resources/js/app.js', 'public/js')
 .js('resources/js/splash.js', 'public/js/')
 .sourceMaps().sass('resources/sass/app.scss', 'public/css');
 
+mix.copyDirectory('resources/fonts', 'public/fonts');
+
 mix.copyDirectory('node_modules/tinymce/plugins', 'public/node_modules/tinymce/plugins');
 mix.copyDirectory('node_modules/tinymce/skins', 'public/node_modules/tinymce/skins');
 mix.copyDirectory('node_modules/tinymce/themes', 'public/node_modules/tinymce/themes');

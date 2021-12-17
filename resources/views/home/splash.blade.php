@@ -2,32 +2,15 @@
 
 @section('content')
     <div class="splash-container">
-        <div id="single-copy" style="display:flex">
-            @include('home.partials.splash_menus_mobile')
-            @include('home.partials.splash_menus')
-            <a class="replay-link" href="/?rewatch=true">Replay Intro</a>
+        <video autoplay muted loop id="bg_vid">
+            <source src="{{ asset('videos/slt_bg_filtered.mp4') }}" type="video/mp4">
+        </video>
+        <h1>Aversions</h1>
+        <h2><span>"</span>Sharp Left Turns<span>"</span></h2>
+        <h3>Out Now</h3>
+        <div class="logos-container">
+            <a href="https://www.youtube.com/watch?v=uJ2ePOxSo18"><img src="{{ asset('images/youtube.svg') }}"></a>
+            <a href="https://aversionsband.bandcamp.com/track/sharp-left-turns"><img src="{{ asset('images/bandcamp.svg') }}"></a>
         </div>
     </div>
 @endsection
-
-@push('scripts')
-    <!-- Facebook Pixel Code -->
-    <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window,document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '583442679711771'); 
-        fbq('track', 'PageView');
-    </script>
-    <noscript>
-        <img height="1" width="1" 
-        src="https://www.facebook.com/tr?id=583442679711771&ev=PageView
-        &noscript=1"/>
-    </noscript>
-    <!-- End Facebook Pixel Code -->
-@endpush

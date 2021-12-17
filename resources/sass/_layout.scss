@@ -1,6 +1,6 @@
 $margin-bottom: 0.5rem;
-$mobile-maxwidth: 499px;
-$breakpoint-tablet: 500px;
+$mobile-maxwidth: 625px;
+$breakpoint-tablet: 625px;
 $breakpoint-desktop: 1150px;
 
 @mixin breakpoint($breakpoint) {

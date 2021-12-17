@@ -17,19 +17,7 @@ class HomeController extends Controller
     public function index(Settings $settings, Request $request)
     {
         if( $settings->get('splash_enabled' ) === "on" ) {
-            $path = public_path('images/squares');
-            $files = File::allFiles($path);
-            $filenames = array();
-            for($x = 0; $x < 9; $x++) {
-                shuffle($files);
-                $file = array_pop($files);
-                array_push($filenames, $file->getFilename());
-            }
-            if($request->cookie('already-visited') !== 'true' || $request->rewatch === 'true') {
-                return response(view('home.splash-movie', compact('filenames')))->cookie('already-visited', 'true', time()+31556926);
-            } else {
-                return view('home.splash', compact('filenames'));
-            }
+            return view('home.splash');
         } else {
             return view('home.home');
         }

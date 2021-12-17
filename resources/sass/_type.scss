@@ -1,29 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Special+Elite&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Special+Elite&display=swap');
 
 @font-face {
     font-family: "Varta";
-    src: url("/fonts/Varta-Light.ttf") format("truetype");
+    src: url("../fonts/Varta-Light.ttf") format("truetype");
     font-weight: 300;
 }
 
 @font-face {
     font-family: "Varta";
-    src: url("/fonts/Varta-Regular.ttf") format("truetype");
+    src: url("../fonts/Varta-Regular.ttf") format("truetype");
     font-weight: 400;
 }
 
 @font-face {
     font-family: "Varta";
-    src: url("/fonts/Varta-Bold.ttf") format("truetype");
+    src: url("../fonts/Varta-Bold.ttf") format("truetype");
     font-weight: 700;
 }
 
 @font-face {
     font-family: "Varta";
-    src: url("/fonts/Varta-SemiBold.ttf") format("truetype");
+    src: url("../fonts/Varta-SemiBold.ttf") format("truetype");
     font-weight: 600;
+}
+
+@font-face {
+    font-family: "BlockBertholdCondensed";
+    src: url("../fonts/Block_Berthold_Condensed.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "BlockBertholdItalic";
+    src: url("../fonts/Block_Berthold_Italic.ttf") format("truetype");
 }
 
 h1, h2, h3 {
