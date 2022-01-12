@@ -10,7 +10,7 @@
         <h3>Out Now</h3>
         <div class="logos-container">
             <a href="https://www.youtube.com/watch?v=uJ2ePOxSo18"><img src="{{ asset('images/youtube.svg') }}"></a>
-            <a href="https://aversionsband.bandcamp.com/track/sharp-left-turns"><img src="{{ asset('images/bandcamp.svg') }}"></a>
+            <a href="https://aversionsband.bandcamp.com"><img src="{{ asset('images/bandcamp.svg') }}"></a>
         </div>
     </div>
 @endsection
