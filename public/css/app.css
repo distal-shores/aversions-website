@@ -9953,32 +9953,8 @@ h3 {
 }
 
 @font-face {
-  font-family: "Varta";
-  src: url(/fonts/Varta-Light.ttf?844e6f15d045098f479835de8709cf1e) format("truetype");
-  font-weight: 300;
-}
-@font-face {
-  font-family: "Varta";
-  src: url(/fonts/Varta-Regular.ttf?27bc38b25fa488eec218e96d8f9b6c65) format("truetype");
-  font-weight: 400;
-}
-@font-face {
-  font-family: "Varta";
-  src: url(/fonts/Varta-Bold.ttf?b243a02cea47cc69798758d6af7706d5) format("truetype");
-  font-weight: 700;
-}
-@font-face {
-  font-family: "Varta";
-  src: url(/fonts/Varta-SemiBold.ttf?9d73e4efaead473be9ca5749367a29fe) format("truetype");
-  font-weight: 600;
-}
-@font-face {
-  font-family: "BlockBertholdCondensed";
-  src: url(/fonts/Block_Berthold_Condensed.otf?c79b69c82df15c71d5601879fc138b03) format("opentype");
-}
-@font-face {
-  font-family: "BlockBertholdItalic";
-  src: url(/fonts/Block_Berthold_Italic.ttf?f61e7da2f31d991af75a8b1659f74dcc) format("truetype");
+  font-family: "AvenirCondensedHand";
+  src: url(/fonts/AvenirCondensedHand.ttf?e1c30f214f884059bf91449f0e5140d8) format("truetype");
 }
 h1, h2, h3 {
   font-family: "Black Ops One", cursive;
@@ -10155,42 +10131,8 @@ p {
 }
 @font-face {
   .home-container {
-    font-family: "Varta";
-    src: url(/fonts/Varta-Light.ttf?844e6f15d045098f479835de8709cf1e) format("truetype");
-    font-weight: 300;
-  }
-}
-@font-face {
-  .home-container {
-    font-family: "Varta";
-    src: url(/fonts/Varta-Regular.ttf?27bc38b25fa488eec218e96d8f9b6c65) format("truetype");
-    font-weight: 400;
-  }
-}
-@font-face {
-  .home-container {
-    font-family: "Varta";
-    src: url(/fonts/Varta-Bold.ttf?b243a02cea47cc69798758d6af7706d5) format("truetype");
-    font-weight: 700;
-  }
-}
-@font-face {
-  .home-container {
-    font-family: "Varta";
-    src: url(/fonts/Varta-SemiBold.ttf?9d73e4efaead473be9ca5749367a29fe) format("truetype");
-    font-weight: 600;
-  }
-}
-@font-face {
-  .home-container {
-    font-family: "BlockBertholdCondensed";
-    src: url(/fonts/Block_Berthold_Condensed.otf?c79b69c82df15c71d5601879fc138b03) format("opentype");
-  }
-}
-@font-face {
-  .home-container {
-    font-family: "BlockBertholdItalic";
-    src: url(/fonts/Block_Berthold_Italic.ttf?f61e7da2f31d991af75a8b1659f74dcc) format("truetype");
+    font-family: "AvenirCondensedHand";
+    src: url(/fonts/AvenirCondensedHand.ttf?e1c30f214f884059bf91449f0e5140d8) format("truetype");
   }
 }
 .home-container h1, .home-container h2, .home-container h3 {
@@ -10778,31 +10720,25 @@ footer .social-media .social-icon.circle img {
 }
 
 .splash-container {
+  background-color: black;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-  height: 100vh;
+  align-items: flex-start;
+  justify-content: flex-start;
   flex-direction: column;
+  padding-top: 3rem;
+  position: relative;
 }
 .splash-container h1, .splash-container h2, .splash-container h3 {
-  color: #ff0000;
+  color: white;
   position: relative;
-  line-height: 7rem;
   z-index: 10;
 }
-@media screen and (min-width: 0) and (max-width: 625px) {
-  .splash-container h1, .splash-container h2, .splash-container h3 {
-    line-height: 3rem;
-    margin: 1rem 0;
-  }
-}
 .splash-container h1, .splash-container h3 {
-  font-family: BlockBertholdCondensed, Arial, sans-serif;
+  font-family: AvenirCondensedHand, Arial, sans-serif;
   text-transform: uppercase;
 }
 .splash-container h1 {
-  font-size: 6rem;
+  font-size: 4rem;
   text-transform: uppercase;
 }
 @media screen and (min-width: 0) and (max-width: 625px) {
@@ -10811,9 +10747,10 @@ footer .social-media .social-icon.circle img {
   }
 }
 .splash-container h2 {
-  font-family: BlockBertholdItalic, Arial, sans-serif;
-  font-size: 4rem;
+  font-family: AvenirCondensedHand, Arial, sans-serif;
+  font-size: 2rem;
   letter-spacing: 3px;
+  text-transform: uppercase;
 }
 @media screen and (min-width: 0) and (max-width: 625px) {
   .splash-container h2 {
@@ -10833,14 +10770,25 @@ footer .social-media .social-icon.circle img {
     font-size: 3rem;
   }
 }
-.splash-container video {
-  -o-object-fit: cover;
-     object-fit: cover;
-  height: 100%;
+.splash-container .grid {
+  color: white;
+  display: grid;
+  grid-template-columns: 0.6fr 1fr 1.4fr 1fr;
+  font-family: AvenirCondensedHand, Arial, sans-serif;
+  font-size: 28px;
+  max-width: 600px;
+  margin: 0 auto;
   width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
+}
+.splash-container .grid .ticket-link {
+  text-align: right;
+}
+.splash-container .grid .ticket-link a {
+  color: #ff0000;
+}
+.splash-container .grid .ticket-link a:hover {
+  text-decoration: none;
+  color: #e60000;
 }
 .splash-container .logos-container {
   min-height: 7.5rem;
@@ -10868,6 +10816,84 @@ footer .social-media .social-icon.circle img {
   .splash-container .logos-container img {
     height: 50px;
     width: 123.75px;
+  }
+}
+.splash-container .title-bar,
+.splash-container .tour-logo {
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+}
+.splash-container .tour-logo {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.splash-container .tour-logo img {
+  width: 60%;
+}
+.splash-container .latest-release {
+  position: fixed;
+  right: 0;
+  top: 0;
+  padding-top: 3rem;
+}
+.splash-container .latest-release h3 {
+  font-size: 2rem;
+}
+.splash-container .latest-release img {
+  width: 50%;
+}
+.splash-container .latest-release:hover img {
+  box-shadow: 7px 7px 15px 1px rgba(255, 255, 255, 0.4);
+  transform: rotate(-7deg);
+}
+@media screen and (max-width: 1600px) {
+  .splash-container {
+    padding-bottom: 3rem;
+  }
+  .splash-container .title-bar {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .splash-container .title-bar h1 {
+    font-size: 3rem;
+  }
+  .splash-container .title-bar h2 {
+    font-size: 2rem;
+    margin-bottom: 0;
+  }
+  .splash-container .grid {
+    grid-template-columns: 0.7fr 1fr 1.3fr;
+    row-gap: 4px;
+    margin-bottom: 3rem;
+    padding: 0 1rem;
+  }
+  .splash-container .grid .ticket-link {
+    text-align: center;
+    grid-column: 1/4;
+  }
+  .splash-container .grid .ticket-link a:not(:empty) {
+    border-radius: 4px;
+    border: 1px solid #ff0000;
+    display: inline-block;
+    width: 100%;
+  }
+  .splash-container .latest-release {
+    position: relative;
+    padding: 0 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .splash-container .latest-release img {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    width: 90%;
+  }
+  .splash-container .latest-release:hover img {
+    box-shadow: none;
+    transform: rotate(0);
   }
 }
 

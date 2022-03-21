@@ -1,0 +1,79 @@
+.splash-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    h1, h2, h3 {
+        color: #ff0000;
+        position: relative;
+        line-height: 7rem;
+        z-index: 10;
+        @include breakpoint(mobile-only) {
+            line-height: 3rem;
+            margin: 1rem 0;
+        }
+    }
+    h1, h3 {
+        font-family: BlockBertholdCondensed, Arial, sans-serif;
+        text-transform: uppercase;
+    }
+    h1 {
+        font-size: 6rem;
+        text-transform: uppercase;
+        @include breakpoint(mobile-only) {
+            font-size: 5rem;
+        }
+    }
+    h2 {
+        font-family: BlockBertholdItalic, Arial, sans-serif;
+        font-size: 4rem;
+        letter-spacing: 3px;
+        @include breakpoint(mobile-only) {
+            text-align: center;
+            font-size: 3rem;
+        }
+        span {
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+        }
+    }
+    h3 {
+        font-size: 4rem;
+        @include breakpoint(mobile-only) {
+            font-size: 3rem;
+        }
+    }
+    video {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+    .logos-container {
+        min-height: 7.5rem;
+        align-items: center;
+        justify-content: space-around;
+        position: relative;
+        max-width: 500px;
+        z-index: 10;
+        display: flex;
+        width: 28%;
+        @include breakpoint(mobile-only) {
+            justify-content: center;
+            width: 100%;
+        }
+        img {
+            height: 75px;
+            width: 187.5px;
+            object-fit: contain;
+            @include breakpoint(mobile-only) {
+                height: 50px;
+                width: 123.75px;
+            }
+        }
+    }
+}
