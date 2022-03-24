@@ -10727,6 +10727,8 @@ footer .social-media .social-icon.circle img {
   flex-direction: column;
   padding-top: 3rem;
   position: relative;
+  min-height: 100vh;
+  padding-bottom: 3rem;
 }
 .splash-container h1, .splash-container h2, .splash-container h3 {
   color: white;

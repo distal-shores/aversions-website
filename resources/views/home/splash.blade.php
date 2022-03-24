@@ -23,7 +23,7 @@
             <div class="date">May 1</div>
             <div class="city">Ottawa</div>
             <div class="venue">Dominion Tavern</div>
-            <div class="ticket-link"><a href=""></a></div>
+            <div class="ticket-link"><a href="https://www.ticketweb.ca/event/deliverables-aversions-growing-fires-dominion-tavern-tickets/11934355?pl=spectrasonic&refid=AVE">Tickets</a></div>
             {{--  --}}
             <div class="date">May 3</div>
             <div class="city">Kingston</div>
@@ -33,7 +33,7 @@
             <div class="date">May 4</div>
             <div class="city">Oshawa</div>
             <div class="venue">The Atria</div>
-            <div class="ticket-link"><a href=""></a></div>
+            <div class="ticket-link"><a href="https://www.eventbrite.ca/manage/events/305925851457/basicinfo">Tickets</a></div>
             {{--  --}}
             <div class="date">May 5</div>
             <div class="city">Guelph</div>
