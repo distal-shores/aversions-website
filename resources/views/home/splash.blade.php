@@ -38,7 +38,7 @@
             <div class="date">May 5</div>
             <div class="city">Guelph</div>
             <div class="venue">Red Brick</div>
-            <div class="ticket-link"><a href=""></a></div>
+            <div class="ticket-link"><a href="https://www.eventbrite.ca/e/sunlust-gentle-aversions-live-at-red-brick-cafe-tickets-307366370087">Tickets</a></div>
             {{--  --}}
             <div class="date">May 6</div>
             <div class="city">Toronto</div>
