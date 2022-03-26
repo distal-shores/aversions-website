@@ -8,6 +8,11 @@
     position: relative;
     min-height: 100vh;
     padding-bottom: 3rem;
+    .inner {
+        max-width: 600px;
+        position: relative;
+        margin: 0 auto;
+    }
     h1, h2, h3 {
         color: white;
         position: relative;
@@ -50,7 +55,6 @@
         grid-template-columns: 0.6fr 1fr 1.4fr 1fr;
         font-family: AvenirCondensedHand, Arial, sans-serif;
         font-size: 28px;
-        max-width: 600px;
         margin: 0 auto;
         width: 100%;
         .ticket-link {
@@ -64,32 +68,8 @@
             }
         }
     }
-    .logos-container {
-        min-height: 7.5rem;
-        align-items: center;
-        justify-content: space-around;
-        position: relative;
-        max-width: 500px;
-        z-index: 10;
-        display: flex;
-        width: 28%;
-        @include breakpoint(mobile-only) {
-            justify-content: center;
-            width: 100%;
-        }
-        img {
-            height: 75px;
-            width: 187.5px;
-            object-fit: contain;
-            @include breakpoint(mobile-only) {
-                height: 50px;
-                width: 123.75px;
-            }
-        }
-    }
     .title-bar,
     .tour-logo {
-        max-width: 600px;
         margin: 0 auto;
         width: 100%;
     }
@@ -101,15 +81,16 @@
         }
     }
     .latest-release {
-        position: fixed;
-        right: 0;
+        position: absolute;
+        right: -275px;
         top: 0;
         padding-top: 3rem;
         h3 {
             font-size: 2rem;
         }
         img {
-            width: 50%;
+            width: 250px;
+            height: 250px;
         }
         &:hover {
             img {
@@ -152,14 +133,15 @@
         .latest-release {
             position: relative;
             padding: 0 1rem;
-            max-width: 600px;
             margin: 0 auto;
+            right: 0;
             width: 100%;
             img {
                 display: block;
                 text-align: center;
                 margin: 0 auto;
                 width: 90%;
+                height: auto;
             }
             &:hover {
                 img {
