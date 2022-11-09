@@ -28,7 +28,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-md-4 right-content">
+                    <div class="col-sm-12 col-md-4 right-content" id="cover-art">
                         <img src="{{ asset('storage/song_covers/' . $song->cover_art) }}">
                     </div>
                 </div>
@@ -36,12 +36,12 @@
                     <div class="row justify-content-end" style="margin-bottom: 2rem;">
                         @if(isset($song->mp3))
                             <div class="col-6 col-lg-auto mp3 text-center">
-                                <a class="download-button" style="color:#{{ settings('epk_bg_colour') }};" href={{ asset('/storage/mp3s/'.$song->mp3) }} download>Download MP3</a>
+                                <a class="download-button" style="background-color:#{{ settings('epk_button_colour') }}; color:#{{ settings('epk_bg_colour') }};" href={{ asset('/storage/mp3s/'.$song->mp3) }} download>Download MP3</a>
                             </div>
                         @endif
                         @if(isset($song->wav))
                             <div class="col-6 col-lg-auto wav text-center">
-                                <a class="download-button" style="color:#{{ settings('epk_bg_colour') }};" href={{ asset('/storage/wavs/'.$song->wav) }}>Download WAV</a>
+                                <a class="download-button" style="background-color:#{{ settings('epk_button_colour') }}; color:#{{ settings('epk_bg_colour') }};" href={{ asset('/storage/wavs/'.$song->wav) }}>Download WAV</a>
                             </div>
                         @endif
                     </div>
@@ -69,7 +69,7 @@
             </div>
         </div>
     </div>
-    <div class="row no-gutters">
+    <div class="row no-gutters" id="socials-footer">
         @include('home.partials.footer')
     </div>
 @endsection

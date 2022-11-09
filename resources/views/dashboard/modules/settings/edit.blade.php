@@ -22,13 +22,21 @@
             <h5>Change/Add Image</h5>
 			<input type="file" class="form-control" id="epk_header_img"  name="epk_header_img">
 		</div> {{-- /form-group --}}
+        <h4>EPK Colours</h4>
+        <p>Six-digit hexidecimal values for below</p>
         <div class="form-group">
-            <h4>EPK Background Colour</h4>
+            <h5>EPK Background Colour</h5>
             @if( isset($epkBgColour) )
                 <div style="background-color:#{{ $epkBgColour }}; width: 100%; height: 30px;">Current colour</div>
             @endif
-            <p>Six-digit hexidecimal value</p>
 			<input type="text" class="form-control" id="epk_bg_colour"  name="epk_bg_colour" value="{{ $epkBgColour }}">
+		</div> {{-- /form-group --}}
+        <div class="form-group">
+            <h5>EPK Button Colour</h5>
+            @if( isset($epkButtonColour) )
+                <div style="background-color:#{{ $epkButtonColour }}; width: 100%; height: 30px;">Current colour</div>
+            @endif
+			<input type="text" class="form-control" id="epk_button_colour"  name="epk_button_colour" value="{{ $epkButtonColour }}">
 		</div> {{-- /form-group --}}
 		<button type="submit" class="btn btn-primary">Submit</button>
 	</form>

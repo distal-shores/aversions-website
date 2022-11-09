@@ -11,7 +11,7 @@
   			<th scope="col">Bandcamp Link</th>
             <th scope="col">Soundcloud Link</th>
             <th scope="col">Youtube Link</th>
-            <th scope="col">EPK</th>
+            <th scope="col">EPK Pub?</th>
             <th scope="col">Single?</th>
             <th scope="col">Edit/Delete</th>
     	</tr>
@@ -20,7 +20,7 @@
         @foreach ($songs as $song)
             <tr>
   			    <td>{{ $song->release_date }}</td>
-  				<td>{{ $song->name }}</td>
+  				<td><a href="/track/{{ $song->slug }}/epk">{{ $song->name }}</a></td>
   				<td>{{ $song->album }}</td>
                 <td>
                     @isset($song->bandcamp_slug)
@@ -39,7 +39,7 @@
                 </td>
                 <td>
                     @if($song->epk_published)
-                        <a href="/track/{{ $song->slug }}/epk">Click here</a>
+                        X
                     @endif
                 </td>
                 <td>

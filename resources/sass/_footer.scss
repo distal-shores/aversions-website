@@ -1,5 +1,5 @@
 footer {
-	background-color: black;
+	background-color: rgba(0,0,0,0.8);
 	padding: 10px;
 	position: fixed;
 	bottom: 0;
@@ -40,4 +40,10 @@ footer {
 			justify-content: space-between;
 		}
 	}
+}
+
+#socials-footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
 }

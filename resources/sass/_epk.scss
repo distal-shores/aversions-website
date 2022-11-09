@@ -5,7 +5,7 @@
     .epk-wrapper {
         max-width: 1200px;
         margin: 0 auto;
-        min-height: calc(100vh - 70px);
+        padding-bottom: 70px;
     }
     .epk-content,
     .epk-header {
@@ -15,6 +15,9 @@
         h3 {
             font-family: 'Varta', sans-serif;
             font-weight: 700;
+        }
+        .covert-art {
+            margin-bottom: 1rem;
         }
         img {
             width: 100%;
@@ -37,7 +40,6 @@
         }
         .download-button {
             padding: 1rem;
-            background-color: #0043FF;
         }
     }
     .epk-header {

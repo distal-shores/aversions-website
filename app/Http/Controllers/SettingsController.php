@@ -24,7 +24,9 @@ class SettingsController extends Controller
         $splashEnabled = $settings->get('splash_enabled');
         $epkHeaderImg = $settings->get('epk_header_img');
         $epkBgColour = $settings->get('epk_bg_colour');
-        return view('dashboard.modules.settings.edit', compact('splashEnabled', 'epkHeaderImg', 'epkBgColour'));
+        $epkButtonColour = $settings->get('epk_button_colour');
+
+        return view('dashboard.modules.settings.edit', compact('splashEnabled', 'epkHeaderImg', 'epkBgColour', 'epkButtonColour'));
     }
 
     public function update(Request $request, Settings $settings)
@@ -37,6 +39,7 @@ class SettingsController extends Controller
         }
         $settings->put('splash_enabled', $request->splash_enabled);
         $settings->put('epk_bg_colour', $request->epk_bg_colour);
+        $settings->put('epk_button_colour', $request->epk_button_colour);
     
         return redirect()->back()->with(['notice' => 'Settings updated']);
     }
