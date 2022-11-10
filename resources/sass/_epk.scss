@@ -5,6 +5,7 @@
     .epk-wrapper {
         max-width: 1200px;
         margin: 0 auto;
+        min-height: calc(100vh - 70px);
         padding-bottom: 70px;
     }
     .epk-content,

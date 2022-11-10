@@ -29,7 +29,7 @@
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-4 right-content" id="cover-art">
-                        <img src="{{ asset('storage/song_covers/' . $song->cover_art) }}">
+                        <img src="{{ Storage::disk('s3')->url('song_covers/' . $song->cover_art) }}">
                     </div>
                 </div>
                 @if(isset($song->mp3) || isset($song->wav))

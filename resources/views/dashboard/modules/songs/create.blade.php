@@ -49,6 +49,10 @@
 			</div>	{{-- /row --}}
 		</div> {{-- /form-group --}}
 		<div class="form-group">
+			<label for="cover_art">Cover Art</label>
+			<input type="file" class="form-control" id="cover_art"  name="cover_art">
+		</div> {{-- /form-group --}}
+		<div class="form-group">
 			<label for="is_single">Single?</label>
 			<input type="checkbox" id="is_single" class="form-control pull-left" name="is_single" value="0">
 		</div> {{-- /form-group --}}

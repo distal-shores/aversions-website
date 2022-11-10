@@ -54,7 +54,7 @@ class SongsController extends Controller
             $request->is_single = 0;
         }
 
-        // Save the event poster in public storage
+        // Save the song cover art in public storage
         if($request->file('cover_art') != null) {
             $file = $request->file('cover_art');
             $originalFileName = $file->getClientOriginalName();

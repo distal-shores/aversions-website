@@ -19,9 +19,13 @@ processes = []
   LOG_CHANNEL = "stderr"
   LOG_LEVEL = "info"
   LOG_STDERR_FORMATTER = "Monolog\\Formatter\\JsonFormatter"
-  BANDCAMP_BASE_URL="https://aversionsband.bandcamp.com/"
-  SOUNDCLOUD_BASE_URL="https://soundcloud.com/aversionstheband/"
-  YOUTUBE_BASE_URL="https://www.youtube.com/watch?v="
+  BANDCAMP_BASE_URL = "https://aversionsband.bandcamp.com/"
+  SOUNDCLOUD_BASE_URL = "https://soundcloud.com/aversionstheband/"
+  YOUTUBE_BASE_URL = "https://www.youtube.com/watch?v="
+  FILESYSTEM_DRIVER = "s3"
+  AWS_DEFAULT_REGION = "us-west-2"
+  AWS_BUCKET = "aversionswebsitebucket"
+  AWS_URL = "aversionswebsitebucket.s3.us-west-2.amazonaws.com"
 
 [experimental]
   allowed_public_ports = []
