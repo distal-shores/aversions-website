@@ -41,7 +41,7 @@
                         @endif
                         @if(isset($song->wav))
                             <div class="col-6 col-lg-auto wav text-center">
-                                <a class="download-button" style="background-color:#{{ settings('epk_button_colour') }}; color:#{{ settings('epk_bg_colour') }};" href={{ Storage::disk('s3')->url('wavs/' . $song->mp3) }}>Download WAV</a>
+                                <a class="download-button" style="background-color:#{{ settings('epk_button_colour') }}; color:#{{ settings('epk_bg_colour') }};" href={{ Storage::disk('s3')->url('wavs/' . $song->wav) }}>Download WAV</a>
                             </div>
                         @endif
                     </div>
