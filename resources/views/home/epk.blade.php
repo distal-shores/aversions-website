@@ -4,7 +4,7 @@
     <div class="epk-container" style="background-color:#{{ settings('epk_bg_colour') }}">
         <div class="epk-wrapper">
             <div class="row no-gutters epk-header">
-                <img src="{{ asset('storage/epk_headers/' . settings('epk_header_img')) }}">
+                <img src="{{ Storage::disk('s3')->url('epk_headers/' . settings('epk_header_img')) }}">
             </div>
             <div class="epk-content">
                 <div class="row no-gutters song-name">
@@ -36,12 +36,12 @@
                     <div class="row justify-content-end" style="margin-bottom: 2rem;">
                         @if(isset($song->mp3))
                             <div class="col-6 col-lg-auto mp3 text-center">
-                                <a class="download-button" style="background-color:#{{ settings('epk_button_colour') }}; color:#{{ settings('epk_bg_colour') }};" href={{ asset('/storage/mp3s/'.$song->mp3) }} download>Download MP3</a>
+                                <a class="download-button" style="background-color:#{{ settings('epk_button_colour') }}; color:#{{ settings('epk_bg_colour') }};" href={{ Storage::disk('s3')->url('mp3s/' . $song->mp3) }} download>Download MP3</a>
                             </div>
                         @endif
                         @if(isset($song->wav))
                             <div class="col-6 col-lg-auto wav text-center">
-                                <a class="download-button" style="background-color:#{{ settings('epk_button_colour') }}; color:#{{ settings('epk_bg_colour') }};" href={{ asset('/storage/wavs/'.$song->wav) }}>Download WAV</a>
+                                <a class="download-button" style="background-color:#{{ settings('epk_button_colour') }}; color:#{{ settings('epk_bg_colour') }};" href={{ Storage::disk('s3')->url('wavs/' . $song->mp3) }}>Download WAV</a>
                             </div>
                         @endif
                     </div>
