@@ -29,6 +29,10 @@
 			<a class="btn" href="{{ route('songs.create') }}"><i class="fas fa-plus-square"></i></a>
 		</li>
 		<li class="list-group-item">
+			<a href="{{ route('albums.index') }}">Albums</a>
+			<a class="btn" href="{{ route('albums.create') }}"><i class="fas fa-plus-square"></i></a>
+		</li>
+		<li class="list-group-item">
 			<a href="{{ route('settings.edit') }}">Global Settings</a>
 		</li>
 	</ul>

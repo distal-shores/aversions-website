@@ -26,8 +26,8 @@ class SongsController extends Controller
      */
     public function index()
     {
-        $songs = Song::orderBy('release_date')->get();
-        return view('dashboard.modules.songs.index', compact('songs'));
+        $albums = Album::orderBy('release_date')->get();
+        return view('dashboard.modules.albums.index', compact('albums'));
     }
 
     /**
@@ -37,7 +37,7 @@ class SongsController extends Controller
      */
     public function create()
     {
-        return view('dashboard.modules.songs.create');
+        return view('dashboard.modules.albums.create');
     }
 
     /**
@@ -50,68 +50,45 @@ class SongsController extends Controller
     {
         $this->validate($request, $this->rules);
 
-        if($request->is_single === null) {
-            $request->is_single = 0;
-        }
-
-        // Save the song cover art in public storage
+        // Save the album cover art in public storage
         if($request->file('cover_art') != null) {
             $file = $request->file('cover_art');
             $originalFileName = $file->getClientOriginalName();
-            $file->storeAs('song_covers', $originalFileName);
+            $file->storeAs('album_covers', $originalFileName);
         }
 
-        // Save the wav in public storage
-        if($request->file('wav') != null) {
-            $wavFile = $request->file('wav');
-            $originalWavFileName = preg_replace('/\s+/', '-', $wavFile->getClientOriginalName());
-            $wavFile->storeAs('wavs', $originalWavFileName);
-        }
-
-        // Save the mp3 in public storage
-        if($request->file('mp3') != null) {
-            $mp3File = $request->file('mp3');
-            $originalMp3FileName = preg_replace('/\s+/', '-', $mp3File->getClientOriginalName());
-            $mp3File->storeAs('mp3s', $originalMp3FileName);
-        }
-
-        $name = $request->name;
+        $title = $request->title;
 
         $requestParams = array(
             'name' => $request->name,
             'slug' => $this->createSlug($name),
             'release_date' => $request->release_date,
             'cover_art' => isset($originalFileName) ? $originalFileName : null,
-            'wav' => isset($originalWavFileName) ? $originalWavFileName : null,
-            'mp3' => isset($originalMp3FileName) ? $originalMp3FileName : null,
             'bandcamp_slug' => $request->bandcamp_slug,
-            'youtube_slug' => $request->youtube_slug,
-            'soundcloud_slug' => $request->soundcloud_slug,
-            'soundcloud_param' => $request->soundcloud_param,
+            'spotify_slug' => $request->spotify_slug,
             'description' => $request->description,
-            'is_single' => $request->is_single,
-            'epk_published' => false,
+            'published' => false,
         );
 
-        $song = Song::firstOrCreate(
-            ['name' => $request->name],
+        $album = Album::firstOrCreate(
+            ['name' => $title],
             $requestParams
         );
 
-        if($song->wasRecentlyCreated) {
-            return redirect()->action('SongsController@index')->with(['status' => 'Song created!', 'message_type' => 'success']);
+        if($album->wasRecentlyCreated) {
+            return redirect()->action('AlbumsController@index')->with(['status' => 'Album created!', 'message_type' => 'success']);
         } else {
-            return redirect()->action('SongsController@index')->with(['status' => 'Song already exists!', 'message_type' => 'warning']);
+            return redirect()->action('AlbumsController@index')->with(['status' => 'Album already exists!', 'message_type' => 'warning']);
         }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Song  $song
+     * @param  \App\Album  $album
      * @return \Illuminate\Http\Response
      */
-    public function show(Song $song)
+    public function show(Album $album)
     {
         //
     }
@@ -119,51 +96,32 @@ class SongsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Song  $song
+     * @param  \App\Album  $album
      * @return \Illuminate\Http\Response
      */
-    public function edit(Song $song)
+    public function edit(Album $album)
     {
-        return view('dashboard.modules.songs.edit', compact('song'));
+        return view('dashboard.modules.albums.edit', compact('album'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Song  $song
+     * @param  \App\Album  $album
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Song $song)
+    public function update(Request $request, Album $album)
     {
         $this->validate($request, $this->rules);
 
         if($request->file('cover_art') != null) {
             $file = $request->file('cover_art');
             $originalFileName = $file->getClientOriginalName();
-            if(!Storage::exists('song_covers/'.$originalFileName)) {
-                $file->storeAs('song_covers', $originalFileName);
+            if(!Storage::exists('album_covers/'.$originalFileName)) {
+                $file->storeAs('album_covers', $originalFileName);
             }
-            $song->cover_art = $originalFileName;
-        }
-
-        if($request->file('wav') != null) {
-            $wavFile = $request->file('wav');
-            $originalWavFileName = preg_replace('/\s+/', '-', $wavFile->getClientOriginalName());
-            if(!Storage::exists('wavs/'.$originalWavFileName)) {
-                $wavFile->storeAs('wavs', $originalWavFileName);
-            }
-            $song->wav = $originalWavFileName;
-        }
-
-        if($request->file('mp3') != null) {
-            $mp3File = $request->file('mp3');
-            $originalMp3FileName = preg_replace('/\s+/', '-', $mp3File->getClientOriginalName());
-
-            if(!Storage::exists('mp3s/'.$originalMp3FileName)) {
-                $mp3File->storeAs('mp3s', $originalMp3FileName);
-            }
-            $song->mp3 = $originalMp3FileName;
+            $album->cover_art = $originalFileName;
         }
         
         if($song->name != $request->name) {
@@ -172,16 +130,16 @@ class SongsController extends Controller
         } else {
             $song->slug = $this->createSlug($request->slug);
         }
-        $song->release_date = $request->release_date;
-        $song->bandcamp_slug = $request->bandcamp_slug;
-        $song->youtube_slug = $request->youtube_slug;
-        $song->soundcloud_slug = $request->soundcloud_slug;
-        $song->soundcloud_param = $request->soundcloud_param;
-        $song->description = $request->description;
-        $song->is_single = $request->boolean('is_single');
-        $song->epk_published = $request->boolean('epk_published');
+        $album->release_date = $request->release_date;
+        $album->bandcamp_slug = $request->bandcamp_slug;
+        $album->youtube_slug = $request->youtube_slug;
+        $album->soundcloud_slug = $request->soundcloud_slug;
+        $album->soundcloud_param = $request->soundcloud_param;
+        $album->description = $request->description;
+        $album->is_single = $request->boolean('is_single');
+        $album->epk_published = $request->boolean('epk_published');
 
-        $song->save();
+        $album->save();
 
         return redirect()->action('SongsController@index')->with(['status' => 'Song "' . $song->name . '" updated!', 'message_type' => 'success']);
     }

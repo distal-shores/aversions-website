@@ -16,7 +16,7 @@
             @if( isset($epkHeaderImg) )
                 <div>
                     <h5>Current Image</h5>
-                    <img class="img-fluid" src="{{ asset('storage/epk_headers/'.$epkHeaderImg) }}">
+                    <img class="img-fluid" src="{{ Storage::disk('s3')->url('epk_headers/'.$epkHeaderImg) }}">
                 </div>
             @endif
             <h5>Change/Add Image</h5>

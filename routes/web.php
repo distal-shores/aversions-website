@@ -23,6 +23,7 @@ Route::prefix('admin')->group(function () {
 	Route::resource('clippings', 'ClippingsController');
 	Route::resource('posts', 'PostsController');
 	Route::resource('songs', 'SongsController');
+	Route::resource('albums', 'AlbumsController');
 	Route::get('/profile/edit', 'UsersController@edit');
 	Route::get('/site-settings', 'SettingsController@edit')->name('settings.edit');
 	Route::post('/site-settings', 'SettingsController@update')->name('settings.update');

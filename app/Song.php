@@ -12,4 +12,12 @@ class Song extends Model
      * @var array
      */
     protected $guarded = [];
+
+    /**
+     * The album that the song belongs to.
+     */
+    public function song()
+    {
+        return $this->belongsTo('App\Song');
+    }
 }

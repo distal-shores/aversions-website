@@ -27,7 +27,6 @@ class CreateSongsTable extends Migration
             $table->text('description');
             $table->boolean('is_single')->default(false);
             $table->boolean('epk_published')->default(false);
-            $table->integer('album')->nullable();
         });
     }
 
