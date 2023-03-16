@@ -30,7 +30,7 @@ Route::prefix('admin')->group(function () {
 	Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 });
 
-// Auth::routes(['register' => false]);
+Auth::routes(['register' => false]);
 
 // // Utility routes
 Route::get('/states', 'GetStatesController');
