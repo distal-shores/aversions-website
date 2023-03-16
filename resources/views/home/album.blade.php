@@ -4,7 +4,7 @@
     <div class="epk-container" style="background-color:#{{ settings('epk_bg_colour') }}">
         <div class="epk-wrapper">
             <div class="row no-gutters epk-header">
-                <img src="{{ Storage::disk('s3')->url('epk_headers/' . settings('epk_header_img')) }}">
+                <img src="{{ Storage::disk('s3')->url('epk_headers/ywtb_header.png') }}">
             </div>
             <div class="epk-content">
                 <div class="row no-gutters song-name">

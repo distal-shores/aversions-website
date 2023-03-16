@@ -1,8 +1,9 @@
-# fly.toml file generated for aversions on 2022-11-08T11:05:38-08:00
+# fly.toml file generated for aversions on 2023-03-15T23:16:06-07:00
 
 app = "aversions"
 kill_signal = "SIGINT"
 kill_timeout = 5
+primary_region = "sea"
 processes = []
 
 [build]
@@ -28,7 +29,6 @@ processes = []
   AWS_URL = "https://aversionswebsitebucket.s3.us-west-2.amazonaws.com"
 
 [experimental]
-  allowed_public_ports = []
   auto_rollback = true
 
 [[services]]
